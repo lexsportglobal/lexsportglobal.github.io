@@ -1,35 +1,93 @@
-<section>
-				  <header class="main">   
-                                    <h1 style="color: #002349;">Data Scouting & Performance</h1>
-                                   </header>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Data Scouting - LEX SPORT GLOBAL</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Optimisation de l'image et du texte */
+			.image.main img {
+				max-height: 400px; /* Évite que l'image soit trop géante */
+				object-fit: cover;
+				border-bottom: 3px solid #C5A05F; /* Souligné Or */
+			}
+			.bilingual-grid {
+				display: flex;
+				gap: 40px;
+				margin-top: 30px;
+			}
+			.lang-box {
+				flex: 1;
+				padding: 20px;
+				line-height: 1.8; /* Plus d'espace entre les lignes pour la lecture */
+			}
+			.lang-box h2 {
+				font-size: 1.5em;
+				margin-bottom: 1em;
+			}
+			.lang-box p {
+				font-size: 1.1em;
+				text-align: justify;
+			}
+			@media screen and (max-width: 736px) {
+				.bilingual-grid { flex-direction: column; }
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
 
-                                   <span class="image main"><img src="images/scouting_data.jpg" alt="Data Analytics Lex Sport Global" /></span>
+					<header id="header">
+						<a href="index.html" class="logo"><strong>LEX SPORT GLOBAL</strong> | Performance & Analytics</a>
+					</header>
 
-                                   <div class="row">
-                                   <div class="col-6 col-12-small" style="border-right: 1px solid #C5A05F; padding-right: 2em;">
-                                        <h2 style="color: #C5A05F;">[FR] Analyse & Valorisation</h2>
-                                  <p>Le département <strong>Data Scouting</strong> de Lex Sport Global transforme l'intuition en science exacte pour la gestion des effectifs sportifs.</p>
-                                  <ul>
-                                      <li><strong>Algorithmes avancés :</strong> Identification de talents via des KPIs (Key Performance Indicators) mondiaux.</li>
-                                      <li><strong>Audit de valeur :</strong> Évaluation financière objective des joueurs pour optimiser les plus-values de transfert.</li>
-                                      <li><strong>Analyse prédictive :</strong> Réduction drastique des risques d'échec lors du recrutement.</li>
-                                 </ul>
-                                 </div>
+					<section>
+						<header class="main">
+							<h1 style="color: #002349; letter-spacing: 2px;">DATA SCOUTING & PERFORMANCE</h1>
+						</header>
 
-                                 <div class="col-6 col-12-small" style="padding-left: 2em;">
-            <h2 style="color: #C5A05F;">[EN] Analytics & Valuation</h2>
-            <p>The <strong>Data Scouting</strong> department at Lex Sport Global turns intuition into exact science for sports squad management.</p>
-            <ul>
-                <li><strong>Advanced Algorithms:</strong> Talent identification through global KPIs (Key Performance Indicators).</li>
-                <li><strong>Value Audit:</strong> Objective financial assessment of players to optimize transfer capital gains.</li>
-                <li><strong>Predictive Analysis:</strong> Drastic reduction of recruitment failure risks.</li>
-            </ul>
-        </div>
-    </div>
+						<span class="image main"><img src="images/scouting_data.jpg" alt="Data Analytics" /></span>
 
-    <hr class="major" />
+						<div class="bilingual-grid">
+							<div class="lang-box" style="border-right: 1px solid #eeeeee;">
+								<h2 style="color: #C5A05F;">[FR] Analyse Prédictive</h2>
+								<p>Le département <strong>Data Scouting</strong> de Lex Sport Global transforme l'observation traditionnelle en une science exacte. Nous accompagnons les clubs dans l'identification de talents à haute valeur ajoutée via :</p>
+								<ul style="margin-top: 20px;">
+									<li><strong>Identification par KPIs :</strong> Analyse comparative selon les standards mondiaux.</li>
+									<li><strong>Valorisation financière :</strong> Évaluation objective des actifs joueurs.</li>
+									<li><strong>Optimisation du recrutement :</strong> Réduction drastique des risques d'échec sportif.</li>
+								</ul>
+							</div>
 
-    <ul class="actions">
-        <li><a href="index.html" class="button primary">Retour / Back</a></li>
-    </ul>
-</section>
+							<div class="lang-box">
+								<h2 style="color: #C5A05F;">[EN] Predictive Analytics</h2>
+								<p>The <strong>Data Scouting</strong> department at Lex Sport Global turns traditional observation into an exact science. We assist clubs in identifying high-value talent through:</p>
+								<ul style="margin-top: 20px;">
+									<li><strong>KPI-based identification:</strong> Benchmarking against global standards.</li>
+									<li><strong>Financial Valuation:</strong> Objective assessment of player assets.</li>
+									<li><strong>Recruitment Optimization:</strong> Drastic reduction in sporting failure risks.</li>
+								</ul>
+							</div>
+						</div>
+
+						<hr class="major" />
+
+						<ul class="actions">
+							<li><a href="index.html" class="button primary big">Retour à l'accueil / Back Home</a></li>
+						</ul>
+					</section>
+
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
