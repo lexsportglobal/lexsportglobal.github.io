@@ -1,5 +1,26 @@
 <!DOCTYPE HTML>
 <html>
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // On initialise la connexion
+  const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co'
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo'
+  const supabase = supabase.createClient(https://kjhrikutzxixmvmhbjqk.supabase.co, eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo)
+
+  // Fonction pour charger les joueurs
+  async function loadPlayers() {
+    const { data, error } = await supabase
+      .from('players')
+      .select('*')
+    
+    if (data) {
+      console.log("Joueurs trouvés :", data)
+      // C'est ici qu'on les affichera sur ton design
+    }
+  }
+  
+  loadPlayers()
+</script>
 	<head>
 		<title>Data Scouting - LEX SPORT GLOBAL</title>
 		<meta charset="utf-8" />
@@ -99,4 +120,5 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 	</body>
+
 </html>
