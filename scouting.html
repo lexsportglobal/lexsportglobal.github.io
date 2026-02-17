@@ -99,9 +99,38 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  // 1. Remplace les valeurs ci-dessous par tes propres clés
+  const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co'; 
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo'; 
+
+  // 2. Création du client de connexion
+  const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+  // 3. Fonction pour vérifier que la base de données répond
+  async function verifierConnexion() {
+    const { data, error } = await supabaseClient
+      .from('players')
+      .select('full_name');
+
+    if (error) {
+      console.log("❌ Erreur de connexion :", error.message);
+    } else if (data && data.length > 0) {
+      console.log("✅ Connexion réussie ! Premier joueur trouvé :", data[0].full_name);
+    } else {
+      console.log("✅ Connexion réussie, mais aucun joueur n'a été trouvé dans la table.");
+    }
+  }
+
+  // Lancement du test
+  verifierConnexion();
+</script>
 	</body>
 
 </html>
+
 
 
 
