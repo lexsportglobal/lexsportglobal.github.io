@@ -35,26 +35,25 @@
 			}
 		</style>
 			<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  // On initialise la connexion
-  const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co'
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo'
-  const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+		// --- CONFIGURATION LEX SPORT GLOBAL ---
+const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
-  // Fonction pour charger les joueurs
-  async function loadPlayers() {
-    const { data, error } = await supabase
-      .from('players')
-      .select('*')
-    
-    if (data) {
-      console.log("Joueurs trouvés :", data)
-      // C'est ici qu'on les affichera sur ton design
+// --- TEST DE CONNEXION ---
+async function verifConnexion() {
+    const { data, error } = await supabaseClient
+        .from('players')
+        .select('full_name');
+
+    if (error) {
+        console.error("❌ Erreur de connexion :", error.message);
+    } else {
+        console.log("✅ Connexion réussie ! Joueur trouvé :", data[0].full_name);
     }
-  }
-  
-  loadPlayers()
-</script>
+}
+
+verifConnexion();
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -122,6 +121,7 @@
 	</body>
 
 </html>
+
 
 
 
