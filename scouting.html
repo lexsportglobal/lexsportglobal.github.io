@@ -93,7 +93,8 @@
 				</div>
 			</div>
 		</div>
-
+<div id="players-container" class="grid-container">
+    </div>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
@@ -110,26 +111,40 @@
   const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
   // 3. Fonction pour vérifier que la base de données répond
-  async function verifierConnexion() {
-    const { data, error } = await supabaseClient
+  async function afficherJoueurs() {
+    const { data: players, error } = await supabaseClient
       .from('players')
-      .select('full_name');
+      .select('*'); // On récupère TOUTES les colonnes (nom, photo, poste, etc.)
 
     if (error) {
-      console.log("❌ Erreur de connexion :", error.message);
-    } else if (data && data.length > 0) {
-      console.log("✅ Connexion réussie ! Premier joueur trouvé :", data[0].full_name);
-    } else {
-      console.log("✅ Connexion réussie, mais aucun joueur n'a été trouvé dans la table.");
+      console.log("Erreur :", error.message);
+      return;
     }
+
+    const container = document.getElementById('players-container');
+    container.innerHTML = ''; // On vide le message de chargement
+
+    players.forEach(player => {
+      // On crée le design de la carte pour chaque joueur
+      container.innerHTML += `
+        <div class="player-card">
+          <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="${player.full_name}">
+          <h3>${player.full_name}</h3>
+          <p class="position">📍 ${player.position || 'Poste non défini'}</p>
+          <p class="stats">⚽ Buts: ${player.goals || 0} | 👟 Assists: ${player.assists || 0}</p>
+          <button onclick="voirProfil('${player.id}')">Voir le profil élite</button>
+        </div>
+      `;
+    });
   }
 
-  // Lancement du test
-  verifierConnexion();
+  // Lancer l'affichage au chargement de la page
+  afficherJoueurs();
 </script>
 	</body>
 
 </html>
+
 
 
 
