@@ -35,25 +35,6 @@
 			}
 		</style>
 			<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-		// --- CONFIGURATION LEX SPORT GLOBAL ---
-const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
-const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
-
-// --- TEST DE CONNEXION ---
-async function verifConnexion() {
-    const { data, error } = await supabaseClient
-        .from('players')
-        .select('full_name');
-
-    if (error) {
-        console.error("❌ Erreur de connexion :", error.message);
-    } else {
-        console.log("✅ Connexion réussie ! Joueur trouvé :", data[0].full_name);
-    }
-}
-
-verifConnexion();
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -121,6 +102,7 @@ verifConnexion();
 	</body>
 
 </html>
+
 
 
 
