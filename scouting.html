@@ -98,23 +98,31 @@
   }
   /* Remplace la partie .player-card button par ceci */
 .player-card button {
-    background-color: #D4AF37 !important; /* Jaune Or Lex Sport */
-    color: #000000 !important;            /* NOIR PUR (Fini le rose/rouge !) */
-    border: 2px solid #000000 !important; /* Contour noir pour bien détacher le bouton */
-    padding: 12px 24px !important;
+    background-color: #D4AF37 !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    
+    /* --- LA MAGIE DU CENTRAGE --- */
+    display: flex !important;
+    justify-content: center !important; /* Centre horizontalement */
+    align-items: center !important;     /* Centre verticalement */
+    height: 45px !important;            /* On fixe une hauteur propre */
+    /* ---------------------------- */
+
+    padding: 0 20px !important;         /* On ajuste le padding latéral uniquement */
     border-radius: 8px !important;
-    font-weight: 900 !important;          /* Écriture très grasse pour la lisibilité */
-    font-size: 14px !important;
+    font-weight: 900 !important;
+    font-size: 13px !important;
     cursor: pointer;
     text-transform: uppercase !important;
     width: 100%;
-    display: block;
     margin-top: 15px;
+    transition: all 0.3s ease;
 }
 
 .player-card button:hover {
-    background-color: #000000 !important; /* Inversion au survol : fond noir */
-    color: #D4AF37 !important;            /* Texte devient doré */
+    background-color: #000000 !important;
+    color: #D4AF37 !important;
     border: 2px solid #D4AF37 !important;
 }
 </style>
@@ -227,6 +235,7 @@
 	</body>
 
 </html>
+
 
 
 
