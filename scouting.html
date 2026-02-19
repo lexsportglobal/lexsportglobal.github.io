@@ -235,28 +235,66 @@
 		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-  // 1. Fonction pour ouvrir la fiche (La Modale)
-function openPlayerProfile(playerData) {
+  // On crée une variable globale pour stocker les joueurs
+let allPlayers = [];
+
+async function fetchPlayers() {
+    // REMPLACE BIEN PAR TES PROPRES CLÉS SUPABASE
+    const supabaseUrl = 'TON_URL_SUPABASE';
+    const supabaseKey = 'TA_CLE_ANON_SUPABASE';
+    
+    try {
+        const response = await fetch(`${supabaseUrl}/rest/v1/players?select=*`, {
+            headers: {
+                'apikey': supabaseKey,
+                'Authorization': `Bearer ${supabaseKey}`
+            }
+        });
+        
+        allPlayers = await response.json();
+        displayPlayers(allPlayers);
+        
+    } catch (error) {
+        console.error("Erreur :", error);
+    }
+}
+
+function displayPlayers(players) {
+    const container = document.getElementById('players-container');
+    container.innerHTML = ''; // On vide le container
+
+    players.forEach((player, index) => {
+        container.innerHTML += `
+            <div class="player-card">
+                <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="${player.full_name}">
+                <h3>${player.full_name}</h3>
+                <p class="position">📍 ${player.position || 'N/A'}</p>
+                <div class="stats" style="margin: 10px 0; color: #ccc;">
+                   ⚽ Buts: ${player.goals || 0} | 👟 Assists: ${player.assists || 0}
+                </div>
+                <button onclick="showDetails(${index})">VIEW PROFILE</button>
+            </div>
+        `;
+    });
+}
+
+function showDetails(index) {
+    const player = allPlayers[index];
     const modal = document.getElementById("playerModal");
     const details = document.getElementById("modalDetails");
     
-    // On décode les données du joueur
-    const player = JSON.parse(decodeURIComponent(playerData));
-
     details.innerHTML = `
         <div class="modal-body">
-            <h2 style="color: #D4AF37; margin-bottom: 5px;">${player.full_name}</h2>
-            <p style="color: #888;">📍 ${player.position} | ${player.nationality}</p>
-            
-            <div class="modal-info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
-                <div class="info-item"><label style="display:block; font-size:10px; color:#D4AF37;">TAILLE</label> ${player.height || 'N/A'}</div>
-                <div class="info-item"><label style="display:block; font-size:10px; color:#D4AF37;">PIED</label> ${player.preferred_foot || 'N/A'}</div>
-                <div class="info-item"><label style="display:block; font-size:10px; color:#D4AF37;">VALEUR</label> ${player.market_value || 'N/A'}</div>
-                <div class="info-item"><label style="display:block; font-size:10px; color:#D4AF37;">CONTRAT</label> ${player.contract_end || 'N/A'}</div>
+            <h2 style="color: #D4AF37;">${player.full_name}</h2>
+            <p>📍 ${player.position} | ${player.nationality}</p>
+            <div class="modal-info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+                <div class="info-item"><label style="color:#D4AF37; font-size:10px; display:block;">PIED</label> ${player.preferred_foot || 'N/A'}</div>
+                <div class="info-item"><label style="color:#D4AF37; font-size:10px; display:block;">VALEUR</label> ${player.market_value || 'N/A'}</div>
+                <div class="info-item"><label style="color:#D4AF37; font-size:10px; display:block;">CONTRAT</label> ${player.contract_end || 'N/A'}</div>
+                <div class="info-item"><label style="color:#D4AF37; font-size:10px; display:block;">TAILLE</label> ${player.height || 'N/A'}</div>
             </div>
-
-            <div class="scout-comment" style="margin-top: 25px; padding: 15px; background: #222; border-left: 4px solid #D4AF37; font-style: italic;">
-                <span style="display:block; font-weight:bold; color:#D4AF37; font-style: normal; margin-bottom: 5px;">SCOUT REPORT :</span>
+            <div style="margin-top:20px; padding:10px; border-left:3px solid #D4AF37; background:#222; font-style:italic;">
+                <strong style="color:#D4AF37; font-style:normal;">SCOUT REPORT:</strong><br>
                 "${player.scout_comment || 'Analyse en cours...'}"
             </div>
         </div>
@@ -264,26 +302,12 @@ function openPlayerProfile(playerData) {
     modal.style.display = "block";
 }
 
-// 2. Fonction pour fermer la modale
-document.querySelector(".close-modal").onclick = function() {
-    document.getElementById("playerModal").style.display = "none";
-}
+// Pour fermer la fenêtre
+document.querySelector(".close-modal").onclick = () => document.getElementById("playerModal").style.display = "none";
+window.onclick = (event) => { if (event.target.className == 'modal') document.getElementById("playerModal").style.display = "none"; }
 
-// Fermer si on clique en dehors de la fenêtre
-window.onclick = function(event) {
-    const modal = document.getElementById("playerModal");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-// 3. Ta fonction qui affiche les joueurs (à adapter dans ton fetch Supabase)
-// À l'intérieur de ta fonction fetch Supabase, là où tu génères le HTML :
-const playerJSON = encodeURIComponent(JSON.stringify(player));
-
-container.innerHTML += `
-    <div class="player-card">
-        <button onclick="openPlayerProfile('${playerJSON}')">VIEW PROFILE</button>
-    </div>
+// Lancer le chargement
+fetchPlayers();
 </script>
 		<div id="playerModal" class="modal">
     <div class="modal-content">
@@ -295,6 +319,7 @@ container.innerHTML += `
 	</body>
 
 </html>
+
 
 
 
