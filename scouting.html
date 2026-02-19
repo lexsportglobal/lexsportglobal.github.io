@@ -235,40 +235,52 @@
 		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-  // Fonction pour ouvrir la fiche
-function openPlayerProfile(player) {
+  // 1. Fonction pour ouvrir la fiche (La Modale)
+function openPlayerProfile(playerData) {
     const modal = document.getElementById("playerModal");
     const details = document.getElementById("modalDetails");
     
+    // On décode les données du joueur
+    const player = JSON.parse(decodeURIComponent(playerData));
+
     details.innerHTML = `
         <div class="modal-body">
-            <h2>${player.full_name}</h2>
-            <p style="color: #D4AF37;">📍 ${player.position} | ${player.nationality}</p>
+            <h2 style="color: #D4AF37; margin-bottom: 5px;">${player.full_name}</h2>
+            <p style="color: #888;">📍 ${player.position} | ${player.nationality}</p>
             
-            <div class="modal-info-grid">
-                <div class="info-item"><label>Taille</label> ${player.height || 'N/A'}</div>
-                <div class="info-item"><label>Pied</label> ${player.preferred_foot || 'N/A'}</div>
-                <div class="info-item"><label>Valeur</label> ${player.market_value || 'N/A'}</div>
-                <div class="info-item"><label>Fin Contrat</label> ${player.contract_end || 'N/A'}</div>
+            <div class="modal-info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                <div class="info-item"><label style="display:block; font-size:10px; color:#D4AF37;">TAILLE</label> ${player.height || 'N/A'}</div>
+                <div class="info-item"><label style="display:block; font-size:10px; color:#D4AF37;">PIED</label> ${player.preferred_foot || 'N/A'}</div>
+                <div class="info-item"><label style="display:block; font-size:10px; color:#D4AF37;">VALEUR</label> ${player.market_value || 'N/A'}</div>
+                <div class="info-item"><label style="display:block; font-size:10px; color:#D4AF37;">CONTRAT</label> ${player.contract_end || 'N/A'}</div>
             </div>
 
-            <div class="scout-comment">
-                <label style="color: #D4AF37; font-weight: bold; display: block; margin-bottom: 5px;">SCOUT REPORT :</label>
-                "${player.scout_comment || 'Aucun commentaire disponible.'}"
+            <div class="scout-comment" style="margin-top: 25px; padding: 15px; background: #222; border-left: 4px solid #D4AF37; font-style: italic;">
+                <span style="display:block; font-weight:bold; color:#D4AF37; font-style: normal; margin-bottom: 5px;">SCOUT REPORT :</span>
+                "${player.scout_comment || 'Analyse en cours...'}"
             </div>
         </div>
     `;
     modal.style.display = "block";
 }
 
-// Fermer la modale
-document.querySelector(".close-modal").onclick = () => {
+// 2. Fonction pour fermer la modale
+document.querySelector(".close-modal").onclick = function() {
     document.getElementById("playerModal").style.display = "none";
-};
+}
 
-// Quand tu génères tes cartes, ajoute l'événement onclick au bouton :
-// Dans ta boucle d'affichage, ton bouton doit ressembler à ça :
-// <button onclick='openPlayerProfile(${JSON.stringify(player)})'>VIEW PROFILE</button>
+// Fermer si on clique en dehors de la fenêtre
+window.onclick = function(event) {
+    const modal = document.getElementById("playerModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// 3. Ta fonction qui affiche les joueurs (à adapter dans ton fetch Supabase)
+// Quand tu crées le bouton dans ta boucle, utilise cette syntaxe précise :
+// const playerJSON = encodeURIComponent(JSON.stringify(player));
+// <button onclick="openPlayerProfile('${playerJSON}')">VIEW PROFILE</button>
 </script>
 		<div id="playerModal" class="modal">
     <div class="modal-content">
@@ -280,6 +292,7 @@ document.querySelector(".close-modal").onclick = () => {
 	</body>
 
 </html>
+
 
 
 
