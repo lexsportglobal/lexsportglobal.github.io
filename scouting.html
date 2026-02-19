@@ -276,11 +276,14 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
 // 3. Ta fonction qui affiche les joueurs (à adapter dans ton fetch Supabase)
-// Quand tu crées le bouton dans ta boucle, utilise cette syntaxe précise :
-// const playerJSON = encodeURIComponent(JSON.stringify(player));
-// <button onclick="openPlayerProfile('${playerJSON}')">VIEW PROFILE</button>
+// À l'intérieur de ta fonction fetch Supabase, là où tu génères le HTML :
+const playerJSON = encodeURIComponent(JSON.stringify(player));
+
+container.innerHTML += `
+    <div class="player-card">
+        <button onclick="openPlayerProfile('${playerJSON}')">VIEW PROFILE</button>
+    </div>
 </script>
 		<div id="playerModal" class="modal">
     <div class="modal-content">
@@ -292,6 +295,7 @@ window.onclick = function(event) {
 	</body>
 
 </html>
+
 
 
 
