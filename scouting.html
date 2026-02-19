@@ -235,43 +235,40 @@
 		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-  // 1. Remplace les valeurs ci-dessous par tes propres clés
-  const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co'; 
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo'; 
+  // Fonction pour ouvrir la fiche
+function openPlayerProfile(player) {
+    const modal = document.getElementById("playerModal");
+    const details = document.getElementById("modalDetails");
+    
+    details.innerHTML = `
+        <div class="modal-body">
+            <h2>${player.full_name}</h2>
+            <p style="color: #D4AF37;">📍 ${player.position} | ${player.nationality}</p>
+            
+            <div class="modal-info-grid">
+                <div class="info-item"><label>Taille</label> ${player.height || 'N/A'}</div>
+                <div class="info-item"><label>Pied</label> ${player.preferred_foot || 'N/A'}</div>
+                <div class="info-item"><label>Valeur</label> ${player.market_value || 'N/A'}</div>
+                <div class="info-item"><label>Fin Contrat</label> ${player.contract_end || 'N/A'}</div>
+            </div>
 
-  // 2. Création du client de connexion
-  const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
-
-  // 3. Fonction pour vérifier que la base de données répond
-  async function afficherJoueurs() {
-    const { data: players, error } = await supabaseClient
-      .from('players')
-      .select('*'); // On récupère TOUTES les colonnes (nom, photo, poste, etc.)
-
-    if (error) {
-      console.log("Erreur :", error.message);
-      return;
-    }
-
-    const container = document.getElementById('players-container');
-    container.innerHTML = ''; // On vide le message de chargement
-
-    players.forEach(player => {
-      // On crée le design de la carte pour chaque joueur
-      container.innerHTML += `
-        <div class="player-card">
-          <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="${player.full_name}">
-          <h3>${player.full_name}</h3>
-          <p class="position">📍 ${player.position || 'Poste non défini'}</p>
-          <p class="stats">⚽ Buts: ${player.Buts || 0} | 👟 Assists: ${player.Assists || 0}</p>
-          <button class="btn-profile">VIEW PROFILE</button>
+            <div class="scout-comment">
+                <label style="color: #D4AF37; font-weight: bold; display: block; margin-bottom: 5px;">SCOUT REPORT :</label>
+                "${player.scout_comment || 'Aucun commentaire disponible.'}"
+            </div>
         </div>
-      `;
-    });
-  }
+    `;
+    modal.style.display = "block";
+}
 
-  // Lancer l'affichage au chargement de la page
-  afficherJoueurs();
+// Fermer la modale
+document.querySelector(".close-modal").onclick = () => {
+    document.getElementById("playerModal").style.display = "none";
+};
+
+// Quand tu génères tes cartes, ajoute l'événement onclick au bouton :
+// Dans ta boucle d'affichage, ton bouton doit ressembler à ça :
+// <button onclick='openPlayerProfile(${JSON.stringify(player)})'>VIEW PROFILE</button>
 </script>
 		<div id="playerModal" class="modal">
     <div class="modal-content">
@@ -283,6 +280,7 @@
 	</body>
 
 </html>
+
 
 
 
