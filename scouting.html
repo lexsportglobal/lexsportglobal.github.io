@@ -240,32 +240,20 @@ let allPlayers = [];
 
 async function fetchPlayers() {
     // REMPLACE BIEN PAR TES PROPRES CLÉS SUPABASE
-    const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co
-';
+    const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
     
-    try {
-        const response = await fetch(`${supabaseUrl}/rest/v1/players?select=*`, {
-            headers: {
-                'apikey': supabaseKey,
-                'Authorization': `Bearer ${supabaseKey}`
-            }
-        });
+    try {const response = await fetch(`${supabaseUrl}/rest/v1/players?select=*`, {headers: {'apikey': supabaseKey,'Authorization': `Bearer ${supabaseKey}`}});
         
         allPlayers = await response.json();
         displayPlayers(allPlayers);
         
-    } catch (error) {
-        console.error("Erreur :", error);
-    }
+    } catch (error) {console.error("Erreur :", error);}
 }
 
-function displayPlayers(players) {
-    const container = document.getElementById('players-container');
+function displayPlayers(players) {const container = document.getElementById('players-container');
     container.innerHTML = ''; // On vide le container
-
-    players.forEach((player, index) => {
-        container.innerHTML += `
+    players.forEach((player, index) => {container.innerHTML += `
             <div class="player-card">
                 <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="${player.full_name}">
                 <h3>${player.full_name}</h3>
@@ -278,7 +266,6 @@ function displayPlayers(players) {
         `;
     });
 }
-
 function showDetails(index) {
     const player = allPlayers[index];
     const modal = document.getElementById("playerModal");
@@ -302,7 +289,6 @@ function showDetails(index) {
     `;
     modal.style.display = "block";
 }
-
 // Pour fermer la fenêtre
 document.querySelector(".close-modal").onclick = () => document.getElementById("playerModal").style.display = "none";
 window.onclick = (event) => { if (event.target.className == 'modal') document.getElementById("playerModal").style.display = "none"; }
@@ -320,6 +306,7 @@ fetchPlayers();
 	</body>
 
 </html>
+
 
 
 
