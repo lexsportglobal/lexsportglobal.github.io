@@ -12,49 +12,55 @@
         .lang-box { flex: 1; padding: 20px; line-height: 1.8; }
         @media screen and (max-width: 736px) { .bilingual-grid { flex-direction: column; } }
 
-        /* --- FILTRES --- */
-        .filter-bar {
-            text-align: center;
-            margin: 40px 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .filter-btn {
-            background: transparent !important;
-            color: #D4AF37 !important;
-            border: 1px solid #D4AF37 !important;
-            padding: 8px 20px !important;
-            font-size: 11px !important;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: #D4AF37 !important;
-            color: #000 !important;
-        }
+       /* --- BARRE DE FILTRES CENTRÉE --- */
+.filter-bar {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Aligne verticalement */
+    gap: 15px;
+    margin: 40px 0;
+    flex-wrap: wrap;         /* S'adapte sur mobile */
+    width: 100%;
+}
 
-        /* --- GRILLE & CARTES --- */
-        #players-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            padding: 20px;
-            background-color: #0f0f0f;
-        }
-        .player-card {
-            background: linear-gradient(145deg, #232323, #1a1a1a);
-            border: 1px solid #D4AF37;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            transition: 0.3s;
-        }
-        .player-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
-        .player-card img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #D4AF37; object-fit: cover; margin-bottom: 15px; }
+.filter-btn {
+    background: transparent !important;
+    color: #D4AF37 !important;
+    border: 2px solid #D4AF37 !important; /* Bordure plus épaisse */
+    padding: 10px 25px !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    min-width: 120px; /* Aligne les tailles de boutons */
+    text-transform: uppercase;
+}
+
+.filter-btn:hover {
+    background: #D4AF37 !important;
+    color: #000 !important;
+    transform: scale(1.05);
+}
+
+/* --- AMÉLIORATION DES NOMS DES JOUEURS --- */
+.player-card h3 {
+    color: #ffffff !important; /* Blanc pur pour un contraste maximal */
+    font-size: 1.4em !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    margin: 15px 0 5px 0;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Ombre pour faire ressortir le texte */
+}
+
+.player-card .position {
+    color: #D4AF37 !important; /* L'or pour la position */
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
         
         /* --- BADGES --- */
         .player-badge {
@@ -184,3 +190,4 @@
     </script>
 </body>
 </html>
+
