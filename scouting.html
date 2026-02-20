@@ -1,285 +1,186 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Data Scouting - LEX SPORT GLOBAL</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			/* Optimisation de l'image et du texte */
-			.image.main img {
-				max-height: 400px;
-				object-fit: cover;
-				border-bottom: 3px solid #C5A05F;
-			}
-			.bilingual-grid {
-				display: flex;
-				gap: 40px;
-				margin-top: 30px;
-			}
-			.lang-box {
-				flex: 1;
-				padding: 20px;
-				line-height: 1.8;
-			}
-			.lang-box h2 {
-				font-size: 1.5em;
-				margin-bottom: 1em;
-			}
-			.lang-box p {
-				font-size: 1.1em;
-				text-align: justify;
-			}
-			@media screen and (max-width: 736px) {
-				.bilingual-grid { flex-direction: column; }
-			}
+<head>
+    <title>Data Scouting - LEX SPORT GLOBAL</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* --- OPTIMISATION GENERALE --- */
+        .image.main img { max-height: 400px; object-fit: cover; border-bottom: 3px solid #C5A05F; }
+        .bilingual-grid { display: flex; gap: 40px; margin-top: 30px; }
+        .lang-box { flex: 1; padding: 20px; line-height: 1.8; }
+        @media screen and (max-width: 736px) { .bilingual-grid { flex-direction: column; } }
 
-			/* --- STYLE CARTES JOUEURS --- */
-			:root {
-				--gold: #D4AF37;
-				--dark: #1a1a1a;
-				--white: #ffffff;
-			}
+        /* --- FILTRES --- */
+        .filter-bar {
+            text-align: center;
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: transparent !important;
+            color: #D4AF37 !important;
+            border: 1px solid #D4AF37 !important;
+            padding: 8px 20px !important;
+            font-size: 11px !important;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #D4AF37 !important;
+            color: #000 !important;
+        }
 
-			#players-container {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-				gap: 25px;
-				padding: 20px;
-				background-color: #0f0f0f;
-				margin-top: 30px;
-			}
+        /* --- GRILLE & CARTES --- */
+        #players-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            background-color: #0f0f0f;
+        }
+        .player-card {
+            background: linear-gradient(145deg, #232323, #1a1a1a);
+            border: 1px solid #D4AF37;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            transition: 0.3s;
+        }
+        .player-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .player-card img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #D4AF37; object-fit: cover; margin-bottom: 15px; }
+        
+        /* --- BADGES --- */
+        .player-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 9px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .status-pro { background: #D4AF37; color: #000; }
+        .status-free { background: #000; color: #D4AF37; border: 1px solid #D4AF37; }
+        .status-amateur { background: #444; color: #fff; }
 
-			.player-card {
-				background: linear-gradient(145deg, #232323, #1a1a1a);
-				border: 1px solid var(--gold);
-				border-radius: 15px;
-				padding: 20px;
-				text-align: center;
-				color: var(--white);
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-				font-family: 'Segoe UI', sans-serif;
-			}
+        /* --- MODALE --- */
+        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
+        .modal-content { background: #1a1a1a; margin: 5% auto; padding: 30px; border: 1px solid #D4AF37; width: 90%; max-width: 500px; border-radius: 15px; color: white; position: relative; }
+        .close-modal { position: absolute; right: 20px; top: 10px; color: #D4AF37; font-size: 35px; cursor: pointer; }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <header id="header">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo_final.jpg" alt="Logo" style="height: 30px; vertical-align: middle;" />
+                        <strong>LEX SPORT GLOBAL</strong> | Performance & Analytics
+                    </a>
+                </header>
 
-			.player-card:hover {
-				transform: translateY(-10px);
-				box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
-			}
+                <section>
+                    <header class="main"><h1>Data Scouting</h1></header>
+                    <span class="image main"><img src="images/scouting_data.jpg" alt="" /></span>
 
-			.player-card img {
-				width: 120px;
-				height: 120px;
-				border-radius: 50%;
-				border: 3px solid var(--gold);
-				object-fit: cover;
-				margin-bottom: 15px;
-				background: #333;
-			}
+                    <div class="filter-bar">
+                        <button class="filter-btn" onclick="filterPlayers('all')">TOUS</button>
+                        <button class="filter-btn" onclick="filterPlayers('pro')">PROS</button>
+                        <button class="filter-btn" onclick="filterPlayers('amateur')">AMATEURS</button>
+                        <button class="filter-btn" onclick="filterPlayers('free agent')">FREE AGENTS</button>
+                    </div>
 
-			.player-card h3 {
-				color: var(--gold);
-				text-transform: uppercase;
-				letter-spacing: 1px;
-				margin: 10px 0;
-			}
+                    <div id="players-container"></div>
+                </section>
+            </div>
+        </div>
+    </div>
 
-			.player-card .stats {
-				background: rgba(212, 175, 55, 0.1);
-				padding: 10px;
-				border-radius: 8px;
-				font-size: 0.9em;
-				margin-bottom: 20px;
-			}
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalDetails"></div>
+        </div>
+    </div>
 
-			.player-card button {
-				background-color: var(--gold) !important;
-				color: #000000 !important;
-				border: 2px solid #000000 !important;
-				display: flex !important;
-				justify-content: center !important;
-				align-items: center !important;
-				height: 45px !important;
-				padding: 0 20px !important;
-				border-radius: 8px !important;
-				font-weight: 900 !important;
-				font-size: 13px !important;
-				cursor: pointer;
-				text-transform: uppercase !important;
-				width: 100%;
-				transition: all 0.3s ease;
-			}
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-			.player-card button:hover {
-				background-color: #000000 !important;
-				color: var(--gold) !important;
-				border: 2px solid var(--gold) !important;
-			}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let allPlayers = [];
+            const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
 
-			/* --- STYLE MODALE --- */
-			.modal {
-				display: none; 
-				position: fixed;
-				z-index: 9999;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				background-color: rgba(0,0,0,0.9);
-				backdrop-filter: blur(5px);
-			}
+            async function fetchPlayers() {
+                try {
+                    const response = await fetch(`${supabaseUrl}/rest/v1/players?select=*`, {
+                        headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` }
+                    });
+                    allPlayers = await response.json();
+                    displayPlayers(allPlayers);
+                } catch (error) { console.error("Erreur:", error); }
+            }
 
-			.modal-content {
-				background-color: #1a1a1a;
-				margin: 5% auto;
-				padding: 30px;
-				border: 1px solid var(--gold);
-				width: 90%;
-				max-width: 500px;
-				border-radius: 15px;
-				color: white;
-				position: relative;
-			}
+            window.displayPlayers = function(players) {
+                const container = document.getElementById('players-container');
+                container.innerHTML = '';
+                players.forEach((player, index) => {
+                    let s = (player.status || 'Amateur').toLowerCase();
+                    let badgeClass = s === 'pro' ? 'status-pro' : (s.includes('free') ? 'status-free' : 'status-amateur');
+                    
+                    container.innerHTML += `
+                        <div class="player-card">
+                            <div class="player-badge ${badgeClass}">${player.status || 'Amateur'}</div>
+                            <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="">
+                            <h3>${player.full_name}</h3>
+                            <p>📍 ${player.position || 'N/A'}</p>
+                            <button onclick="showDetails(${index}, '${player.full_name}')" style="width:100%; background:#D4AF37 !important; color:#000 !important; font-weight:bold; border:none; height:40px; border-radius:5px; cursor:pointer;">VIEW PROFILE</button>
+                        </div>`;
+                });
+            }
 
-			.close-modal {
-				position: absolute;
-				right: 20px;
-				top: 10px;
-				color: var(--gold);
-				font-size: 35px;
-				font-weight: bold;
-				cursor: pointer;
-			}
+            window.filterPlayers = function(category) {
+                const filtered = (category === 'all') 
+                    ? allPlayers 
+                    : allPlayers.filter(p => (p.status || '').toLowerCase().includes(category.toLowerCase()));
+                displayPlayers(filtered);
+            };
 
-			.modal-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-			.info-item { border-bottom: 1px solid #333; padding-bottom: 5px; }
-			.info-item label { display: block; color: var(--gold); font-size: 0.7em; text-transform: uppercase; }
-		</style>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="main">
-				<div class="inner">
-					<header id="header">
-						<a href="index.html" class="logo">
-							<img src="images/logo_final.jpg" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 10px;" />
-							<strong>LEX SPORT GLOBAL</strong> | Performance & Analytics
-						</a>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/company/lexsportglobal/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							<li><a href="https://wa.me/22997328579" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-						</ul>
-					</header>
+            window.showDetails = function(index, fullName) {
+                // On retrouve le joueur par son nom pour éviter les erreurs d'index après filtrage
+                const player = allPlayers.find(p => p.full_name === fullName);
+                const details = document.getElementById("modalDetails");
+                details.innerHTML = `
+                    <h2 style="color:#D4AF37;">${player.full_name}</h2>
+                    <p>${player.position} | ${player.nationality}</p>
+                    <hr style="border-color:#333;">
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+                        <div><label style="color:#D4AF37; display:block; font-size:10px;">PIED</label>${player.preferred_foot || 'N/A'}</div>
+                        <div><label style="color:#D4AF37; display:block; font-size:10px;">VALEUR</label>${player.market_value || 'N/A'}</div>
+                    </div>
+                    <div style="margin-top:20px; padding:10px; background:#222; border-left:3px solid #D4AF37; font-style:italic;">
+                        "${player.scout_comment || 'Analyse en cours...'}"
+                    </div>`;
+                document.getElementById("playerModal").style.display = "block";
+            };
 
-					<section>
-						<header class="main">
-							<h1 style="color: #002349; letter-spacing: 2px;">Data Scouting & Performance</h1>
-						</header>
-						<span class="image main"><img src="images/scouting_data.jpg" alt="Data Analytics" /></span>
+            const modal = document.getElementById("playerModal");
+            document.querySelector(".close-modal").onclick = () => modal.style.display = "none";
+            window.onclick = (e) => { if(e.target == modal) modal.style.display = "none"; };
 
-						<div class="bilingual-grid">
-							<div class="lang-box" style="border-right: 1px solid #eeeeee;">
-								<h2 style="color: #C5A05F;">[FR] Analyse Prédictive</h2>
-								<p>Le département <strong>Data Scouting</strong> de Lex Sport Global accompagne les clubs dans l'identification de talents via des KPIs mondiaux.</p>
-							</div>
-							<div class="lang-box">
-								<h2 style="color: #C5A05F;">[EN] Predictive Analytics</h2>
-								<p>Lex Sport Global's <strong>Data Scouting</strong> assist clubs in identifying talent through global KPIs benchmarks.</p>
-							</div>
-						</div>
-					</section>
-
-					<div id="players-container"></div>
-
-					<ul class="actions" style="margin-top: 50px;">
-						<li><a href="index.html" class="button primary big">Retour à l'accueil / Back Home</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div id="playerModal" class="modal">
-			<div class="modal-content">
-				<span class="close-modal">&times;</span>
-				<div id="modalDetails"></div>
-			</div>
-		</div>
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				let allPlayers = [];
-				const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
-				const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
-
-				async function fetchPlayers() {
-					try {
-						const response = await fetch(`${supabaseUrl}/rest/v1/players?select=*`, {
-							headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` }
-						});
-						allPlayers = await response.json();
-						displayPlayers(allPlayers);
-					} catch (error) { console.error("Erreur Supabase:", error); }
-				}
-
-				function displayPlayers(players) {
-					const container = document.getElementById('players-container');
-					container.innerHTML = '';
-					players.forEach((player, index) => {
-						container.innerHTML += `
-							<div class="player-card">
-								<img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="${player.full_name}">
-								<h3>${player.full_name}</h3>
-								<p class="position">📍 ${player.position || 'N/A'}</p>
-								<div class="stats">
-								   ⚽ Buts: ${player.Buts || 0} | 👟 Assists: ${player.Assists || 0}
-								</div>
-								<button onclick="showDetails(${index})">VIEW PROFILE</button>
-							</div>
-						`;
-					});
-				}
-
-				window.showDetails = function(index) {
-					const player = allPlayers[index];
-					const modal = document.getElementById("playerModal");
-					const details = document.getElementById("modalDetails");
-					details.innerHTML = `
-						<div class="modal-body">
-							<h2 style="color: #D4AF37; text-transform:uppercase;">${player.full_name}</h2>
-							<p>📍 ${player.position} | ${player.nationality}</p>
-							<div class="modal-info-grid">
-								<div class="info-item"><label>PIED</label> ${player.preferred_foot || 'N/A'}</div>
-								<div class="info-item"><label>VALEUR</label> ${player.market_value || 'N/A'}</div>
-								<div class="info-item"><label>CONTRAT</label> ${player.contract_end || 'N/A'}</div>
-								<div class="info-item"><label>TAILLE</label> ${player.height || 'N/A'}</div>
-							</div>
-							<div style="margin-top:20px; padding:15px; border-left:3px solid #D4AF37; background:#222; font-style:italic;">
-								<strong style="color:#D4AF37; font-style:normal; font-size:0.8em;">SCOUT REPORT:</strong><br>
-								"${player.scout_comment || 'Analyse en cours...'}"
-							</div>
-						</div>
-					`;
-					modal.style.display = "block";
-				};
-
-				const modal = document.getElementById("playerModal");
-				const closeBtn = document.querySelector(".close-modal");
-				if(closeBtn) {
-					closeBtn.onclick = () => modal.style.display = "none";
-				}
-				window.onclick = (event) => {
-					if (event.target == modal) modal.style.display = "none";
-				};
-
-				fetchPlayers();
-			});
-		</script>
-	</body>
+            fetchPlayers();
+        });
+    </script>
+</body>
 </html>
