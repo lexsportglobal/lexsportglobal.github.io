@@ -256,46 +256,35 @@
 						displayPlayers(allPlayers);
 					} catch (error) { console.error("Erreur Supabase:", error); }
 				}
+function displayPlayers(players) {
+					const container = document.getElementById('players-container');
+					container.innerHTML = '';
+					players.forEach((player, index) => {
+    // Déterminer la classe du badge selon le statut dans ta base
+    let statusClass = 'status-amateur'; 
+    let statusLabel = player.status || 'Amateur';
 
-				function displayPlayers(players) {
-    const container = document.getElementById('players-container');
-    if(!container) return;
-    container.innerHTML = ''; // On vide pour le filtre
+    if (statusLabel.toLowerCase() === 'pro') statusClass = 'status-pro';
+    if (statusLabel.toLowerCase() === 'indépendant' || statusLabel.toLowerCase() === 'free') {
+        statusClass = 'status-free';
+        statusLabel = 'Free Agent';
+    }
 
-    players.forEach((player, index) => {
-        // Logique des badges
-        let statusClass = 'status-amateur'; 
-        let statusLabel = player.status || 'Amateur';
-        if (statusLabel.toLowerCase() === 'pro') statusClass = 'status-pro';
-        if (statusLabel.toLowerCase() === 'free agent' || statusLabel.toLowerCase() === 'free') {
-            statusClass = 'status-free';
-            statusLabel = 'Free Agent';
-        }
-
-        // Injection du HTML
-        container.innerHTML += `
-            <div class="player-card">
-                <div class="player-badge ${statusClass}">${statusLabel}</div>
-                <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="${player.full_name}">
-                <h3>${player.full_name}</h3>
-                <p class="position">📍 ${player.position || 'N/A'}</p>
-                <div class="stats">
-                   ⚽ Buts: ${player.Buts || 0} | 👟 Assists: ${player.Assists || 0}
-                </div>
-                <button onclick="showDetails(${index})">VIEW PROFILE</button>
+    container.innerHTML += `
+        <div class="player-card">
+            <div class="player-badge ${statusClass}">${statusLabel}</div>
+            
+            <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="${player.full_name}">
+            <h3>${player.full_name}</h3>
+            <p class="position">📍 ${player.position || 'N/A'}</p>
+            <div class="stats">
+               ⚽ Buts: ${player.Buts || 0} | 👟 Assists: ${player.Assists || 0}
             </div>
-        `;
-    }); // <--- ICI on ferme le forEach
-} // <--- ICI on ferme la fonction displayPlayers
-
-// MAINTENANT tu peux mettre la fonction de filtre juste après
-} 
-			window.filterPlayers = function(category) {
-    const filtered = (category === 'all') 
-        ? allPlayers 
-        : allPlayers.filter(p => p.status && p.status.toLowerCase() === category.toLowerCase());
-    displayPlayers(filtered);
-};
+            <button onclick="showDetails(${index})">VIEW PROFILE</button>
+        </div>
+    `;
+});
+				
 				}
 
 				window.showDetails = function(index) {
@@ -337,6 +326,7 @@
 	</body>
 
 </html>
+
 
 
 
