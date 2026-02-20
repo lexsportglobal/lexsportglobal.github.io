@@ -289,7 +289,8 @@
 } // <--- ICI on ferme la fonction displayPlayers
 
 // MAINTENANT tu peux mettre la fonction de filtre juste après
-window.filterPlayers = function(category) {
+} 
+			window.filterPlayers = function(category) {
     const filtered = (category === 'all') 
         ? allPlayers 
         : allPlayers.filter(p => p.status && p.status.toLowerCase() === category.toLowerCase());
@@ -336,5 +337,6 @@ window.filterPlayers = function(category) {
 	</body>
 
 </html>
+
 
 
