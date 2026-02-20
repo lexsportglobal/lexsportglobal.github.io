@@ -94,72 +94,43 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let allPlayers = [];
-            const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
-            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
+    // Variable globale pour stocker les données
+    let allPlayers = [];
 
-            async function fetchPlayers() {
-                try {
-                    const response = await fetch(`${supabaseUrl}/rest/v1/players?select=*`, {
-                        headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` }
-                    });
-                    allPlayers = await response.json();
-                    displayPlayers(allPlayers);
-                } catch (error) { console.error("Erreur:", error); }
-            }
+    async function fetchPlayers() {
+        // ... (Ton code de fetch Supabase ici) ...
+    }
 
-            window.displayPlayers = function(players) {
-                const container = document.getElementById('players-container');
-                container.innerHTML = '';
-                players.forEach((player, index) => {
-                    let s = (player.status || 'Amateur').toLowerCase();
-                    let badgeClass = s === 'pro' ? 'status-pro' : (s.includes('free') ? 'status-free' : 'status-amateur');
-                    
-                    container.innerHTML += `
-                        <div class="player-card">
-                            <div class="player-badge ${badgeClass}">${player.status || 'Amateur'}</div>
-                            <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="">
-                            <h3>${player.full_name}</h3>
-                            <p>📍 ${player.position || 'N/A'}</p>
-                            <button onclick="showDetails(${index}, '${player.full_name}')" style="width:100%; background:#D4AF37 !important; color:#000 !important; font-weight:bold; border:none; height:40px; border-radius:5px; cursor:pointer;">VIEW PROFILE</button>
-                        </div>`;
-                });
-            }
-
-            window.filterPlayers = function(category) {
-                const filtered = (category === 'all') 
-                    ? allPlayers 
-                    : allPlayers.filter(p => (p.status || '').toLowerCase().includes(category.toLowerCase()));
-                displayPlayers(filtered);
-            };
-
-            window.showDetails = function(index, fullName) {
-                // On retrouve le joueur par son nom pour éviter les erreurs d'index après filtrage
-                const player = allPlayers.find(p => p.full_name === fullName);
-                const details = document.getElementById("modalDetails");
-                details.innerHTML = `
-                    <h2 style="color:#D4AF37;">${player.full_name}</h2>
-                    <p>${player.position} | ${player.nationality}</p>
-                    <hr style="border-color:#333;">
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
-                        <div><label style="color:#D4AF37; display:block; font-size:10px;">PIED</label>${player.preferred_foot || 'N/A'}</div>
-                        <div><label style="color:#D4AF37; display:block; font-size:10px;">VALEUR</label>${player.market_value || 'N/A'}</div>
-                    </div>
-                    <div style="margin-top:20px; padding:10px; background:#222; border-left:3px solid #D4AF37; font-style:italic;">
-                        "${player.scout_comment || 'Analyse en cours...'}"
-                    </div>`;
-                document.getElementById("playerModal").style.display = "block";
-            };
-
-            const modal = document.getElementById("playerModal");
-            document.querySelector(".close-modal").onclick = () => modal.style.display = "none";
-            window.onclick = (e) => { if(e.target == modal) modal.style.display = "none"; };
-
-            fetchPlayers();
+    // FONCTION D'AFFICHAGE : Elle centre tout
+    window.displayPlayers = function(players) {
+        const container = document.getElementById('players-container');
+        container.innerHTML = '';
+        
+        players.forEach((player, index) => {
+            let s = (player.status || 'Amateur').toLowerCase();
+            let bClass = s === 'pro' ? 'status-pro' : (s.includes('free') ? 'status-free' : 'status-amateur');
+            
+            container.innerHTML += `
+                <div class="player-card">
+                    <div class="player-badge ${bClass}">${player.status}</div>
+                    <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="">
+                    <h3>${player.full_name}</h3>
+                    <span class="position">📍 ${player.position}</span>
+                    <button onclick="showDetails(${index}, '${player.full_name.replace(/'/g, "\\'")}')">VIEW PROFILE</button>
+                </div>`;
         });
-    </script>
+    }
+
+    // FONCTION DE FILTRE
+    window.filterPlayers = function(cat) {
+        const filtered = (cat === 'all') 
+            ? allPlayers 
+            : allPlayers.filter(p => (p.status || '').toLowerCase().includes(cat.toLowerCase()));
+        displayPlayers(filtered);
+    };
+</script>
 </body>
 </html>
+
 
 
