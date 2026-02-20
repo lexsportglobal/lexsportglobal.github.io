@@ -57,6 +57,29 @@
 .scout-box { margin-top: 30px; padding: 15px; background: rgba(212, 175, 55, 0.05); border-left: 4px solid #D4AF37; border-radius: 4px; }
 .scout-box label { color: #D4AF37; font-weight: bold; display: block; margin-bottom: 8px; font-size: 12px; }
 .scout-box p { font-style: italic; font-size: 14px; line-height: 1.6; color: #eee; margin: 0; }
+
+	/* Style des badges */
+.player-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Variantes de couleurs */
+.status-pro { background-color: #D4AF37; color: #000; }
+.status-free { background-color: #000; color: #D4AF37; border: 1px solid #D4AF37; }
+.status-amateur { background-color: #444; color: #fff; }
+
+/* On s'assure que la carte est le point de repère du badge */
+.player-card { position: relative; }
 </style>
 
 <script>
@@ -299,19 +322,30 @@ document.addEventListener('DOMContentLoaded', function() {
 					const container = document.getElementById('players-container');
 					container.innerHTML = '';
 					players.forEach((player, index) => {
+    // Déterminer la classe du badge selon le statut dans ta base
+    let statusClass = 'status-amateur'; 
+    let statusLabel = player.status || 'Amateur';
+
+    if (statusLabel.toLowerCase() === 'pro') statusClass = 'status-pro';
+    if (statusLabel.toLowerCase() === 'indépendant' || statusLabel.toLowerCase() === 'free') {
+        statusClass = 'status-free';
+        statusLabel = 'Free Agent';
+    }
+						
 						container.innerHTML += `
-							<div class="player-card">
-								<img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="${player.full_name}">
-								<h3>${player.full_name}</h3>
-								<p class="position">📍 ${player.position || 'N/A'}</p>
-								<div class="stats">
-								   ⚽ Buts: ${player.Buts || 0} | 👟 Assists: ${player.Assists || 0}
-								</div>
-								<button onclick="showDetails(${index})">VIEW PROFILE</button>
-							</div>
-						`;
-					});
-				}
+        <div class="player-card">
+            <div class="player-badge ${statusClass}">${statusLabel}</div>
+            
+            <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="${player.full_name}">
+            <h3>${player.full_name}</h3>
+            <p class="position">📍 ${player.position || 'N/A'}</p>
+            <div class="stats">
+               ⚽ Buts: ${player.Buts || 0} | 👟 Assists: ${player.Assists || 0}
+            </div>
+            <button onclick="showDetails(${index})">VIEW PROFILE</button>
+        </div>
+    `;
+});
 
 				window.showDetails = function(index) {
 					const player = allPlayers[index];
@@ -349,4 +383,5 @@ document.addEventListener('DOMContentLoaded', function() {
 			});
 		</script>
 	</body>
+
 </html>
