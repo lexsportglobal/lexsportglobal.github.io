@@ -240,8 +240,9 @@ let allPlayers = [];
 
 async function fetchPlayers() {
     // REMPLACE BIEN PAR TES PROPRES CLÉS SUPABASE
-    const supabaseUrl = 'TON_URL_SUPABASE';
-    const supabaseKey = 'TA_CLE_ANON_SUPABASE';
+    const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co
+';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
     
     try {
         const response = await fetch(`${supabaseUrl}/rest/v1/players?select=*`, {
@@ -270,7 +271,7 @@ function displayPlayers(players) {
                 <h3>${player.full_name}</h3>
                 <p class="position">📍 ${player.position || 'N/A'}</p>
                 <div class="stats" style="margin: 10px 0; color: #ccc;">
-                   ⚽ Buts: ${player.goals || 0} | 👟 Assists: ${player.assists || 0}
+                   ⚽ Buts: ${player.Buts || 0} | 👟 Assists: ${player.Assists || 0}
                 </div>
                 <button onclick="showDetails(${index})">VIEW PROFILE</button>
             </div>
@@ -319,6 +320,7 @@ fetchPlayers();
 	</body>
 
 </html>
+
 
 
 
