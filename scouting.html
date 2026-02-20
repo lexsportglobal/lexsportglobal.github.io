@@ -1,4 +1,71 @@
-<!DOCTYPE HTML>
+<div id="playerModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modalDetails">
+            </div>
+    </div>
+</div>
+
+<style>
+/* Fenêtre de fond */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+}
+
+/* Boîte de dialogue */
+.modal-content {
+    background-color: #121212;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #D4AF37;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+}
+
+/* Bouton fermer */
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #D4AF37;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover { color: white; }
+
+/* Styles internes de la fiche */
+.modal-body h2 { color: #D4AF37; font-size: 1.8em; margin-bottom: 5px; text-transform: uppercase; }
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px; }
+.info-box { border-bottom: 1px solid #333; padding-bottom: 8px; }
+.info-box label { display: block; color: #D4AF37; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.info-box span { font-size: 15px; font-weight: 500; }
+.scout-box { margin-top: 30px; padding: 15px; background: rgba(212, 175, 55, 0.05); border-left: 4px solid #D4AF37; border-radius: 4px; }
+.scout-box label { color: #D4AF37; font-weight: bold; display: block; margin-bottom: 8px; font-size: 12px; }
+.scout-box p { font-style: italic; font-size: 14px; line-height: 1.6; color: #eee; margin: 0; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // --- CONFIGURATION ---
+    const supabaseUrl = 'TON_URL_SUPABASE'; // <--- REMPLACE ICI
+    const supabaseKey = 'TA_CLE_ANON_SUPABASE'; // <--- REMPLACE ICI
+    
+    <!DOCTYPE HTML>
 <html>
 	<head>
 		<title>Data Scouting - LEX SPORT GLOBAL</title>
