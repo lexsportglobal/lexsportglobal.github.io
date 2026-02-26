@@ -17,18 +17,28 @@
         .filter-section { width: 100%; text-align: center; margin: 50px 0 30px 0; }
         .filter-bar { display: inline-flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .filter-btn {
-            background: transparent !important;
-            color: #D4AF37 !important;
-            border: 2px solid #D4AF37 !important;
-            padding: 10px 25px !important;
-            font-weight: 800 !important;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.3s;
-            border-radius: 4px;
-            letter-spacing: 1px;
-        }
-        .filter-btn:hover { background: #D4AF37 !important; color: #000 !important; }
+    display: inline-flex;       /* Force le bouton à utiliser le mode flexible */
+    align-items: center;        /* Centre le texte verticalement */
+    justify-content: center;    /* Centre le texte horizontalement */
+    background: transparent !important;
+    color: #D4AF37 !important;
+    border: 2px solid #D4AF37 !important;
+    padding: 10px 25px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    line-height: 1;             /* Force la hauteur de ligne à être égale à la taille du texte */
+    text-align: center;
+    min-height: 45px;           /* Assure une hauteur minimale uniforme */
+}
+
+.filter-btn:hover { 
+    background: #D4AF37 !important; 
+    color: #000 !important; 
+}
 
         /* --- 3. GRILLE & CARTES --- */
         #players-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px; }
@@ -194,6 +204,7 @@
     </script>
 </body>
 </html>
+
 
 
 
