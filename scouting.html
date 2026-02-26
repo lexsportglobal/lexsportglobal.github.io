@@ -125,11 +125,12 @@
 
             async function fetchPlayers() {
                 try {
-                    const response = await fetch(`${supabaseUrl}/rest/v1/players?select=*`, {
-                        headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` }
-                    });
-                    allPlayers = await response.json();
-                    displayPlayers(allPlayers);
+                    // On ajoute .eq('is_active', true) pour ne voir que les profils validés
+                        const response = await fetch(`${supabaseUrl}/rest/v1/players?is_active=eq.true&select=*`, {
+                       headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` }
+                        });
+                       allPlayers = await response.json();
+                        displayPlayers(allPlayers);
                 } catch (error) { console.error("Erreur:", error); }
             }
 
@@ -187,5 +188,6 @@
     </script>
 </body>
 </html>
+
 
 
