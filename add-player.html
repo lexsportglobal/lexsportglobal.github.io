@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Inscription Joueur - LEX SPORT GLOBAL</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .form-container { max-width: 600px; margin: 40px auto; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 1px solid #D4AF37; }
+        .form-container h2 { color: #D4AF37; text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+        label { color: #fff; font-weight: bold; margin-top: 15px; display: block; }
+        input, select, textarea { background: #222 !important; border: 1px solid #333 !important; color: #fff !important; margin-bottom: 20px; }
+        input:focus { border-color: #D4AF37 !important; }
+        .btn-submit { background: #D4AF37 !important; color: #000 !important; font-weight: 900; width: 100%; height: 50px; border: none; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
+        .btn-submit:hover { transform: scale(1.02); background: #fff !important; }
+        #success-msg { display: none; background: #28a745; color: white; padding: 15px; border-radius: 5px; text-align: center; margin-bottom: 20px; }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <section>
+                    <div class="form-container">
+                        <h2>Inscrire un Talent</h2>
+                        <div id="success-msg">Joueur enregistré avec succès ! En attente de validation par l'administration.</div>
+                        
+                        <form id="playerForm">
+                            <label>Nom Complet du Joueur</label>
+                            <input type="text" id="full_name" placeholder="Ex: Jean D'Almeida" required>
+
+                            <label>Club Actuel</label>
+                            <input type="text" id="club" placeholder="Ex: Dragons de l'Ouémé" required>
+
+                            <label>Poste / Position</label>
+                            <select id="position">
+                                <option value="Gardien">Gardien</option>
+                                <option value="Défenseur">Défenseur</option>
+                                <option value="Milieu">Milieu</option>
+                                <option value="Attaquant">Attaquant</option>
+                            </select>
+
+                            <label>Statut</label>
+                            <select id="status">
+                                <option value="Pro">Professionnel</option>
+                                <option value="Amateur">Amateur</option>
+                                <option value="Free Agent">Agent Libre (Sans club)</option>
+                            </select>
+
+                            <label>Lien Photo (URL)</label>
+                            <input type="url" id="photo_url" placeholder="https://lien-vers-photo.jpg">
+
+                            <label>Commentaire du Club / Scout Report initial</label>
+                            <textarea id="scout_comment" rows="4" placeholder="Points forts, statistiques..."></textarea>
+
+                            <button type="submit" class="btn-submit">Soumettre le profil</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
+        const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        document.getElementById('playerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const playerData = {
+                full_name: document.getElementById('full_name').value,
+                position: document.getElementById('position').value,
+                status: document.getElementById('status').value,
+                photo_url: document.getElementById('photo_url').value,
+                scout_comment: document.getElementById('scout_comment').value,
+                is_active: false // Par défaut, non visible sur le site
+            };
+
+            const { error } = await _supabase.from('players').insert([playerData]);
+
+            if (error) {
+                alert("Erreur lors de l'envoi : " + error.message);
+            } else {
+                document.getElementById('success-msg').style.display = 'block';
+                document.getElementById('playerForm').reset();
+                window.scrollTo(0,0);
+            }
+        });
+    </script>
+</body>
+</html>
