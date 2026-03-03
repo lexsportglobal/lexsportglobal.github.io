@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
     <style>
         .form-container { max-width: 600px; margin: 40px auto; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 1px solid #D4AF37; }
         .form-container h2 { color: #D4AF37; text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
@@ -58,6 +59,7 @@
 
                             <label>Votre Numéro WhatsApp (avec indicatif)</label>
                             <input type="text" id="contact_phone" placeholder="Ex: +229 00 00 00 00" required>
+                            <div class="h-captcha" data-sitekey="597e5954-a0c4-41dc-bba6-43b663aae4cc"></div>
                             <button type="submit" class="btn-submit">Soumettre le profil</button>
                         </form>
                     </div>
@@ -98,3 +100,4 @@
 </body>
 
 </html>
+
