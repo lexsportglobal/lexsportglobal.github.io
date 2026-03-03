@@ -75,29 +75,45 @@
         const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
         document.getElementById('playerForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const playerData = {
-                full_name: document.getElementById('full_name').value,
-                position: document.getElementById('position').value,
-                status: document.getElementById('status').value,
-                photo_url: document.getElementById('photo_url').value,
-                scout_comment: document.getElementById('scout_comment').value,
-                is_active: false // Par défaut, non visible sur le site
-            };
+    e.preventDefault();
 
-            const { error } = await _supabase.from('players').insert([playerData]);
+    // 1. RÉCUPÉRER LE JETON HCAPTCHA (Le badge prouvant qu'on est humain)
+    const hcaptchaResponse = document.querySelector('[name="h-captcha-response"]').value;
 
-            if (error) {
-                alert("Erreur lors de l'envoi : " + error.message);
-            } else {
-                document.getElementById('success-msg').style.display = 'block';
-                document.getElementById('playerForm').reset();
-                window.scrollTo(0,0);
-            }
-        });
+    // 2. LE VERROU : Si la case n'est pas cochée, on arrête tout
+    if (!hcaptchaResponse) {
+        alert("Veuillez prouver que vous n'êtes pas un robot en cochant la case hCaptcha.");
+        return; 
+    }
+
+    // 3. SI C'EST BON, ON RÉCUPÈRE LES DONNÉES DU JOUEUR
+    const playerData = {
+        full_name: document.getElementById('full_name').value,
+        position: document.getElementById('position').value,
+        status: document.getElementById('status').value,
+        photo_url: document.getElementById('photo_url').value,
+        scout_comment: document.getElementById('scout_comment').value,
+        submitted_by: document.getElementById('submitted_by').value,
+        contact_phone: document.getElementById('contact_phone').value,
+        is_active: false // Reste invisible tant que tu ne valides pas dans Supabase
+    };
+
+    // 4. ENVOI VERS TA TABLE SUPABASE
+    const { data, error } = await _supabase
+        .from('players')
+        .insert([playerData]);
+
+    if (error) {
+        alert("Erreur lors de l'envoi : " + error.message);
+    } else {
+        alert("Profil soumis avec succès ! Il sera examiné par Lex Sport Global.");
+        document.getElementById('playerForm').reset(); // Vide le formulaire
+        hcaptcha.reset(); // Réinitialise le Captcha pour le prochain envoi
+    }
+});
     </script>
 </body>
 
 </html>
+
 
