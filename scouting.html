@@ -89,9 +89,10 @@
                         <h1 style="color: #002349; letter-spacing: 2px;">Data Scouting & Performance</h1>
                     </header>
                     <span class="image main"><img src="images/scouting_data.jpg" alt="Data Analytics" /></span>
-                                 background-position: center center; /* Centre le visuel pour PC et Mobile */
-                                 background-repeat: no-repeat;       /* Évite que l'image se duplique */
-                                 background-size: contain;             /* L'image occupe tout l'espace sans se déformer */
+                                 width: 100%;       /* L'image prend toute la largeur disponible */
+                                 height: auto;      /* La hauteur s'ajuste automatiquement pour garder les proportions */
+                                 max-width: 100%;   /* Empêche l'image de dépasser de son conteneur sur grand écran */
+                                 object-fit: contain; /* Force l'affichage intégral du visuel */
                     <div class="bilingual-grid">
                         <div class="lang-box" style="border-right: 1px solid #333;">
                             <h2>[FR] Analyse Prédictive</h2>
