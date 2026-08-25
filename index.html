@@ -20,38 +20,37 @@
 
 		<div id="wrapper">
 
-			<!-- Header avec Menu Horizontal intégré -->
+			<!-- Nouveau Header Pro Horizontal -->
 			<header id="header">
 				<div class="header-container">
 					<a href="index.html" class="logo">
-						<img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 40px; vertical-align: middle; margin-right: 10px;" />
+						<img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px; vertical-align: middle; margin-right: 12px;" />
 						<strong>LEX SPORT GLOBAL</strong>
 					</a>
 
-					<!-- Bouton Hamburger (Mobiles/Tablettes) -->
-					<button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
-						<i class="fas fa-bars"></i>
-					</button>
-
-					<!-- Navigation Horizontale -->
+					<!-- Menu Nav Horizontal Desktop -->
 					<nav id="menu-nav">
 						<ul>
-							<li><a href="index.html">Accueil / Home</a></li>
-							<li><a href="generic.html">Expertise Juridique / Legal</a></li>
+							<li><a href="index.html">Accueil</a></li>
+							<li><a href="generic.html">Expertise Juridique</a></li>
 							<li><a href="scouting.html">Data Scouting</a></li> 
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
 
-					<!-- Actions / Socials -->
+					<!-- Reseaux & Bouton Action -->
 					<div class="header-right">
 						<ul class="icons">
-							<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope social-email"><span class="label">Contact</span></a></li>
-							<li><a href="https://wa.me/22997328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp social-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
-							<li><a href="https://YouTube.com" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+							<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="https://wa.me/22997328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
 						</ul>
-						<a href="contact.html" class="button primary small btn-contact-desktop">Nous contacter</a>
+						<a href="contact.html" class="button primary btn-contact-header">Nous contacter</a>
+
+						<!-- Bouton Hamburger (Uniquement affiché sur mobiles/tablettes) -->
+						<button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+							<i class="fas fa-bars"></i>
+						</button>
 					</div>
 				</div>
 			</header>
@@ -60,7 +59,7 @@
 			<div id="main">
 				<div class="inner">
 
-					<!-- Banner -->
+					<!-- Section Banner -->
 					<section id="banner">
 						<div class="content">
 							<header>
@@ -79,7 +78,7 @@
 						</span>
 					</section>
 
-					<!-- Strategic Pillars -->
+					<!-- Section Piliers Stratégiques -->
 					<section>
 						<header class="major">
 							<h2>Nos Piliers Stratégiques / Our Strategic Pillars</h2>
@@ -113,16 +112,16 @@
 				</div>
 			</div>
 
-			<!-- Footer intégré en bas de page -->
+			<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
 					<ul class="icons">
-						<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope social-email"><span class="label">Email</span></a></li>
-						<li><a href="https://wa.me/22997328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp social-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
+						<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="https://wa.me/22997328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
 						<li><a href="https://YouTube.com" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
 					</ul>
-					<a href="legales.html">Mentions Légales & Confidentialité</a>
+					<p><a href="legales.html">Mentions Légales & Confidentialité</a></p>
 					<p class="copyright">&copy; LEX SPORT GLOBAL. 2026 All rights reserved.</p>
 				</div>
 			</footer>
@@ -136,9 +135,12 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			// Gestion de l'ouverture/fermeture du menu mobile hamburger
-			document.getElementById('navToggle').addEventListener('click', function() {
-				document.getElementById('menu-nav').classList.toggle('active');
+			// Gestion de l'affichage du menu mobile
+			const navToggle = document.getElementById('navToggle');
+			const menuNav = document.getElementById('menu-nav');
+
+			navToggle.addEventListener('click', function() {
+				menuNav.classList.toggle('active');
 			});
 		</script>
 	</body>
