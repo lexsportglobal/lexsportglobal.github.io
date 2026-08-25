@@ -20,34 +20,41 @@
 
 		<div id="wrapper">
 
-			<!-- Nouveau Header Pro Horizontal -->
+			<!-- Header Horizontal -->
 			<header id="header">
 				<div class="header-container">
 					<a href="index.html" class="logo">
-						<img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px; vertical-align: middle; margin-right: 12px;" />
+						<img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 42px; vertical-align: middle; margin-right: 12px;" />
 						<strong>LEX SPORT GLOBAL</strong>
 					</a>
 
-					<!-- Menu Nav Horizontal Desktop -->
+					<!-- Menu Nav Horizontal Desktop avec texte plus gros -->
 					<nav id="menu-nav">
 						<ul>
-							<li><a href="index.html">Accueil</a></li>
-							<li><a href="generic.html">Expertise Juridique</a></li>
+							<li><a href="index.html"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a></li>
+							<li><a href="generic.html"><span class="lang-fr">Expertise Juridique</span><span class="lang-en">Legal Engineering</span></a></li>
 							<li><a href="scouting.html">Data Scouting</a></li> 
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
 
-					<!-- Reseaux & Bouton Action -->
 					<div class="header-right">
+						<!-- Commutateur de Langues (FR / EN) -->
+						<div class="lang-switcher">
+							<button class="lang-btn active" id="btn-fr">FR</button>
+							<span class="lang-separator">|</span>
+							<button class="lang-btn" id="btn-en">EN</button>
+						</div>
+
+						<!-- Réseaux Sociaux -->
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 							<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 							<li><a href="https://wa.me/22997328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
 						</ul>
-						<a href="contact.html" class="button primary btn-contact-header">Nous contacter</a>
+						<a href="contact.html" class="button primary btn-contact-header"><span class="lang-fr">Nous contacter</span><span class="lang-en">Contact Us</span></a>
 
-						<!-- Bouton Hamburger (Uniquement affiché sur mobiles/tablettes) -->
+						<!-- Bouton Hamburger Mobile/Tablette -->
 						<button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
 							<i class="fas fa-bars"></i>
 						</button>
@@ -59,7 +66,7 @@
 			<div id="main">
 				<div class="inner">
 
-					<!-- Section Banner -->
+					<!-- Banner Section -->
 					<section id="banner">
 						<div class="content">
 							<header>
@@ -67,10 +74,10 @@
 								<span style="font-size: 0.6em; color: #a5a5a5;"><i>Legal Engineering for Athletic Performance</i></span></h1>
 								<p>Data Scouting & Conformité FIFA / <i>FIFA Compliance</i></p>
 							</header>
-							<p><strong>[FR]</strong> Pionnier au Bénin, LEX SPORT GLOBAL allie l'expertise juridique (Loi 2021-05) à l'ingénierie des données pour sécuriser les investissements sportifs et optimiser le scouting de talents.</p>
-							<p><i><strong>[EN]</strong> A pioneer in Benin, LEX SPORT GLOBAL combines legal expertise (Law 2021-05) with data engineering to secure sports investments and optimize talent scouting.</i></p>
+							<p class="lang-fr">Pionnier au Bénin, LEX SPORT GLOBAL allie l'expertise juridique (Loi 2021-05) à l'ingénierie des données pour sécuriser les investissements sportifs et optimiser le scouting de talents.</p>
+							<p class="lang-en">A pioneer in Benin, LEX SPORT GLOBAL combines legal expertise (Law 2021-05) with data engineering to secure sports investments and optimize talent scouting.</p>
 							<ul class="actions">
-								<li><a href="generic.html" class="button big">Notre Expertise / Our Expertise</a></li>
+								<li><a href="generic.html" class="button big"><span class="lang-fr">Notre Expertise</span><span class="lang-en">Our Expertise</span></a></li>
 							</ul>
 						</div>
 						<span class="image object">
@@ -78,32 +85,34 @@
 						</span>
 					</section>
 
-					<!-- Section Piliers Stratégiques -->
+					<!-- Section Piliers Stratégiques ALIGNÉS EN VERTICAL -->
 					<section>
 						<header class="major">
-							<h2>Nos Piliers Stratégiques / Our Strategic Pillars</h2>
+							<h2><span class="lang-fr">Nos Piliers Stratégiques</span><span class="lang-en">Our Strategic Pillars</span></h2>
 						</header>
 						<div class="posts">
+							<!-- Article 1 -->
 							<article>
 								<a href="generic.html" class="image">
 									<img src="images/expertise_legal.jpg" alt="Ingénierie Juridique" />
 								</a>
 								<h3>Ingénierie Juridique (Loi 2021-05)</h3>
-								<p><strong>[FR]</strong> Audit de conformité des sociétés sportives au Bénin et sécurisation des actifs juridiques.</p>
-								<p><i><strong>[EN]</strong> Legal compliance audits for sports companies in Benin and securing legal assets.</i></p>
+								<p class="lang-fr">Audit de conformité des sociétés sportives au Bénin et sécurisation des actifs juridiques.</p>
+								<p class="lang-en">Legal compliance audits for sports companies in Benin and securing legal assets.</p>
 								<ul class="actions">
-									<li><a href="generic.html" class="button">Plus d'infos / More info</a></li>
+									<li><a href="generic.html" class="button"><span class="lang-fr">Plus d'infos</span><span class="lang-en">More info</span></a></li>
 								</ul>
 							</article>
+							<!-- Article 2 (Place en dessous de l'article 1) -->
 							<article>
 								<a href="generic.html" class="image">
 									<img src="images/scouting_data.jpg" alt="Data Scouting" />
 								</a>
 								<h3>Data Scouting & Performance</h3>
-								<p><strong>[FR]</strong> Identification de talents via des algorithmes de performance avancés et analyse prédictive.</p>
-								<p><i><strong>[EN]</strong> Talent identification through advanced performance algorithms and predictive analytics.</i></p>
+								<p class="lang-fr">Identification de talents via des algorithmes de performance avancés et analyse prédictive.</p>
+								<p class="lang-en">Talent identification through advanced performance algorithms and predictive analytics.</p>
 								<ul class="actions">
-									<li><a href="scouting.html" class="button">Plus d'infos / More info</a></li>
+									<li><a href="scouting.html" class="button"><span class="lang-fr">Plus d'infos</span><span class="lang-en">More info</span></a></li>
 								</ul>
 							</article>
 						</div>
@@ -121,7 +130,7 @@
 						<li><a href="https://wa.me/22997328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
 						<li><a href="https://YouTube.com" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
 					</ul>
-					<p><a href="legales.html">Mentions Légales & Confidentialité</a></p>
+					<p><a href="legales.html"><span class="lang-fr">Mentions Légales & Confidentialité</span><span class="lang-en">Legal Notice & Privacy</span></a></p>
 					<p class="copyright">&copy; LEX SPORT GLOBAL. 2026 All rights reserved.</p>
 				</div>
 			</footer>
@@ -141,6 +150,25 @@
 
 			navToggle.addEventListener('click', function() {
 				menuNav.classList.toggle('active');
+			});
+
+			// Gestionnaire de changement de langue (FR / EN)
+			const btnFr = document.getElementById('btn-fr');
+			const btnEn = document.getElementById('btn-en');
+			const body = document.body;
+
+			btnFr.addEventListener('click', function() {
+				btnFr.classList.add('active');
+				btnEn.classList.remove('active');
+				body.classList.remove('lang-fr-hidden');
+				body.classList.add('lang-en-hidden');
+			});
+
+			btnEn.addEventListener('click', function() {
+				btnEn.classList.add('active');
+				btnFr.classList.remove('active');
+				body.classList.remove('lang-en-hidden');
+				body.classList.add('lang-fr-hidden');
 			});
 		</script>
 	</body>
