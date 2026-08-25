@@ -2750,4 +2750,84 @@ button,
     #header .icons {
         display: none;
     }
+/* ==========================================================================
+   Styles spécifiques pour la page Contact & Profil Directeur
+   ========================================================================== */
+
+/* Carte Profil Directeur */
+.director-profile-box {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #f8fafc;
+    border-left: 4px solid #C5A05F;
+    padding: 20px 25px;
+    border-radius: 6px;
+    margin-bottom: 25px;
 }
+
+.director-image-wrapper {
+    flex-shrink: 0;
+}
+
+.director-photo {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #C5A05F;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.director-details h3 {
+    margin: 0 0 4px 0;
+    color: #2c3e50;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+.director-title {
+    color: #C5A05F;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px !important;
+}
+
+.director-details p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+/* Suppression des espacements/interlines de la liste de contact */
+.contact-compact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-compact-list li {
+    padding: 6px 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-compact-list li i {
+    color: #C5A05F;
+    width: 20px;
+    text-align: center;
+}
+
+/* Responsiveness pour mobiles */
+@media screen and (max-width: 600px) {
+    .director-profile-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+    }
+}
+
