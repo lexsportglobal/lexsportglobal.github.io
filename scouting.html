@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="fr">
 <head>
-    <title>Data Scouting - LEX SPORT GLOBAL</title>
+    <title>Data Scouting | LEX SPORT GLOBAL</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
         /* --- 1. PRESENTATION & TEXTE BILINGUE --- */
@@ -17,28 +18,28 @@
         .filter-section { width: 100%; text-align: center; margin: 50px 0 30px 0; }
         .filter-bar { display: inline-flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .filter-btn {
-    display: inline-flex;       /* Force le bouton à utiliser le mode flexible */
-    align-items: center;        /* Centre le texte verticalement */
-    justify-content: center;    /* Centre le texte horizontalement */
-    background: transparent !important;
-    color: #D4AF37 !important;
-    border: 2px solid #D4AF37 !important;
-    padding: 10px 25px !important;
-    font-weight: 800 !important;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 4px;
-    letter-spacing: 1px;
-    line-height: 1;             /* Force la hauteur de ligne à être égale à la taille du texte */
-    text-align: center;
-    min-height: 45px;           /* Assure une hauteur minimale uniforme */
-}
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent !important;
+            color: #D4AF37 !important;
+            border: 2px solid #D4AF37 !important;
+            padding: 10px 25px !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            line-height: 1;
+            text-align: center;
+            min-height: 45px;
+        }
 
-.filter-btn:hover { 
-    background: #D4AF37 !important; 
-    color: #000 !important; 
-}
+        .filter-btn:hover { 
+            background: #D4AF37 !important; 
+            color: #000 !important; 
+        }
 
         /* --- 3. GRILLE & CARTES --- */
         #players-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px; }
@@ -52,12 +53,12 @@
         }
         .player-card h3 { 
             color: #FFFFFF !important; 
-            font-size: 1.1em !important; /* Taille réduite pour plus de finesse */ 
+            font-size: 1.1em !important; 
             font-weight: 800 !important; 
-            margin: 10px 0 5px 0; /* Marges réduites */ 
+            margin: 10px 0 5px 0; 
             text-transform: uppercase;
-            line-height: 1.2; /* Pour éviter que ça prenne trop de place en hauteur */
-}
+            line-height: 1.2;
+        }
         .player-card .position { color: #D4AF37 !important; font-weight: bold; display: block; margin-bottom: 15px; }
         .player-card img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid #D4AF37; object-fit: cover; }
 
@@ -73,24 +74,55 @@
         .close-modal { position: absolute; right: 20px; top: 10px; color: #D4AF37; font-size: 35px; cursor: pointer; }
     </style>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-VKBQS18D5E');
-</script>
+      gtag('config', 'G-VKBQS18D5E');
+    </script>
 </head>
 <body class="is-preload">
     <div id="wrapper">
         <div id="main">
             <div class="inner">
+
+                <!-- NOUTEAU HEADER HARMONISÉ -->
                 <header id="header">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo_final.jpg" alt="" style="height: 30px; vertical-align: middle; margin-right: 10px;" />
-                        <strong>LEX SPORT GLOBAL</strong> | Performance & Analytics
-                    </a>
+                    <div class="header-container">
+                        <a href="index.html" class="logo">
+                            <img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
+                            <span>LEX SPORT GLOBAL</span>
+                        </a>
+
+                        <nav id="menu-nav">
+                            <ul>
+                                <li><a href="index.html"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a></li>
+                                <li><a href="generic.html"><span class="lang-fr">Expertise Juridique</span><span class="lang-en">Legal Engineering</span></a></li>
+                                <li><a href="scouting.html">Data Scouting</a></li> 
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="header-right">
+                            <div class="lang-switcher">
+                                <button class="lang-btn active" id="btn-fr">FR</button>
+                                <span class="lang-separator">|</span>
+                                <button class="lang-btn" id="btn-en">EN</button>
+                            </div>
+
+                            <ul class="icons">
+                                <li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                                <li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                                <li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
+                            </ul>
+
+                            <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
                 </header>
 
                 <section>
@@ -98,10 +130,7 @@
                         <h1 style="color: #002349; letter-spacing: 2px;">Data Scouting & Performance</h1>
                     </header>
                     <span class="image main"><img src="images/scouting_data.jpg" alt="Data Analytics" /></span>
-                                 width: 100%;       /* L'image prend toute la largeur disponible */
-                                 height: auto;      /* La hauteur s'ajuste automatiquement pour garder les proportions */
-                                 max-width: 100%;   /* Empêche l'image de dépasser de son conteneur sur grand écran */
-                                 object-fit: contain; /* Force l'affichage intégral du visuel */
+
                     <div class="bilingual-grid">
                         <div class="lang-box" style="border-right: 1px solid #333;">
                             <h2>[FR] Analyse Prédictive</h2>
@@ -115,7 +144,7 @@
                     <div style="text-align: center; margin-bottom: 20px;">
                         <p style="font-style: italic; color: #888; font-size: 0.9em; margin-bottom: 10px;">Vous êtes un club ou un agent indépendant ?</p>
                         <a href="add-player.html" class="button primary" style="background-color: #D4AF37 !important; color: #000 !important; font-weight: 900; border-radius: 5px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);">
-                           ➕ INSCRIRE UN TALENT
+                            ➕ INSCRIRE UN TALENT
                        </a>
                     </div>
 
@@ -132,6 +161,18 @@
                 </section>
             </div>
         </div>
+
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    <li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
+                </ul>
+                <p><a href="legales.html"><span class="lang-fr">Mentions Légales & Confidentialité</span><span class="lang-en">Legal Notice & Privacy</span></a></p>
+                <p class="copyright">&copy; LEX SPORT GLOBAL. 2026 All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 
     <div id="playerModal" class="modal">
@@ -142,30 +183,63 @@
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Menu Mobile Toggle
+            const navToggle = document.getElementById('navToggle');
+            const menuNav = document.getElementById('menu-nav');
+            if(navToggle) {
+                navToggle.addEventListener('click', function() {
+                    menuNav.classList.toggle('active');
+                });
+            }
+
+            // Commutateur FR / EN (Boutons Bleu & Or)
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            const body = document.body;
+
+            if(btnFr && btnEn) {
+                btnFr.addEventListener('click', function() {
+                    btnFr.classList.add('active');
+                    btnEn.classList.remove('active');
+                    body.classList.remove('lang-en-hidden');
+                    body.classList.add('lang-fr-hidden');
+                });
+
+                btnEn.addEventListener('click', function() {
+                    btnEn.classList.add('active');
+                    btnFr.classList.remove('active');
+                    body.classList.remove('lang-fr-hidden');
+                    body.classList.add('lang-en-hidden');
+                });
+            }
+
+            // Supabase Logic
             let allPlayers = [];
             const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
             const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
 
             async function fetchPlayers() {
                 try {
-                    // On ajoute .eq('is_active', true) pour ne voir que les profils validés
-                        const response = await fetch(`${supabaseUrl}/rest/v1/players?is_active=eq.true&select=*`, {
-                       headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` }
-                        });
-                       allPlayers = await response.json();
-                        displayPlayers(allPlayers);
+                    const response = await fetch(`${supabaseUrl}/rest/v1/players?is_active=eq.true&select=*`, {
+                        headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` }
+                    });
+                    allPlayers = await response.json();
+                    displayPlayers(allPlayers);
                 } catch (error) { console.error("Erreur:", error); }
             }
 
             window.displayPlayers = function(players) {
                 const container = document.getElementById('players-container');
                 container.innerHTML = '';
-                players.forEach((player, index) => {
+                players.forEach((player) => {
                     let s = (player.status || 'Amateur').toLowerCase();
                     let bClass = s === 'pro' ? 'status-pro' : (s.includes('free') ? 'status-free' : 'status-amateur');
                     
@@ -215,18 +289,4 @@
         });
     </script>
 </body>
-    
- <footer id="footer">
-     <p style="text-align: center;">
-         <a href="legales.html">Mentions Légales & Confidentialité</a>
-     </p>
-     <p style="text-align: center;">
-         <p class="copyright">&copy; LEX SPORT GLOBAL. 2026 All rights reserved.</p>
-     </p>
-</footer>
 </html>
-
-
-
-
-
