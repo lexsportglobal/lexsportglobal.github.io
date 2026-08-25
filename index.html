@@ -23,12 +23,13 @@
 			<!-- Header Horizontal -->
 			<header id="header">
 				<div class="header-container">
+					<!-- Logo avec texte placé en dessous -->
 					<a href="index.html" class="logo">
-						<img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 42px; vertical-align: middle; margin-right: 12px;" />
-						<strong>LEX SPORT GLOBAL</strong>
+						<img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
+						<span>LEX SPORT GLOBAL</span>
 					</a>
 
-					<!-- Menu Nav Horizontal Desktop avec texte plus gros -->
+					<!-- Menu Nav Horizontal Desktop -->
 					<nav id="menu-nav">
 						<ul>
 							<li><a href="index.html"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a></li>
@@ -102,7 +103,7 @@
 									<li><a href="generic.html" class="button"><span class="lang-fr">Plus d'infos</span><span class="lang-en">More info</span></a></li>
 								</ul>
 							</article>
-							<!-- Article 2 (Place en dessous de l'article 1) -->
+							<!-- Article 2 -->
 							<article>
 								<a href="generic.html" class="image">
 									<img src="images/scouting_data.jpg" alt="Data Scouting" />
@@ -143,7 +144,7 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			// Gestion de l'affichage du menu mobile
+			// Affichage du menu mobile
 			const navToggle = document.getElementById('navToggle');
 			const menuNav = document.getElementById('menu-nav');
 
@@ -151,7 +152,7 @@
 				menuNav.classList.toggle('active');
 			});
 
-			// Gestionnaire de changement de langue (FR / EN)
+			// Changement de langue (FR / EN)
 			const btnFr = document.getElementById('btn-fr');
 			const btnEn = document.getElementById('btn-en');
 			const body = document.body;
