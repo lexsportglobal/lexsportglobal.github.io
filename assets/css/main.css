@@ -2564,38 +2564,46 @@ button,
     width: 100%;
 }
 
-/* Sélecteur de langue */
+/* ==========================================================================
+   Boutons Commutateur de Langue (Bleu & Or)
+   ========================================================================== */
 .lang-switcher {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    background: #f1f5f9;
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-size: 0.9em;
-    font-weight: 700;
+    gap: 4px;
+    margin-right: 15px;
 }
 
 .lang-btn {
-    background: none;
-    border: none;
-    color: #718096;
-    padding: 4px 8px;
+    background: transparent !important;
+    border: 1.5px solid #2c3e50 !important; /* Bordure Bleu Corporate */
+    color: #2c3e50 !important;             /* Texte Bleu */
+    font-size: 0.75em !important;
+    font-weight: 700 !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
     cursor: pointer;
-    font-weight: 700;
-    font-size: 0.85em;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease-in-out;
     box-shadow: none !important;
+    height: auto !important;
+    line-height: 1.2 !important;
+}
+
+.lang-btn:hover {
+    border-color: #C5A05F !important;     /* Bordure Or au survol */
+    color: #C5A05F !important;              /* Texte Or */
 }
 
 .lang-btn.active {
-    background: #2c3e50;
-    color: #ffffff;
+    background-color: #C5A05F !important;  /* Fond Or quand actif */
+    border-color: #C5A05F !important;
+    color: #ffffff !important;             /* Texte blanc sur fond Or */
 }
 
 .lang-separator {
     color: #cbd5e0;
-    margin: 0 2px;
+    font-size: 0.8em;
+    font-weight: bold;
 }
 
 /* Icônes Réseaux & Bouton */
