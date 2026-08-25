@@ -2751,114 +2751,139 @@ button,
         display: none;
     }
 /* ==========================================================================
-   Page Contact & Profil Direction
+   Page Contact & Style Profil Direction
    ========================================================================== */
 
-/* Suppression des interlignes et marges excessives */
-.contact-section h1 {
-    margin-bottom: 0.3em;
+/* Titres Réduits */
+.page-title-small {
+    font-size: 1.35em !important;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.1em !important;
 }
 
-.contact-intro {
-    margin-bottom: 1.5em;
-    font-size: 0.95em;
-    line-height: 1.5;
-    color: #4a5568;
+.subtitle-en {
+    font-size: 0.85em;
+    color: #718096;
+    font-style: italic;
+    margin-bottom: 1em;
 }
 
-.contact-title {
+.section-title-small {
     color: #C5A05F !important;
-    font-size: 1.1em !important;
+    font-size: 0.95em !important;
+    font-weight: 700;
+    margin: 0 !important;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.8em !important;
+    letter-spacing: 0.03em;
 }
 
-.contact-compact {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.2em 0;
+.section-title-en {
+    font-size: 0.75em;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 0.8em;
 }
 
-.contact-compact li {
-    padding: 6px 0;
-    font-size: 0.95em;
+/* Layout Flex avec espacement suffisant vers la droite */
+.contact-profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px; /* Espace suffisant entre les coordonnées et la photo */
+    margin-top: 15px;
+}
+
+.contact-details {
+    flex: 1;
+}
+
+/* Alignement compact des listes */
+.contact-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 10px 0 !important;
+}
+
+.contact-list li {
+    padding: 3px 0 !important;
+    margin: 0 !important;
+    font-size: 0.9em;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.contact-compact li i {
+.contact-list li i {
     color: #C5A05F;
-    width: 20px;
+    width: 18px;
     text-align: center;
 }
 
-.location-box {
-    margin-top: 1em;
-    padding-top: 1em;
-    border-top: 1px solid #edf2f7;
+/* Bloc Carte & Photo d'Identité */
+.director-profile {
+    width: 190px;
+    flex-shrink: 0;
 }
 
-.response-delay {
-    font-size: 0.85em;
-    color: #718096;
-    margin-top: 1em;
-}
-
-/* Carte Directeur (Moyenne taille, sobre & corporate) */
-.director-card {
+.profile-card {
     background: #ffffff;
-    border: 1px solid #edf2f7;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px;
     text-align: center;
-    max-width: 320px;
-    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.director-img-container {
-    width: 170px;
-    height: 170px;
-    margin: 0 auto 15px auto;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid #C5A05F;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.director-img {
-    width: 100%;
-    height: 100%;
+/* Format visuel exact Photo d'Identité (Ratio 3.5 x 4.5) */
+.id-photo {
+    width: 112px;
+    height: 144px;
     object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #cbd5e0;
+    margin: 0 auto 8px auto;
+    display: block;
 }
 
-.director-role-tag {
-    display: inline-block;
-    background: #2c3e50;
-    color: #ffffff;
-    font-size: 0.65em;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 12px;
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
-}
-
-.director-title {
-    font-size: 0.85em !important; /* Petit titre selon la demande */
+.profile-title {
+    font-size: 0.75em !important;
     font-weight: 700;
     color: #2c3e50;
-    margin: 4px 0 2px 0 !important;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    margin: 0 !important;
+    line-height: 1.2;
 }
 
-.director-subtitle {
-    font-size: 0.75em;
+.profile-title-en {
+    font-size: 0.68em;
+    color: #718096;
+    font-style: italic;
+    margin: 2px 0 4px 0 !important;
+    line-height: 1.1;
+}
+
+.profile-company {
+    font-size: 0.65em;
     color: #C5A05F;
-    font-weight: 600;
-    margin: 0;
+    font-weight: 700;
+    margin: 0 !important;
+    letter-spacing: 0.05em;
+}
+
+/* Repositionnement responsive pour écran mobile */
+@media screen and (max-width: 768px) {
+    .contact-profile-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .director-profile {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .contact-details {
+        width: 100%;
+    }
 }
