@@ -2751,83 +2751,114 @@ button,
         display: none;
     }
 /* ==========================================================================
-   Styles spécifiques pour la page Contact & Profil Directeur
+   Page Contact & Profil Direction
    ========================================================================== */
 
-/* Carte Profil Directeur */
-.director-profile-box {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    background: #f8fafc;
-    border-left: 4px solid #C5A05F;
-    padding: 20px 25px;
-    border-radius: 6px;
-    margin-bottom: 25px;
+/* Suppression des interlignes et marges excessives */
+.contact-section h1 {
+    margin-bottom: 0.3em;
 }
 
-.director-image-wrapper {
-    flex-shrink: 0;
-}
-
-.director-photo {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #C5A05F;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.director-details h3 {
-    margin: 0 0 4px 0;
-    color: #2c3e50;
-    font-size: 1.25em;
-    font-weight: 700;
-}
-
-.director-title {
-    color: #C5A05F;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.85em;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px !important;
-}
-
-.director-details p {
-    margin: 0;
+.contact-intro {
+    margin-bottom: 1.5em;
     font-size: 0.95em;
-    line-height: 1.4;
+    line-height: 1.5;
+    color: #4a5568;
 }
 
-/* Suppression des espacements/interlines de la liste de contact */
-.contact-compact-list {
+.contact-title {
+    color: #C5A05F !important;
+    font-size: 1.1em !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.8em !important;
+}
+
+.contact-compact {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 1.2em 0;
 }
 
-.contact-compact-list li {
+.contact-compact li {
     padding: 6px 0;
-    margin: 0;
+    font-size: 0.95em;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.contact-compact-list li i {
+.contact-compact li i {
     color: #C5A05F;
     width: 20px;
     text-align: center;
 }
 
-/* Responsiveness pour mobiles */
-@media screen and (max-width: 600px) {
-    .director-profile-box {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 15px;
-    }
+.location-box {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #edf2f7;
 }
 
+.response-delay {
+    font-size: 0.85em;
+    color: #718096;
+    margin-top: 1em;
+}
+
+/* Carte Directeur (Moyenne taille, sobre & corporate) */
+.director-card {
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.director-img-container {
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #C5A05F;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.director-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.director-role-tag {
+    display: inline-block;
+    background: #2c3e50;
+    color: #ffffff;
+    font-size: 0.65em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.director-title {
+    font-size: 0.85em !important; /* Petit titre selon la demande */
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 4px 0 2px 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.director-subtitle {
+    font-size: 0.75em;
+    color: #C5A05F;
+    font-weight: 600;
+    margin: 0;
+}
