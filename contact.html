@@ -143,5 +143,37 @@
 				menuNav.classList.toggle('active');
 			});
 		</script>
+		<script>
+    // Activation du menu Hamburger (Mobile)
+    const navToggle = document.getElementById('navToggle');
+    const menuNav = document.getElementById('menu-nav');
+
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            menuNav.classList.toggle('active');
+        });
+    }
+
+    // Gestion de la bascule FR / EN (Boutons Bleu/Or)
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    const body = document.body;
+
+    if (btnFr && btnEn) {
+        btnFr.addEventListener('click', function() {
+            btnFr.classList.add('active');
+            btnEn.classList.remove('active');
+            body.classList.remove('lang-en-active');
+            body.classList.add('lang-fr-active');
+        });
+
+        btnEn.addEventListener('click', function() {
+            btnEn.classList.add('active');
+            btnFr.classList.remove('active');
+            body.classList.remove('lang-fr-active');
+            body.classList.add('lang-en-active');
+        });
+    }
+</script>
 	</body>
 </html>
