@@ -2272,13 +2272,13 @@ button,
     margin-top: 0;
     padding-top: 0; }
 /* ==========================================================================
-   Ajustements pour Menu Horizontal Top Header & Suppression Sidebar
+   Header Modernisé & Navigation Horizontale
    ========================================================================== */
 
-/* Annulation du layout grille/flex initial du template */
+/* Structure Globale sans Sidebar */
 #wrapper {
     display: block !important;
-    padding-top: 80px; /* Espace pour le header fixe */
+    padding-top: 90px; /* Espace compensatoire sous l'en-tête fixe */
 }
 
 #main {
@@ -2287,89 +2287,161 @@ button,
     margin: 0 auto;
 }
 
-/* Header Fixe en haut */
+/* Style de L'en-tête Fixe sur PC */
 #header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: #ffffff;
-    border-bottom: 1px solid rgba(210, 215, 217, 0.75);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px); /* Effet verre moderne */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 0 2em;
+    height: 80px;
     margin: 0;
 }
 
 .header-container {
     max-width: 1200px;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* Logo & Marque */
 #header .logo {
     display: flex;
     align-items: center;
     border: none;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #2c3e50;
+    white-space: nowrap;
 }
 
-/* Style de la navigation horizontale sur écran large */
+/* Menu Horizontal Desktop (Forcé sur écran PC) */
+#menu-nav {
+    display: block !important;
+}
+
 #menu-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 28px;
+}
+
+#menu-nav ul li {
+    padding: 0;
 }
 
 #menu-nav ul li a {
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.85em;
-    letter-spacing: 0.05em;
-    color: #3d4449;
-    transition: color 0.2s ease-in-out;
+    font-size: 0.8em;
+    letter-spacing: 0.08em;
+    color: #4a5568;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.25s ease;
+}
+
+/* Accentuation au survol */
+#menu-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #C5A05F; /* Couleur dorée corporate */
+    transition: width 0.25s ease;
 }
 
 #menu-nav ul li a:hover {
-    color: #f56a6a;
+    color: #C5A05F;
 }
 
+#menu-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Icônes Réseaux & Bouton Action */
 .header-right {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 16px;
 }
 
 #header .icons {
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-/* Bouton Hamburger (caché sur Desktop) */
+#header .icons li {
+    padding: 0;
+}
+
+#header .icons a {
+    color: #718096;
+    transition: color 0.2s ease, transform 0.2s ease;
+    font-size: 0.9em;
+}
+
+#header .icons a:hover {
+    color: #C5A05F;
+    transform: translateY(-2px);
+}
+
+.btn-contact-header {
+    background-color: #2c3e50 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    border-radius: 4px;
+    font-size: 0.75em !important;
+    height: 2.8em !important;
+    line-height: 2.8em !important;
+    padding: 0 1.5em !important;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background-color 0.25s ease !important;
+}
+
+.btn-contact-header:hover {
+    background-color: #C5A05F !important;
+}
+
+/* Masquer l'icône Hamburger sur PC */
 .nav-toggle {
     display: none;
-    background: none;
+    background: transparent;
     border: none;
-    font-size: 1.5em;
+    font-size: 1.4em;
     cursor: pointer;
-    color: #3d4449;
-    padding: 5px;
-    box-shadow: none;
+    color: #2c3e50;
+    padding: 8px;
+    box-shadow: none !important;
 }
 
-/* Footer full width en bas de page */
+/* Footer Bas de Page */
 #footer {
     width: 100%;
     text-align: center;
-    padding: 40px 20px;
-    background: #f5f6f7;
-    margin-top: 50px;
-    border-top: 1px solid #e6e6e6;
+    padding: 45px 20px;
+    background: #f7fafc;
+    margin-top: 60px;
+    border-top: 1px solid #e2e8f0;
 }
 
 #footer .inner {
@@ -2377,43 +2449,63 @@ button,
     margin: 0 auto;
 }
 
-/* Responsive (Tablettes et Mobiles) */
-@media screen and (max-width: 980px) {
+/* ==========================================================================
+   Règles Responsive (Tablettes et Téléphones uniquement <= 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    #wrapper {
+        padding-top: 75px;
+    }
+
+    #header {
+        height: 70px;
+        padding: 0 1.2em;
+    }
+
+    /* Afficher le bouton Hamburger seulement sur Mobile/Tablette */
     .nav-toggle {
         display: block;
     }
 
-    .btn-contact-desktop {
-        display: none;
-    }
-
+    /* Cacher le menu horizontal classique sur mobile */
     #menu-nav {
-        display: none;
+        display: none !important;
         position: absolute;
-        top: 100%;
+        top: 70px;
         left: 0;
         width: 100%;
         background: #ffffff;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        border-top: 1px solid #eee;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #edf2f7;
     }
 
     #menu-nav.active {
-        display: block;
+        display: block !important;
     }
 
     #menu-nav ul {
         flex-direction: column;
+        align-items: stretch;
         gap: 0;
         padding: 10px 0;
     }
 
     #menu-nav ul li {
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f7fafc;
     }
 
     #menu-nav ul li a {
         display: block;
-        padding: 12px 20px;
+        padding: 14px 24px;
+        font-size: 0.85em;
+    }
+
+    #menu-nav ul li a::after {
+        display: none;
+    }
+
+    .btn-contact-header,
+    #header .icons {
+        display: none; /* Simplification du header sur très petit écran */
     }
 }
