@@ -2271,3 +2271,149 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+/* ==========================================================================
+   Ajustements pour Menu Horizontal Top Header & Suppression Sidebar
+   ========================================================================== */
+
+/* Annulation du layout grille/flex initial du template */
+#wrapper {
+    display: block !important;
+    padding-top: 80px; /* Espace pour le header fixe */
+}
+
+#main {
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Fixe en haut */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(210, 215, 217, 0.75);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header .logo {
+    display: flex;
+    align-items: center;
+    border: none;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Style de la navigation horizontale sur écran large */
+#menu-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+#menu-nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+    color: #3d4449;
+    transition: color 0.2s ease-in-out;
+}
+
+#menu-nav ul li a:hover {
+    color: #f56a6a;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#header .icons {
+    margin: 0;
+}
+
+/* Bouton Hamburger (caché sur Desktop) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #3d4449;
+    padding: 5px;
+    box-shadow: none;
+}
+
+/* Footer full width en bas de page */
+#footer {
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+    background: #f5f6f7;
+    margin-top: 50px;
+    border-top: 1px solid #e6e6e6;
+}
+
+#footer .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive (Tablettes et Mobiles) */
+@media screen and (max-width: 980px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .btn-contact-desktop {
+        display: none;
+    }
+
+    #menu-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-top: 1px solid #eee;
+    }
+
+    #menu-nav.active {
+        display: block;
+    }
+
+    #menu-nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    #menu-nav ul li {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    #menu-nav ul li a {
+        display: block;
+        padding: 12px 20px;
+    }
+}
