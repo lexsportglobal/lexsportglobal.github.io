@@ -1,306 +1,281 @@
 /* ==========================================================================
-   LEX SPORT GLOBAL - Main Stylesheet 2026
-   Palette : Bleu-Nuit (#002349) | Or (#D4AF37) | Blanc (#FFFFFF)
+   LEX SPORT GLOBAL - Main Stylesheet (Optimisée & Authentique)
    ========================================================================== */
 
-/* --- 1. RESET & VARIABLES GLOBALES --- */
+/* --- 1. VARIABLES & RESET --- */
 :root {
-    --color-primary: #002349;       /* Bleu-Nuit */
-    --color-primary-dark: #001731;  /* Bleu-Nuit Sombre */
-    --color-accent: #D4AF37;        /* Or Premium */
-    --color-accent-hover: #C5A05F;  /* Or Survol */
-    --color-text: #333333;          /* Texte Principal */
-    --color-text-light: #666666;    /* Texte Secondaire */
-    --color-bg-light: #F8F9FA;      /* Fond Clair */
-    --font-main: 'Helvetica Neue', Arial, sans-serif;
-    --transition: all 0.3s ease;
+	--bg-main: #070F1B;
+	--bg-card: #112240;
+	--primary-blue: #002349;
+	--accent-gold: #D4AF37;
+	--accent-gold-hover: #C5A05F;
+	--text-light: #F1F5F9;
+	--text-muted: #94A3B8;
+	--font-main: 'Helvetica Neue', Arial, sans-serif;
 }
 
 *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--bg-main);
+	color: var(--text-light);
+	font-family: var(--font-main);
+	font-size: 15px;
+	line-height: 1.7;
+	-webkit-font-smoothing: antialiased;
 }
 
-body {
-    font-family: var(--font-main);
-    background-color: var(--color-bg-light);
-    color: var(--color-text);
-    line-height: 1.6;
-    font-size: 16px;
-    overflow-x: hidden;
-}
-
-/* --- 2. LAYOUT GENERAL --- */
+/* --- 2. LAYOUT GENERAL (#wrapper & #main) --- */
 #wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
 }
 
 #main {
-    flex: 1;
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+	flex: 1;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 40px 20px;
 }
 
 .inner {
-    width: 100%;
+	width: 100%;
 }
 
-hr.major {
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 2em 0;
-}
-
-/* --- 3. HEADER & NAVIGATION (STRUCTURALEMENT INTACT) --- */
+/* --- 3. HEADER & NAVIGATION HORIZONTALE --- */
 #header {
-    background-color: var(--color-primary);
-    border-bottom: 2px solid var(--color-accent);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	background-color: var(--primary-blue);
+	border-bottom: 2px solid var(--accent-gold);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 12px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-/* Logo */
-#header .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none !important;
-    border-bottom: none !important;
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	text-decoration: none !important;
+	border-bottom: none !important;
 }
 
-#header .logo img {
-    height: 38px;
-    width: auto;
+.logo span {
+	color: #ffffff;
+	font-weight: 800;
+	font-size: 1.1rem;
+	letter-spacing: 1.5px;
 }
 
-#header .logo span {
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 1.1rem;
-    letter-spacing: 1.5px;
-}
-
-/* Menu de Navigation */
 #menu-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 20px;
 }
 
-#menu-nav a {
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-bottom: none !important;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: var(--transition);
+#menu-nav ul li a {
+	color: var(--text-light);
+	text-decoration: none !important;
+	border-bottom: none !important;
+	font-weight: 600;
+	font-size: 0.95em;
+	transition: color 0.3s ease;
+	padding: 6px 10px;
 }
 
-#menu-nav a:hover {
-    color: var(--color-accent) !important;
+#menu-nav ul li a:hover {
+	color: var(--accent-gold) !important;
 }
 
-/* Header Right : Langues, Réseaux, Mobile Toggle */
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
 }
 
-/* Switcher FR/EN */
-.lang-switcher {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #ffffff;
-    font-size: 0.85rem;
-}
-
-.lang-btn {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 2px 5px;
-    transition: var(--transition);
-}
-
-.lang-btn.active, .lang-btn:hover {
-    color: var(--color-accent);
-}
-
-.lang-separator {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-/* Icônes Réseaux Sociaux Header */
+/* Icons Header */
 ul.icons {
-    display: flex;
-    list-style: none;
-    gap: 12px;
-    margin: 0;
-    padding: 0;
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 12px;
 }
 
 ul.icons li a {
-    color: #ffffff !important;
-    font-size: 1rem;
-    text-decoration: none !important;
-    border-bottom: none !important;
-    transition: var(--transition);
+	color: var(--text-light);
+	font-size: 1.1em;
+	text-decoration: none !important;
+	border-bottom: none !important;
+	transition: color 0.3s ease;
 }
 
 ul.icons li a:hover {
-    color: var(--color-accent) !important;
+	color: var(--accent-gold) !important;
 }
 
-/* Bouton Hamburger Mobile */
 .nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.4rem;
-    cursor: pointer;
+	display: none;
+	background: none;
+	border: none;
+	color: var(--text-light);
+	font-size: 1.4rem;
+	cursor: pointer;
 }
 
-/* --- 4. BOUTONS & CONTOURS DORÉS (SPECIFIQUE) --- */
-.button, btn, 
-a.button_gold,
-.btn-gold {
-    display: inline-block;
-    padding: 10px 24px;
-    background-color: var(--color-primary);
-    color: #ffffff !important;
-    font-weight: 700;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 4px;
-    border: 2px solid var(--color-accent) !important; /* Contour Or */
-    text-decoration: none !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+/* --- 4. BOUTONS PAGE D'ACCUEIL (CONTOUR OR D'ORIGINE) --- */
+.button, 
+a.button, 
+input[type="submit"].button, 
+button.button {
+	display: inline-block;
+	background-color: transparent !important;
+	color: var(--accent-gold) !important;
+	border: 2px solid var(--accent-gold) !important;
+	border-radius: 4px;
+	padding: 10px 24px;
+	font-weight: 700;
+	font-size: 0.9em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none !important;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
 }
 
 .button:hover, 
-a.button_gold:hover,
-.btn-gold:hover {
-    background-color: var(--color-accent);
-    color: var(--color-primary) !important;
-    border-color: var(--color-accent) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
+a.button:hover, 
+input[type="submit"].button:hover, 
+button.button:hover {
+	background-color: var(--accent-gold) !important;
+	color: var(--primary-blue) !important;
+	box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+	transform: translateY(-2px);
 }
 
-/* Stylisation spécifique des boutons cibles */
-a[href*="generic.html"], /* Notre expertise */
-a[href*="scouting.html"], /* Plus d'infos */
-a[href*="legales.html"]   /* Mentions Légales & Confidentialité */ {
-    border: 2px solid var(--color-accent) !important; /* Contour Or forcé */
-    border-radius: 4px;
-    transition: var(--transition);
+/* Bouton Large Spécifique */
+.button.large {
+	padding: 14px 32px;
+	font-size: 1em;
 }
 
-/* --- 5. FOOTER (INTACT) --- */
+/* --- 5. STYLE FOOTER & MENTIONS LÉGALES (OR PARTOUT) --- */
 #footer {
-    background-color: var(--color-primary);
-    border-top: 2px solid var(--color-accent);
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px 20px 20px;
-    margin-top: auto;
+	background-color: var(--primary-blue);
+	border-top: 2px solid var(--accent-gold);
+	padding: 30px 20px;
+	text-align: center;
+	margin-top: auto;
 }
 
 #footer .inner {
-    max-width: 1200px;
-    margin: 0 auto;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
-#footer ul.icons {
-    justify-content: center;
-    margin-bottom: 20px;
-    gap: 20px;
+/* Mentions Légales & Confidentialité en OR partout */
+#footer p a, 
+a.legal-link {
+	color: var(--accent-gold) !important;
+	font-weight: 800 !important;
+	text-decoration: none !important;
+	border-bottom: none !important;
+	transition: color 0.3s ease;
 }
 
-#footer ul.icons li a {
-    font-size: 1.2rem;
-}
-
-#footer p {
-    margin-bottom: 10px;
-    font-size: 0.9em;
-}
-
-#footer p a {
-    color: var(--color-accent) !important;
-    font-weight: 800 !important;
-    text-decoration: none !important;
-    border-bottom: 2px solid var(--color-accent) !important; /* Ajout du contour Or stylisé */
-    padding: 4px 12px;
-    border-radius: 4px;
-    display: inline-block;
-    transition: var(--transition);
-}
-
-#footer p a:hover {
-    background-color: var(--color-accent);
-    color: var(--color-primary) !important;
+#footer p a:hover, 
+a.legal-link:hover {
+	color: var(--accent-gold-hover) !important;
+	text-decoration: underline !important;
 }
 
 #footer .copyright {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.8em;
-    margin-top: 15px;
+	color: var(--text-muted);
+	font-size: 0.85rem;
+	margin-top: 10px;
 }
 
-/* --- 6. ADAPTATION RESPONSIVE MOBILE --- */
+/* --- 6. TYPOGRAPHIE ET ELEMENTS DE CONTENU --- */
+h1, h2, h3, h4, h5, h6 {
+	color: var(--text-light);
+	font-weight: 700;
+	margin-top: 0;
+}
+
+.page-title-small {
+	color: var(--text-light);
+	font-size: 1.8rem;
+	margin-bottom: 5px;
+}
+
+.subtitle-en {
+	color: var(--text-muted);
+	font-style: italic;
+	font-size: 0.95rem;
+	margin-top: 0;
+}
+
+hr.major {
+	border: 0;
+	border-top: 1px solid rgba(212, 175, 55, 0.3);
+	margin: 2em 0;
+}
+
+/* --- 7. RESPONSIVE DESIGN (MOBILE) --- */
 @media screen and (max-width: 980px) {
-    .nav-toggle {
-        display: block;
-    }
+	.nav-toggle {
+		display: block;
+	}
 
-    #menu-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-primary-dark);
-        border-bottom: 2px solid var(--color-accent);
-        padding: 20px 0;
-    }
+	#menu-nav {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background-color: var(--primary-blue);
+		border-bottom: 2px solid var(--accent-gold);
+		padding: 20px 0;
+	}
 
-    #menu-nav.active {
-        display: block;
-    }
+	#menu-nav.active {
+		display: block;
+	}
 
-    #menu-nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
+	#menu-nav ul {
+		flex-direction: column;
+		align-items: center;
+		gap: 15px;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#main {
+		padding: 20px 15px;
+	}
+
+	.button {
+		width: 100%;
+		text-align: center;
+	}
 }
