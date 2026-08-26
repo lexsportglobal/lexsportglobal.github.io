@@ -6,6 +6,84 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* --- ALIGNEMENT PARFAIT CONTACT + PHOTO --- */
+			.contact-profile-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start; /* Aligne le haut de la photo avec le haut du texte */
+				gap: 40px;
+				margin-top: 10px;
+			}
+
+			.contact-details {
+				flex: 1;
+			}
+
+			.director-profile {
+				flex: 0 0 220px; /* Largeur fixe à droite pour le bloc profil */
+				text-align: center;
+				padding-top: 5px; /* Ajustement fin pour l'alignement visuel parfait */
+			}
+
+			.profile-card img {
+				width: 90px !important;
+				height: 90px !important;
+				object-fit: cover;
+				border-radius: 50%;
+				border: 2px solid #D4AF37;
+				display: block;
+				margin: 0 auto 10px auto;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+			}
+
+			.profile-info p {
+				margin: 0;
+				line-height: 1.3;
+			}
+
+			.profile-title {
+				font-weight: 700;
+				color: #ffffff;
+				font-size: 0.9em;
+			}
+
+			.profile-title-en {
+				font-style: italic;
+				color: #888;
+				font-size: 0.8em;
+				margin-bottom: 4px !important;
+			}
+
+			.profile-company {
+				color: #D4AF37;
+				font-weight: 800;
+				font-size: 0.85em;
+				letter-spacing: 1px;
+			}
+
+			/* Style Footer Or/Gras */
+			#footer p a {
+				color: #D4AF37 !important;
+				font-weight: 800 !important;
+				text-decoration: none;
+			}
+			#footer p a:hover {
+				color: #C5A05F !important;
+				text-decoration: underline;
+			}
+
+			@media screen and (max-width: 736px) {
+				.contact-profile-container {
+					flex-direction: column-reverse; /* Passe au-dessus ou au-dessous sur mobile */
+					align-items: center;
+				}
+				.director-profile {
+					flex: 1 1 auto;
+					margin-bottom: 25px;
+				}
+			}
+		</style>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
 		<script>
@@ -69,7 +147,7 @@
 
 						<hr class="major" style="margin: 1.5em 0;" />
 
-						<!-- Layout Contact + Photo ID à Droite -->
+						<!-- Layout Contact + Photo Alignée à Droite -->
 						<div class="contact-profile-container">
 							
 							<!-- Bloc Contact & Siège (Gauche) -->
@@ -90,10 +168,10 @@
 								<span style="font-size: 0.8em; font-style: italic; color: #666;">Reception by appointment for club audits and private consultations.</span></p>
 							</div>
 
-							<!-- Bloc Photo ID (Droite avec espacement) -->
+							<!-- Bloc Photo ID (Haut Droite, Alignement strict) -->
 							<div class="director-profile">
 								<div class="profile-card">
-									<img src="images/director.jpg" alt="Noël S. VODOUESSI" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 2px solid #D4AF37; display: block; margin: 0 auto 15px auto;" />
+									<img src="images/director.jpg" alt="Noël S. VODOUESSI" />
 									<div class="profile-info">
 										<p class="profile-title">Directeur Général & Consultant</p>
 										<p class="profile-title-en">Managing Director & Consultant</p>
@@ -136,44 +214,36 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
+			// Activation du menu Hamburger (Mobile)
 			const navToggle = document.getElementById('navToggle');
 			const menuNav = document.getElementById('menu-nav');
 
-			navToggle.addEventListener('click', function() {
-				menuNav.classList.toggle('active');
-			});
+			if (navToggle) {
+				navToggle.addEventListener('click', function() {
+					menuNav.classList.toggle('active');
+				});
+			}
+
+			// Gestion de la bascule FR / EN
+			const btnFr = document.getElementById('btn-fr');
+			const btnEn = document.getElementById('btn-en');
+			const body = document.body;
+
+			if (btnFr && btnEn) {
+				btnFr.addEventListener('click', function() {
+					btnFr.classList.add('active');
+					btnEn.classList.remove('active');
+					body.classList.remove('lang-en-active');
+					body.classList.add('lang-fr-active');
+				});
+
+				btnEn.addEventListener('click', function() {
+					btnEn.classList.add('active');
+					btnFr.classList.remove('active');
+					body.classList.remove('lang-fr-active');
+					body.classList.add('lang-en-active');
+				});
+			}
 		</script>
-		<script>
-    // Activation du menu Hamburger (Mobile)
-    const navToggle = document.getElementById('navToggle');
-    const menuNav = document.getElementById('menu-nav');
-
-    if (navToggle) {
-        navToggle.addEventListener('click', function() {
-            menuNav.classList.toggle('active');
-        });
-    }
-
-    // Gestion de la bascule FR / EN (Boutons Bleu/Or)
-    const btnFr = document.getElementById('btn-fr');
-    const btnEn = document.getElementById('btn-en');
-    const body = document.body;
-
-    if (btnFr && btnEn) {
-        btnFr.addEventListener('click', function() {
-            btnFr.classList.add('active');
-            btnEn.classList.remove('active');
-            body.classList.remove('lang-en-active');
-            body.classList.add('lang-fr-active');
-        });
-
-        btnEn.addEventListener('click', function() {
-            btnEn.classList.add('active');
-            btnFr.classList.remove('active');
-            body.classList.remove('lang-fr-active');
-            body.classList.add('lang-en-active');
-        });
-    }
-</script>
 	</body>
 </html>
