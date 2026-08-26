@@ -2877,17 +2877,6 @@ button,
     margin: 0 !important;
     letter-spacing: 0.05em;
 }
-	/* --- FORMAT MINIATURE PHOTO CONTACT --- */
-.profile-thumb {
-    width: 90px !important;            /* Largeur très réduite */
-    height: 90px !important;           /* Hauteur identique pour un carré parfait */
-    object-fit: cover !important;       /* Évite de déformer ou d'étirer l'image */
-    border-radius: 50% !important;      /* Rend l'image parfaitement ronde */
-    border: 2px solid #D4AF37 !important; /* Bordure dorée raffinée */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    display: block;
-    margin: 10px auto 20px auto;       /* Centre la photo horizontalement */
-}
 
 /* Repositionnement responsive pour écran mobile */
 @media screen and (max-width: 768px) {
