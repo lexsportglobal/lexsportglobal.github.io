@@ -1,11 +1,45 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Lex Sport Global | Law • Data • Performance</title>
+		<title>Accueil | LEX SPORT GLOBAL</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* --- STYLE BOUTONS ET FOOTER OR (GOLD) --- */
+			
+			/* Boutons personnalisés avec bordure et écriture Or */
+			.button.gold-btn, 
+			a.button.gold-btn {
+				color: #D4AF37 !important;
+				border-color: #D4AF37 !important;
+				box-shadow: inset 0 0 0 2px #D4AF37 !important;
+				background-color: transparent !important;
+				text-decoration: none !important;
+				transition: all 0.3s ease-in-out;
+			}
+
+			/* Effet au survol : fond Or et texte sombre */
+			.button.gold-btn:hover, 
+			a.button.gold-btn:hover {
+				background-color: #D4AF37 !important;
+				color: #002349 !important; /* Bleu-nuit au survol */
+				border-color: #D4AF37 !important;
+			}
+
+			/* Footer : "Mentions Légales & Confidentialité" en Or et Gras sur toutes les pages */
+			#footer p a {
+				color: #D4AF37 !important;
+				font-weight: 800 !important;
+				text-decoration: none !important;
+				border-bottom: none !important;
+				transition: color 0.3s ease;
+			}
+			#footer p a:hover {
+				color: #C5A05F !important;
+			}
+		</style>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
 		<script>
@@ -22,98 +56,90 @@
 
 			<!-- Header Horizontal -->
 			<header id="header">
-    <div class="header-container">
-        <!-- Logo avec texte sous l'image -->
-        <a href="index.html" class="logo">
-            <img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
-            <span>LEX SPORT GLOBAL</span>
-        </a>
+				<div class="header-container">
+					<a href="index.html" class="logo">
+						<img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
+						<span>LEX SPORT GLOBAL</span>
+					</a>
 
-        <!-- Menu Navigation Maintenu -->
-        <nav id="menu-nav">
-            <ul>
-                <li><a href="index.html"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a></li>
-                <li><a href="generic.html"><span class="lang-fr">Expertise Juridique</span><span class="lang-en">Legal Engineering</span></a></li>
-                <li><a href="scouting.html">Data Scouting</a></li> 
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+					<!-- Menu Nav Horizontal -->
+					<nav id="menu-nav">
+						<ul>
+							<li><a href="index.html">Accueil / Home</a></li>
+							<li><a href="generic.html">Expertise Juridique / Legal</a></li>
+							<li><a href="scouting.html">Data Scouting</a></li> 
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</nav>
 
-        <div class="header-right">
-            <!-- Commutateur de Langues Bleu & Or -->
-            <div class="lang-switcher">
-                <button class="lang-btn active" id="btn-fr">FR</button>
-                <span class="lang-separator">|</span>
-                <button class="lang-btn" id="btn-en">EN</button>
-            </div>
+					<div class="header-right">
+						<!-- Commutateur de Langues Bleu & Or -->
+						<div class="lang-switcher">
+							<button class="lang-btn active" id="btn-fr">FR</button>
+							<span class="lang-separator">|</span>
+							<button class="lang-btn" id="btn-en">EN</button>
+						</div>
 
-            <!-- Réseaux Sociaux -->
-            <ul class="icons">
-                <li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                <li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-                <li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
-            </ul>
+						<!-- Réseaux Sociaux -->
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
+						</ul>
 
-            <!-- Bouton Hamburger Mobile -->
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </div>
-</header>
+						<!-- Bouton Hamburger Mobile -->
+						<button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+							<i class="fas fa-bars"></i>
+						</button>
+					</div>
+				</div>
+			</header>
 
-			<!-- Contenu principal -->
+			<!-- Banner Section -->
+			<section id="banner">
+				<div class="content">
+					<header>
+						<h1 style="color: #002349;">LEX SPORT GLOBAL</h1>
+						<p>Ingénierie Juridique & Data Scouting Sportif</p>
+					</header>
+					<p>Cabinet international spécialisé dans l'ingénierie juridique du sport, l'audit de conformité réglementaire (FIFA, FBF, OHADA) et l'analyse de données d'athlètes à haute valeur ajoutée.</p>
+					
+					<!-- Bouton Or / Gold -->
+					<ul class="actions">
+						<li><a href="generic.html" class="button gold-btn">Notre Expertise / Our Expertise</a></li>
+					</ul>
+				</div>
+				<span class="image object">
+					<img src="images/pic10.jpg" alt="Lex Sport Global Header" />
+				</span>
+			</section>
+
+			<!-- Section Services / Présentation -->
 			<div id="main">
 				<div class="inner">
 
-					<!-- Banner Section -->
-					<section id="banner">
-						<div class="content">
-							<header>
-								<h1>L'Ingénierie Juridique au service de la Performance<br />
-								<span style="font-size: 0.6em; color: #a5a5a5;"><i>Legal Engineering for Athletic Performance</i></span></h1>
-								<p>Data Scouting & Conformité FIFA / <i>FIFA Compliance</i></p>
-							</header>
-							<p class="lang-fr">Pionnier au Bénin, LEX SPORT GLOBAL allie l'expertise juridique (Loi 2021-05) à l'ingénierie des données pour sécuriser les investissements sportifs et optimiser le scouting de talents.</p>
-							<p class="lang-en">A pioneer in Benin, LEX SPORT GLOBAL combines legal expertise (Law 2021-05) with data engineering to secure sports investments and optimize talent scouting.</p>
-							<ul class="actions">
-								<li><a href="generic.html" class="button big"><span class="lang-fr">Notre Expertise</span><span class="lang-en">Our Expertise</span></a></li>
-							</ul>
-						</div>
-						<span class="image object">
-							<img src="images/cover.jpg" alt="LEX SPORT GLOBAL Corporate Cover" />
-						</span>
-					</section>
-
-					<!-- Section Piliers Stratégiques ALIGNÉS EN VERTICAL -->
 					<section>
 						<header class="major">
-							<h2><span class="lang-fr">Nos Piliers Stratégiques</span><span class="lang-en">Our Strategic Pillars</span></h2>
+							<h2 style="color: #002349;">Nos Domaines d'Intervention</h2>
 						</header>
-						<div class="posts">
-							<!-- Article 1 -->
+						<div class="features">
 							<article>
-								<a href="generic.html" class="image">
-									<img src="images/expertise_legal.jpg" alt="Ingénierie Juridique" />
-								</a>
-								<h3>Ingénierie Juridique (Loi 2021-05)</h3>
-								<p class="lang-fr">Audit de conformité des sociétés sportives au Bénin et sécurisation des actifs juridiques.</p>
-								<p class="lang-en">Legal compliance audits for sports companies in Benin and securing legal assets.</p>
-								<ul class="actions">
-									<li><a href="generic.html" class="button"><span class="lang-fr">Plus d'infos</span><span class="lang-en">More info</span></a></li>
-								</ul>
+								<span class="icon fa-gem"></span>
+								<div class="content">
+									<h3 style="color: #002349;">Audit Juridique & Conformité</h3>
+									<p>Sécurisation des transferts, rédaction des contrats sportifs et alignement sur les normes internationales FIFA et législations locales.</p>
+									<!-- Bouton Or / Gold -->
+									<a href="generic.html" class="button gold-btn">Plus d'infos / More info</a>
+								</div>
 							</article>
-							<!-- Article 2 -->
 							<article>
-								<a href="generic.html" class="image">
-									<img src="images/scouting_data.jpg" alt="Data Scouting" />
-								</a>
-								<h3>Data Scouting & Performance</h3>
-								<p class="lang-fr">Identification de talents via des algorithmes de performance avancés et analyse prédictive.</p>
-								<p class="lang-en">Talent identification through advanced performance algorithms and predictive analytics.</p>
-								<ul class="actions">
-									<li><a href="scouting.html" class="button"><span class="lang-fr">Plus d'infos</span><span class="lang-en">More info</span></a></li>
-								</ul>
+								<span class="icon solid fa-paper-plane"></span>
+								<div class="content">
+									<h3 style="color: #002349;">Data Scouting & Valorisation</h3>
+									<p>Analyse de performance assistée par les données pour maximiser la visibilité des talents et optimiser le recrutement des clubs.</p>
+									<!-- Bouton Or / Gold -->
+									<a href="scouting.html" class="button gold-btn">Plus d'infos / More info</a>
+								</div>
 							</article>
 						</div>
 					</section>
@@ -121,16 +147,16 @@
 				</div>
 			</div>
 
-			<!-- Footer -->
+			<!-- Footer Harmonisé (Lien Or) -->
 			<footer id="footer">
 				<div class="inner">
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 						<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://wa.me/22997328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
+						<li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
 						<li><a href="https://YouTube.com" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
 					</ul>
-					<p><a href="legales.html"><span class="lang-fr">Mentions Légales & Confidentialité</span><span class="lang-en">Legal Notice & Privacy</span></a></p>
+					<p><a href="legales.html">Mentions Légales & Confidentialité</a></p>
 					<p class="copyright">&copy; LEX SPORT GLOBAL. 2026 All rights reserved.</p>
 				</div>
 			</footer>
@@ -144,64 +170,36 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			// Affichage du menu mobile
+			// Menu Mobile Hamburger
 			const navToggle = document.getElementById('navToggle');
 			const menuNav = document.getElementById('menu-nav');
 
-			navToggle.addEventListener('click', function() {
-				menuNav.classList.toggle('active');
-			});
+			if (navToggle) {
+				navToggle.addEventListener('click', function() {
+					menuNav.classList.toggle('active');
+				});
+			}
 
-			// Changement de langue (FR / EN)
+			// Gestionnaire de Langue FR / EN
 			const btnFr = document.getElementById('btn-fr');
 			const btnEn = document.getElementById('btn-en');
 			const body = document.body;
 
-			btnFr.addEventListener('click', function() {
-				btnFr.classList.add('active');
-				btnEn.classList.remove('active');
-				body.classList.remove('lang-fr-hidden');
-				body.classList.add('lang-en-hidden');
-			});
+			if (btnFr && btnEn) {
+				btnFr.addEventListener('click', function() {
+					btnFr.classList.add('active');
+					btnEn.classList.remove('active');
+					body.classList.remove('lang-en-active');
+					body.classList.add('lang-fr-active');
+				});
 
-			btnEn.addEventListener('click', function() {
-				btnEn.classList.add('active');
-				btnFr.classList.remove('active');
-				body.classList.remove('lang-en-hidden');
-				body.classList.add('lang-fr-hidden');
-			});
+				btnEn.addEventListener('click', function() {
+					btnEn.classList.add('active');
+					btnFr.classList.remove('active');
+					body.classList.remove('lang-fr-active');
+					body.classList.add('lang-en-active');
+				});
+			}
 		</script>
-		<script>
-    // Activation du menu Hamburger (Mobile)
-    const navToggle = document.getElementById('navToggle');
-    const menuNav = document.getElementById('menu-nav');
-
-    if (navToggle) {
-        navToggle.addEventListener('click', function() {
-            menuNav.classList.toggle('active');
-        });
-    }
-
-    // Gestion de la bascule FR / EN (Boutons Bleu/Or)
-    const btnFr = document.getElementById('btn-fr');
-    const btnEn = document.getElementById('btn-en');
-    const body = document.body;
-
-    if (btnFr && btnEn) {
-        btnFr.addEventListener('click', function() {
-            btnFr.classList.add('active');
-            btnEn.classList.remove('active');
-            body.classList.remove('lang-en-active');
-            body.classList.add('lang-fr-active');
-        });
-
-        btnEn.addEventListener('click', function() {
-            btnEn.classList.add('active');
-            btnFr.classList.remove('active');
-            body.classList.remove('lang-fr-active');
-            body.classList.add('lang-en-active');
-        });
-    }
-</script>
 	</body>
 </html>
