@@ -2271,3 +2271,627 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+/* ==========================================================================
+   Header Modernisé & Navigation Horizontale
+   ========================================================================== */
+
+/* Structure Globale sans Sidebar */
+#wrapper {
+    display: block !important;
+    padding-top: 90px; /* Espace compensatoire sous l'en-tête fixe */
+}
+
+#main {
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style de L'en-tête Fixe sur PC */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px); /* Effet verre moderne */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 0 2em;
+    height: 80px;
+    margin: 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo & Marque */
+#header .logo {
+    display: flex;
+    align-items: center;
+    border: none;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #2c3e50;
+    white-space: nowrap;
+}
+
+/* Menu Horizontal Desktop (Forcé sur écran PC) */
+#menu-nav {
+    display: block !important;
+}
+
+#menu-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+#menu-nav ul li {
+    padding: 0;
+}
+
+#menu-nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 0.08em;
+    color: #4a5568;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.25s ease;
+}
+
+/* Accentuation au survol */
+#menu-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #C5A05F; /* Couleur dorée corporate */
+    transition: width 0.25s ease;
+}
+
+#menu-nav ul li a:hover {
+    color: #C5A05F;
+}
+
+#menu-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Icônes Réseaux & Bouton Action */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#header .icons {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#header .icons li {
+    padding: 0;
+}
+
+#header .icons a {
+    color: #718096;
+    transition: color 0.2s ease, transform 0.2s ease;
+    font-size: 0.9em;
+}
+
+#header .icons a:hover {
+    color: #C5A05F;
+    transform: translateY(-2px);
+}
+
+.btn-contact-header {
+    background-color: #2c3e50 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    border-radius: 4px;
+    font-size: 0.75em !important;
+    height: 2.8em !important;
+    line-height: 2.8em !important;
+    padding: 0 1.5em !important;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background-color 0.25s ease !important;
+}
+
+.btn-contact-header:hover {
+    background-color: #C5A05F !important;
+}
+
+/* Masquer l'icône Hamburger sur PC */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+    color: #2c3e50;
+    padding: 8px;
+    box-shadow: none !important;
+}
+
+/* Footer Bas de Page */
+#footer {
+    width: 100%;
+    text-align: center;
+    padding: 45px 20px;
+    background: #f7fafc;
+    margin-top: 60px;
+    border-top: 1px solid #e2e8f0;
+}
+
+#footer .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Header Modernisé & Navigation Horizontale (Mise à jour)
+   ========================================================================== */
+
+#wrapper {
+    display: block !important;
+    padding-top: 90px;
+}
+
+#main {
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Fixe */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 0 2em;
+    height: 85px;
+    margin: 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo avec texte positionné EN DESSOUS de l'image */
+#header .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-decoration: none;
+    line-height: 1.2;
+    padding: 5px 0;
+}
+
+#header .logo img {
+    margin-right: 0 !important;
+    margin-bottom: 3px;
+}
+
+#header .logo span {
+    font-size: 0.75em;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #2c3e50;
+    text-transform: uppercase;
+}
+}
+
+/* Menu Horizontal Desktop (Éléments plus GROS) */
+#menu-nav {
+    display: block !important;
+}
+
+#menu-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+#menu-nav ul li {
+    padding: 0;
+}
+
+#menu-nav ul li a {
+    text-decoration: none;
+    font-weight: 700; /* Plus gras */
+    text-transform: uppercase;
+    font-size: 1.05em; /* Agrandissement du texte (était à 0.8em) */
+    letter-spacing: 0.05em;
+    color: #2c3e50;
+    position: relative;
+    padding: 10px 0;
+    transition: color 0.25s ease;
+}
+
+#menu-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #C5A05F;
+    transition: width 0.25s ease;
+}
+
+#menu-nav ul li a:hover {
+    color: #C5A05F;
+}
+
+#menu-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Boutons Commutateur de Langue (Bleu & Or)
+   ========================================================================== */
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 15px;
+}
+
+.lang-btn {
+    background: transparent !important;
+    border: 1.5px solid #2c3e50 !important; /* Bordure Bleu Corporate */
+    color: #2c3e50 !important;             /* Texte Bleu */
+    font-size: 0.75em !important;
+    font-weight: 700 !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    box-shadow: none !important;
+    height: auto !important;
+    line-height: 1.2 !important;
+}
+
+.lang-btn:hover {
+    border-color: #C5A05F !important;     /* Bordure Or au survol */
+    color: #C5A05F !important;              /* Texte Or */
+}
+
+.lang-btn.active {
+    background-color: #C5A05F !important;  /* Fond Or quand actif */
+    border-color: #C5A05F !important;
+    color: #ffffff !important;             /* Texte blanc sur fond Or */
+}
+
+.lang-separator {
+    color: #cbd5e0;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* Icônes Réseaux & Bouton */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#header .icons {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#header .icons li {
+    padding: 0;
+}
+
+#header .icons a {
+    color: #718096;
+    transition: color 0.2s ease;
+    font-size: 1em;
+}
+
+#header .icons a:hover {
+    color: #C5A05F;
+}
+
+.btn-contact-header {
+    background-color: #2c3e50 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    border-radius: 4px;
+    font-size: 0.8em !important;
+    height: 2.8em !important;
+    line-height: 2.8em !important;
+    padding: 0 1.4em !important;
+    font-weight: 700;
+}
+
+.btn-contact-header:hover {
+    background-color: #C5A05F !important;
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #2c3e50;
+    padding: 8px;
+    box-shadow: none !important;
+}
+
+/* ==========================================================================
+   ALIGNEMENT VERTICAL DES SECTIONS (Empilement 100% Largeur)
+   ========================================================================== */
+
+/* Force la grille d'origine du template à s'afficher en 1 seule colonne */
+.posts {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 50px !important;
+}
+
+.posts article {
+    width: 100% !important;
+    margin: 0 0 30px 0 !important;
+    border-bottom: 1px solid #edf2f7;
+    padding-bottom: 40px;
+}
+
+.posts article .image {
+    max-height: 400px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.posts article .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Class pour masquer dynamiquement la langue non sélectionnée */
+.lang-en-hidden .lang-en {
+    display: none !important;
+}
+
+.lang-fr-hidden .lang-fr {
+    display: none !important;
+}
+
+/* Footer */
+#footer {
+    width: 100%;
+    text-align: center;
+    padding: 45px 20px;
+    background: #f7fafc;
+    margin-top: 60px;
+    border-top: 1px solid #e2e8f0;
+}
+
+#footer .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Mobile & Tablettes */
+@media screen and (max-width: 980px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    #menu-nav {
+        display: none !important;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #edf2f7;
+    }
+
+    #menu-nav.active {
+        display: block !important;
+    }
+
+    #menu-nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    #menu-nav ul li {
+        border-bottom: 1px solid #f7fafc;
+    }
+
+    #menu-nav ul li a {
+        display: block;
+        padding: 16px 24px;
+        font-size: 1.1em;
+    }
+
+    .btn-contact-header,
+    #header .icons {
+        display: none;
+    }
+/* ==========================================================================
+   Page Contact & Style Profil Direction
+   ========================================================================== */
+
+/* Titres Réduits */
+.page-title-small {
+    font-size: 1.35em !important;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.1em !important;
+}
+
+.subtitle-en {
+    font-size: 0.85em;
+    color: #718096;
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+.section-title-small {
+    color: #C5A05F !important;
+    font-size: 0.95em !important;
+    font-weight: 700;
+    margin: 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.section-title-en {
+    font-size: 0.75em;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 0.8em;
+}
+
+/* Layout Flex avec espacement suffisant vers la droite */
+.contact-profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px; /* Espace suffisant entre les coordonnées et la photo */
+    margin-top: 15px;
+}
+
+.contact-details {
+    flex: 1;
+}
+
+/* Alignement compact des listes */
+.contact-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 10px 0 !important;
+}
+
+.contact-list li {
+    padding: 3px 0 !important;
+    margin: 0 !important;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-list li i {
+    color: #C5A05F;
+    width: 18px;
+    text-align: center;
+}
+
+/* Bloc Carte & Photo d'Identité */
+.director-profile {
+    width: 190px;
+    flex-shrink: 0;
+}
+
+.profile-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Format visuel exact Photo d'Identité (Ratio 3.5 x 4.5) */
+.id-photo {
+    width: 112px;
+    height: 144px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #cbd5e0;
+    margin: 0 auto 8px auto;
+    display: block;
+}
+
+.profile-title {
+    font-size: 0.75em !important;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 !important;
+    line-height: 1.2;
+}
+
+.profile-title-en {
+    font-size: 0.68em;
+    color: #718096;
+    font-style: italic;
+    margin: 2px 0 4px 0 !important;
+    line-height: 1.1;
+}
+
+.profile-company {
+    font-size: 0.65em;
+    color: #C5A05F;
+    font-weight: 700;
+    margin: 0 !important;
+    letter-spacing: 0.05em;
+}
+
+/* Repositionnement responsive pour écran mobile */
+@media screen and (max-width: 768px) {
+    .contact-profile-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .director-profile {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .contact-details {
+        width: 100%;
+    }
+}
