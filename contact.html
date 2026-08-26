@@ -7,7 +7,48 @@
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* --- ALIGNEMENT PARFAIT CONTACT + PHOTO --- */
+			/* --- ALIGNEMENT ET STYLES DES RÉSEAUX SOCIAUX --- */
+			.contact-list {
+				list-style: none !important;
+				padding-left: 0 !important;
+				margin-left: 0 !important;
+			}
+
+			.contact-list li {
+				display: flex;
+				align-items: center;
+				margin-bottom: 12px;
+			}
+
+			/* Fixe la largeur de l'icône pour que tous les textes commencent exactement au même niveau que le numéro WhatsApp */
+			.contact-list li i {
+				width: 28px;
+				font-size: 1.1em;
+				color: #002349 !important; /* Bleu-nuit */
+				text-align: left;
+				flex-shrink: 0;
+			}
+
+			.contact-list li strong {
+				color: #002349 !important; /* Bleu-nuit */
+				margin-right: 5px;
+			}
+
+			/* Liens simples sans aucun soulignement en Bleu-Nuit */
+			.contact-list li a {
+				color: #002349 !important; /* Bleu-nuit au lieu du rouge */
+				text-decoration: none !important;
+				border-bottom: none !important;
+				transition: opacity 0.3s ease;
+			}
+
+			.contact-list li a:hover {
+				opacity: 0.8;
+				text-decoration: none !important;
+				border-bottom: none !important;
+			}
+
+			/* --- ALIGNEMENT CONTACT + PHOTO --- */
 			.contact-profile-container {
 				display: flex;
 				justify-content: space-between;
@@ -20,44 +61,6 @@
 				flex: 1;
 			}
 
-			/* --- ALIGNEMENT ET STYLE DES COORDONNÉES --- */
-			.contact-list {
-				list-style: none;
-				padding-left: 0;
-				margin-bottom: 1.5em;
-			}
-
-			.contact-list li {
-				margin-bottom: 10px;
-				display: flex;
-				align-items: center;
-			}
-
-			.contact-list i {
-				color: #002349 !important; /* Couleur bleu-nuit pour les icônes */
-				width: 25px;
-				font-size: 1.1em;
-			}
-
-			/* Alignement strict du texte des informations */
-			.contact-label {
-				display: inline-block;
-				width: 100px; /* Force un alignement vertical parfait pour toutes les valeurs */
-				color: #ffffff;
-			}
-
-			.contact-list a {
-				color: #D4AF37 !important;
-				text-decoration: none !important; /* Suppression des traits de soulignement */
-				transition: color 0.3s ease;
-			}
-
-			.contact-list a:hover {
-				color: #002349 !important; /* Changement du rouge vers bleu-nuit au survol */
-				text-decoration: none !important;
-			}
-
-			/* --- STYLE PROFIL DIRECTEUR --- */
 			.director-profile {
 				flex: 0 0 220px;
 				text-align: center;
@@ -105,6 +108,7 @@
 				color: #D4AF37 !important;
 				font-weight: 800 !important;
 				text-decoration: none !important;
+				border-bottom: none !important;
 			}
 			#footer p a:hover {
 				color: #C5A05F !important;
@@ -155,7 +159,7 @@
 					</nav>
 
 					<div class="header-right">
-						<!-- Réseaux Sociaux -->
+						<!-- Réseaux Sociaux Header -->
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 							<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
@@ -194,9 +198,9 @@
 								<p class="section-title-en">Official Contact Details</p>
 								
 								<ul class="contact-list">
-									<li><i class="icon solid fa-envelope"></i> <strong class="contact-label">Email :</strong> <a href="mailto:lexsportglobal.contact@gmail.com">lexsportglobal.contact@gmail.com</a></li>
-									<li><i class="icon brands fa-whatsapp"></i> <strong class="contact-label">WhatsApp :</strong> <a href="https://wa.me/2290197328579" target="_blank">+229 01 97 32 85 79</a></li>
-									<li><i class="icon brands fa-linkedin-in"></i> <strong class="contact-label">LinkedIn :</strong> <a href="https://linkedin.com/company/lexsportglobal" target="_blank">Lex Sport Global</a></li>
+									<li><i class="icon solid fa-envelope"></i> <strong>Email :</strong> <a href="mailto:lexsportglobal.contact@gmail.com">lexsportglobal.contact@gmail.com</a></li>
+									<li><i class="icon brands fa-whatsapp"></i> <strong>WhatsApp :</strong> <a href="https://wa.me/2290197328579" target="_blank">+229 01 97 32 85 79</a></li>
+									<li><i class="icon brands fa-linkedin-in"></i> <strong>LinkedIn :</strong> <a href="https://linkedin.com/company/lexsportglobal" target="_blank">Lex Sport Global</a></li>
 								</ul>
 
 								<h3 class="section-title-small" style="margin-top: 1.2em;">Siège Social</h3>
@@ -206,7 +210,7 @@
 								<span style="font-size: 0.8em; font-style: italic; color: #666;">Reception by appointment for club audits and private consultations.</span></p>
 							</div>
 
-							<!-- Bloc Photo ID (Haut Droite) -->
+							<!-- Bloc Photo ID -->
 							<div class="director-profile">
 								<div class="profile-card">
 									<img src="images/director.jpg" alt="Noël S. VODOUESSI" />
