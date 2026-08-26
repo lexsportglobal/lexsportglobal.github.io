@@ -1,31 +1,61 @@
-/* ==========================================================================
-   Code CSS Corrigé, Harmonisé & Nettoyé (Fichier Complet Unifié)
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   1. Réinitialisation, Typographie & Layout Général
+   -------------------------------------------------------------------------- */
+#wrapper {
+  display: block !important;
+  padding-top: 90px;
+}
+
+#main {
+  width: 100% !important;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#main > .inner {
+  padding: 0 6em 0.1em 6em;
+  margin: 0 auto;
+  max-width: 110em;
+}
+
+#main > .inner > section {
+  padding: 6em 0 4em 0;
+  border-top: solid 2px rgba(210, 215, 217, 0.75);
+}
+
+#main > .inner > section:first-of-type {
+  border-top: 0 !important;
+}
 
 /* --------------------------------------------------------------------------
-   1. Typographie & Base
+   2. Listes, Icônes Réseaux Sociaux & Contact
    -------------------------------------------------------------------------- */
 ul.icons {
   cursor: default;
   list-style: none;
   padding-left: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 ul.icons li {
   display: inline-block;
-  padding: 0 1em 0 0;
+  padding: 0;
 }
 
-ul.icons li:last-child {
-  padding-right: 0;
+ul.icons li .icon,
+ul.icons li a {
+  color: #718096;
+  transition: color 0.2s ease, transform 0.2s ease;
+  font-size: 1em;
+  text-decoration: none;
 }
 
-ul.icons li .icon {
-  color: inherit;
-}
-
-ul.icons li .icon:before {
-  font-size: 1.25em;
+ul.icons li a:hover {
+  color: #C5A05F;
+  transform: translateY(-2px);
 }
 
 ul.contact {
@@ -42,6 +72,8 @@ ul.contact li {
 }
 
 ul.contact li:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -75,7 +107,9 @@ ul.contact li a {
   color: inherit;
 }
 
-/* Pagination */
+/* --------------------------------------------------------------------------
+   3. Pagination
+   -------------------------------------------------------------------------- */
 ul.pagination {
   cursor: default;
   list-style: none;
@@ -124,19 +158,11 @@ ul.pagination li:last-child {
   padding-left: 0.75em;
 }
 
-@media screen and (max-width: 480px) {
-  ul.pagination li:nth-child(n+2):nth-last-child(n+2) {
-    display: none;
-  }
-  ul.pagination li:first-child {
-    padding-right: 0;
-  }
-}
-
 /* --------------------------------------------------------------------------
-   2. Tables & Formulaires
+   4. Tableaux
    -------------------------------------------------------------------------- */
 .table-wrapper {
+  -webkit-overflow-scrolling: touch;
   overflow-x: auto;
 }
 
@@ -201,7 +227,9 @@ table.alt tfoot {
   border-top: 0;
 }
 
-/* Boutons */
+/* --------------------------------------------------------------------------
+   5. Boutons
+   -------------------------------------------------------------------------- */
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
@@ -299,14 +327,6 @@ button.primary:hover,
   color: #ffffff !important;
 }
 
-input[type="submit"].primary:active,
-input[type="reset"].primary:active,
-input[type="button"].primary:active,
-button.primary:active,
-.button.primary:active {
-  background-color: #050c17;
-}
-
 input[type="submit"].disabled, input[type="submit"]:disabled,
 input[type="reset"].disabled, input[type="reset"]:disabled,
 input[type="button"].disabled, input[type="button"]:disabled,
@@ -317,7 +337,7 @@ button.disabled, button:disabled,
 }
 
 /* --------------------------------------------------------------------------
-   3. Composants de Contenu (Mini Posts & Features)
+   6. Composants Spécifiques (Mini Posts, Features, Banner)
    -------------------------------------------------------------------------- */
 .mini-posts article {
   border-top: solid 1px rgba(210, 215, 217, 0.75);
@@ -410,130 +430,6 @@ button.disabled, button:disabled,
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 980px) {
-  .features {
-    margin: 0 0 2em 0;
-    width: 100%;
-  }
-  .features article {
-    margin: 0 0 3em 0;
-    width: 100%;
-  }
-  .features article:nth-child(2n - 1) {
-    margin-right: 0;
-  }
-  .features article:nth-child(2n) {
-    margin-left: 0;
-  }
-  .features article:nth-last-child(1), .features article:nth-last-child(2) {
-    margin-bottom: 3em;
-  }
-  .features article:last-child {
-    margin-bottom: 0;
-  }
-  .features article .icon {
-    height: 8em;
-    line-height: 8em;
-    width: 8em;
-  }
-  .features article .icon:before {
-    font-size: 2.25rem;
-  }
-  .features article .icon:after {
-    height: 6em;
-    margin: -3em 0 0 -3em;
-    width: 6em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .features article {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .features article .icon {
-    height: 6em;
-    line-height: 6em;
-    margin: 0 0 1.5em 0;
-    width: 6em;
-  }
-  .features article .icon:before {
-    font-size: 1.25rem;
-  }
-  .features article .icon:after {
-    height: 4em;
-    margin: -2em 0 0 -2em;
-    width: 4em;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   4. Posts Grid (Empilement en Colonne Unique Harmonisé)
-   -------------------------------------------------------------------------- */
-.posts {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 50px !important;
-  margin: 0 0 2em 0;
-  width: 100%;
-}
-
-.posts article {
-  width: 100% !important;
-  margin: 0 0 30px 0 !important;
-  border-bottom: 1px solid #edf2f7;
-  padding-bottom: 40px;
-  position: relative;
-}
-
-.posts article > :last-child {
-  margin-bottom: 0;
-}
-
-.posts article .image {
-  max-height: 400px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  display: block;
-}
-
-.posts article .image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* --------------------------------------------------------------------------
-   5. Structure Globale & Banner
-   -------------------------------------------------------------------------- */
-#wrapper {
-  display: block !important;
-  padding-top: 90px;
-}
-
-#main {
-  width: 100% !important;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#main > .inner {
-  padding: 0 6em 0.1em 6em;
-  margin: 0 auto;
-  max-width: 110em;
-}
-
-#main > .inner > section {
-  padding: 6em 0 4em 0;
-  border-top: solid 2px rgba(210, 215, 217, 0.75);
-}
-
-#main > .inner > section:first-of-type {
-  border-top: 0 !important;
-}
-
 #banner {
   padding: 4em 0;
   display: flex;
@@ -566,27 +462,42 @@ button.disabled, button:disabled,
   border-radius: 6px;
 }
 
-@media screen and (orientation: portrait) {
-  #banner {
-    flex-direction: column-reverse;
-  }
-  #banner h1 br {
-    display: none;
-  }
-  #banner .content {
-    width: 100%;
-  }
-  #banner .image {
-    margin: 0 0 4em 0;
-    height: 25em;
-    max-height: 50vh;
-    min-height: 18em;
-    width: 100%;
-  }
+/* --------------------------------------------------------------------------
+   7. Grille d'Articles & Alignement Vertical 100% Largeur
+   -------------------------------------------------------------------------- */
+.posts {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 50px !important;
+  margin: 0 0 2em 0;
+  width: 100%;
+}
+
+.posts article {
+  width: 100% !important;
+  margin: 0 0 30px 0 !important;
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.posts article .image {
+  max-height: 400px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  display: block;
+}
+
+.posts article .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* --------------------------------------------------------------------------
-   6. En-tête Fixe, Navigation & Commutateur de Langue
+   8. En-tête Fixe, Logo, Navigation & Commutateur de Langue
    -------------------------------------------------------------------------- */
 #header {
   position: fixed;
@@ -641,7 +552,6 @@ button.disabled, button:disabled,
   text-transform: uppercase;
 }
 
-/* Menu Horizontal Desktop */
 #menu-nav {
   display: block !important;
 }
@@ -665,7 +575,7 @@ button.disabled, button:disabled,
   text-transform: uppercase;
   font-size: 1.05em;
   letter-spacing: 0.05em;
-  color: #0B192C;
+  color: #2c3e50;
   position: relative;
   padding: 10px 0;
   transition: color 0.25s ease;
@@ -678,19 +588,25 @@ button.disabled, button:disabled,
   left: 0;
   width: 0%;
   height: 3px;
-  background-color: #D4AF37;
+  background-color: #C5A05F;
   transition: width 0.25s ease;
 }
 
 #menu-nav ul li a:hover {
-  color: #D4AF37;
+  color: #C5A05F;
 }
 
 #menu-nav ul li a:hover::after {
   width: 100%;
 }
 
-/* Commutateur de Langues */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Commutateur de Langue */
 .lang-switcher {
   display: inline-flex;
   align-items: center;
@@ -700,8 +616,8 @@ button.disabled, button:disabled,
 
 .lang-btn {
   background: transparent !important;
-  border: 1.5px solid #0B192C !important;
-  color: #0B192C !important;
+  border: 1.5px solid #2c3e50 !important;
+  color: #2c3e50 !important;
   font-size: 0.75em !important;
   font-weight: 700 !important;
   padding: 2px 8px !important;
@@ -714,13 +630,13 @@ button.disabled, button:disabled,
 }
 
 .lang-btn:hover {
-  border-color: #D4AF37 !important;
-  color: #D4AF37 !important;
+  border-color: #C5A05F !important;
+  color: #C5A05F !important;
 }
 
 .lang-btn.active {
-  background-color: #D4AF37 !important;
-  border-color: #D4AF37 !important;
+  background-color: #C5A05F !important;
+  border-color: #C5A05F !important;
   color: #ffffff !important;
 }
 
@@ -730,7 +646,6 @@ button.disabled, button:disabled,
   font-weight: bold;
 }
 
-/* Classes utilitaires multilingues */
 .lang-en-hidden .lang-en {
   display: none !important;
 }
@@ -739,37 +654,9 @@ button.disabled, button:disabled,
   display: none !important;
 }
 
-/* Icônes Réseaux & Call-to-Action */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-#header .icons {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-#header .icons li {
-  padding: 0;
-}
-
-#header .icons a {
-  color: #0B192C;
-  transition: color 0.2s ease, transform 0.2s ease;
-  font-size: 1em;
-}
-
-#header .icons a:hover {
-  color: #D4AF37;
-  transform: translateY(-2px);
-}
-
+/* Boutons & Toggles du Header */
 .btn-contact-header {
-  background-color: #0B192C !important;
+  background-color: #2c3e50 !important;
   color: #ffffff !important;
   box-shadow: none !important;
   border-radius: 4px;
@@ -783,8 +670,8 @@ button.disabled, button:disabled,
 }
 
 .btn-contact-header:hover {
-  background-color: #D4AF37 !important;
-  color: #0B192C !important;
+  background-color: #C5A05F !important;
+  color: #ffffff !important;
 }
 
 .nav-toggle {
@@ -793,18 +680,18 @@ button.disabled, button:disabled,
   border: none;
   font-size: 1.5em;
   cursor: pointer;
-  color: #0B192C;
+  color: #2c3e50;
   padding: 8px;
   box-shadow: none !important;
 }
 
 /* --------------------------------------------------------------------------
-   7. Page Contact & Style Profil Direction
+   9. Page Contact & Style Profil Direction
    -------------------------------------------------------------------------- */
 .page-title-small {
   font-size: 1.35em !important;
   font-weight: 700;
-  color: #0B192C;
+  color: #2c3e50;
   margin-bottom: 0.1em !important;
 }
 
@@ -816,7 +703,7 @@ button.disabled, button:disabled,
 }
 
 .section-title-small {
-  color: #D4AF37 !important;
+  color: #C5A05F !important;
   font-size: 0.95em !important;
   font-weight: 700;
   margin: 0 !important;
@@ -859,7 +746,7 @@ button.disabled, button:disabled,
 }
 
 .contact-list li i {
-  color: #D4AF37;
+  color: #C5A05F;
   width: 18px;
   text-align: center;
 }
@@ -891,7 +778,7 @@ button.disabled, button:disabled,
 .profile-title {
   font-size: 0.75em !important;
   font-weight: 700;
-  color: #0B192C;
+  color: #2c3e50;
   margin: 0 !important;
   line-height: 1.2;
 }
@@ -906,16 +793,93 @@ button.disabled, button:disabled,
 
 .profile-company {
   font-size: 0.65em;
-  color: #D4AF37;
+  color: #C5A05F;
   font-weight: 700;
   margin: 0 !important;
   letter-spacing: 0.05em;
 }
 
 /* --------------------------------------------------------------------------
-   8. Responsive & Footer
+   10. Pied de Page (Footer)
    -------------------------------------------------------------------------- */
+#footer {
+  width: 100%;
+  text-align: center;
+  padding: 45px 20px;
+  background: #f7fafc;
+  margin-top: 60px;
+  border-top: 1px solid #e2e8f0;
+}
+
+#footer .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#footer .copyright {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9em;
+}
+
+#footer .copyright a {
+  color: #C5A05F;
+  text-decoration: none;
+}
+
+#footer .copyright a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   11. Adaptabilité Responsive (Media Queries)
+   -------------------------------------------------------------------------- */
+@media screen and (orientation: portrait) {
+  #banner {
+    flex-direction: column-reverse;
+  }
+  #banner h1 br {
+    display: none;
+  }
+  #banner .content {
+    width: 100%;
+  }
+  #banner .image {
+    margin: 0 0 4em 0;
+    height: 25em;
+    max-height: 50vh;
+    min-height: 18em;
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 980px) {
+  .features {
+    margin: 0 0 2em 0;
+    width: 100%;
+  }
+  .features article {
+    margin: 0 0 3em 0;
+    width: 100%;
+  }
+  .features article:nth-child(2n - 1),
+  .features article:nth-child(2n) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .features article .icon {
+    height: 8em;
+    line-height: 8em;
+    width: 8em;
+  }
+  .features article .icon:before {
+    font-size: 2.25rem;
+  }
+  .features article .icon:after {
+    height: 6em;
+    margin: -3em 0 0 -3em;
+    width: 6em;
+  }
+
   .nav-toggle {
     display: block;
   }
@@ -975,31 +939,30 @@ button.disabled, button:disabled,
   }
 }
 
-#footer {
-  width: 100%;
-  text-align: center;
-  padding: 45px 20px;
-  background: #0B192C;
-  color: #ffffff;
-  margin-top: 60px;
-  border-top: 3px solid #D4AF37;
-}
+@media screen and (max-width: 480px) {
+  ul.pagination li:nth-child(n+2):nth-last-child(n+2) {
+    display: none;
+  }
+  ul.pagination li:first-child {
+    padding-right: 0;
+  }
 
-#footer .inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#footer .copyright {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9em;
-}
-
-#footer .copyright a {
-  color: #D4AF37;
-  text-decoration: none;
-}
-
-#footer .copyright a:hover {
-  text-decoration: underline;
+  .features article {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .features article .icon {
+    height: 6em;
+    line-height: 6em;
+    margin: 0 0 1.5em 0;
+    width: 6em;
+  }
+  .features article .icon:before {
+    font-size: 1.25rem;
+  }
+  .features article .icon:after {
+    height: 4em;
+    margin: -2em 0 0 -2em;
+    width: 4em;
+  }
 }
