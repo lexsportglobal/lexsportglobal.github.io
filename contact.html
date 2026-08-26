@@ -7,7 +7,49 @@
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* --- ALIGNEMENT CONTACT + PHOTO & NETTOYAGE LIENS --- */
+			/* --- ALIGNEMENT DES COORDONNÉES ET COULEUR BLEU NUIT --- */
+			.contact-list {
+				list-style: none;
+				padding-left: 0;
+				margin: 1em 0;
+			}
+
+			.contact-list li {
+				display: flex;
+				align-items: center;
+				margin-bottom: 0.8em;
+			}
+
+			/* Alignement strict des icônes */
+			.contact-list li i {
+				width: 25px; /* Largeur fixe pour aligner le début de toutes les icônes */
+				text-align: center;
+				color: #002349 !important; /* Couleur Bleu Nuit */
+				font-size: 1.1em;
+				margin-right: 12px;
+				flex-shrink: 0;
+			}
+
+			/* Alignement du texte des coordonnées */
+			.contact-list li a, 
+			.contact-list li span {
+				color: #002349 !important; /* Couleur Bleu Nuit pour les liens */
+				text-decoration: none !important; /* Supprime le soulignement */
+				transition: color 0.3s ease;
+			}
+
+			.contact-list li a:hover {
+				color: #D4AF37 !important; /* Devient doré au survol */
+				text-decoration: none !important;
+			}
+
+			/* Réseaux sociaux : Suppression du soulignement */
+			.icons li a {
+				text-decoration: none !important;
+				border-bottom: none !important;
+			}
+
+			/* --- LAYOUT CONTACT + PHOTO ALIGNÉE À DROITE --- */
 			.contact-profile-container {
 				display: flex;
 				justify-content: space-between;
@@ -20,45 +62,6 @@
 				flex: 1;
 			}
 
-			/* Titres en Bleu Nuit */
-			.page-title-small, 
-			.section-title-small {
-				color: #002349 !important;
-			}
-
-			/* Alignement & suppression des soulignements des Réseaux Sociaux */
-			.contact-list {
-				list-style: none;
-				padding-left: 0 !important;
-				margin-left: 0 !important;
-			}
-
-			.contact-list li {
-				padding-left: 0 !important;
-				margin-bottom: 8px;
-			}
-
-			.contact-list li a {
-				color: inherit;
-				text-decoration: none !important;
-				border-bottom: none !important;
-				transition: color 0.3s ease;
-			}
-
-			.contact-list li a:hover {
-				color: #D4AF37 !important;
-				text-decoration: none !important;
-				border-bottom: none !important;
-			}
-
-			.contact-list li i {
-				color: #002349;
-				width: 20px;
-				text-align: center;
-				margin-right: 8px;
-			}
-
-			/* Bloc Photo ID à Droite */
 			.director-profile {
 				flex: 0 0 220px;
 				text-align: center;
@@ -83,13 +86,13 @@
 
 			.profile-title {
 				font-weight: 700;
-				color: #ffffff;
+				color: #002349; /* Bleu Nuit */
 				font-size: 0.9em;
 			}
 
 			.profile-title-en {
 				font-style: italic;
-				color: #888;
+				color: #666;
 				font-size: 0.8em;
 				margin-bottom: 4px !important;
 			}
@@ -101,15 +104,15 @@
 				letter-spacing: 1px;
 			}
 
-			/* Footer Or / Bold */
+			/* Style Footer Or/Gras */
 			#footer p a {
 				color: #D4AF37 !important;
 				font-weight: 800 !important;
 				text-decoration: none !important;
-				border-bottom: none !important;
 			}
 			#footer p a:hover {
 				color: #C5A05F !important;
+				text-decoration: underline !important;
 			}
 
 			@media screen and (max-width: 736px) {
@@ -156,7 +159,7 @@
 					</nav>
 
 					<div class="header-right">
-						<!-- Réseaux Sociaux Header -->
+						<!-- Réseaux Sociaux -->
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 							<li><a href="mailto:lexsportglobal.contact@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
@@ -177,7 +180,7 @@
 
 					<section>
 						<header class="main">
-							<h1 class="page-title-small">Contact & Direction Générale</h1>
+							<h1 class="page-title-small" style="color: #002349;">Contact & Direction Générale</h1>
 							<p class="subtitle-en">Contact & Executive Management</p>
 						</header>
 
@@ -191,23 +194,32 @@
 							
 							<!-- Bloc Contact & Siège (Gauche) -->
 							<div class="contact-details">
-								<h3 class="section-title-small">Coordonnées Officielles</h3>
+								<h3 class="section-title-small" style="color: #002349;">Coordonnées Officielles</h3>
 								<p class="section-title-en">Official Contact Details</p>
 								
 								<ul class="contact-list">
-									<li><i class="icon solid fa-envelope"></i> <strong>Email :</strong> <a href="mailto:lexsportglobal.contact@gmail.com">lexsportglobal.contact@gmail.com</a></li>
-									<li><i class="icon brands fa-whatsapp"></i> <strong>WhatsApp :</strong> <a href="https://wa.me/2290197328579" target="_blank">+229 01 97 32 85 79</a></li>
-									<li><i class="icon brands fa-linkedin-in"></i> <strong>LinkedIn :</strong> <a href="https://linkedin.com/company/lexsportglobal" target="_blank">Lex Sport Global</a></li>
+									<li>
+										<i class="icon solid fa-envelope"></i>
+										<span><strong>Email :</strong> <a href="mailto:lexsportglobal.contact@gmail.com">lexsportglobal.contact@gmail.com</a></span>
+									</li>
+									<li>
+										<i class="icon brands fa-whatsapp"></i>
+										<span><strong>WhatsApp :</strong> <a href="https://wa.me/2290197328579" target="_blank">+229 01 97 32 85 79</a></span>
+									</li>
+									<li>
+										<i class="icon brands fa-linkedin-in"></i>
+										<span><strong>LinkedIn :</strong> <a href="https://linkedin.com/company/lexsportglobal" target="_blank">Lex Sport Global</a></span>
+									</li>
 								</ul>
 
-								<h3 class="section-title-small" style="margin-top: 1.2em;">Siège Social</h3>
+								<h3 class="section-title-small" style="margin-top: 1.2em; color: #002349;">Siège Social</h3>
 								<p class="section-title-en">Headquarters</p>
 								<p style="margin-bottom: 0; line-height: 1.4;">📍 <strong>Cotonou, Bénin</strong><br />
 								<span style="font-size: 0.85em;">Réception sur rendez-vous pour les audits de clubs et consultations privées.</span><br />
 								<span style="font-size: 0.8em; font-style: italic; color: #666;">Reception by appointment for club audits and private consultations.</span></p>
 							</div>
 
-							<!-- Bloc Photo ID (Haut Droite, Alignement strict) -->
+							<!-- Bloc Photo ID -->
 							<div class="director-profile">
 								<div class="profile-card">
 									<img src="images/director.jpg" alt="Noël S. VODOUESSI" />
@@ -253,7 +265,6 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			// Activation du menu Hamburger (Mobile)
 			const navToggle = document.getElementById('navToggle');
 			const menuNav = document.getElementById('menu-nav');
 
@@ -263,7 +274,6 @@
 				});
 			}
 
-			// Gestion de la bascule FR / EN
 			const btnFr = document.getElementById('btn-fr');
 			const btnEn = document.getElementById('btn-en');
 			const body = document.body;
