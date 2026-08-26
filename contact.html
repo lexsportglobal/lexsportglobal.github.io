@@ -11,7 +11,7 @@
 			.contact-profile-container {
 				display: flex;
 				justify-content: space-between;
-				align-items: flex-start; /* Aligne le haut de la photo avec le haut du texte */
+				align-items: flex-start;
 				gap: 40px;
 				margin-top: 10px;
 			}
@@ -20,10 +20,48 @@
 				flex: 1;
 			}
 
+			/* --- ALIGNEMENT ET STYLE DES COORDONNÉES --- */
+			.contact-list {
+				list-style: none;
+				padding-left: 0;
+				margin-bottom: 1.5em;
+			}
+
+			.contact-list li {
+				margin-bottom: 10px;
+				display: flex;
+				align-items: center;
+			}
+
+			.contact-list i {
+				color: #002349 !important; /* Couleur bleu-nuit pour les icônes */
+				width: 25px;
+				font-size: 1.1em;
+			}
+
+			/* Alignement strict du texte des informations */
+			.contact-label {
+				display: inline-block;
+				width: 100px; /* Force un alignement vertical parfait pour toutes les valeurs */
+				color: #ffffff;
+			}
+
+			.contact-list a {
+				color: #D4AF37 !important;
+				text-decoration: none !important; /* Suppression des traits de soulignement */
+				transition: color 0.3s ease;
+			}
+
+			.contact-list a:hover {
+				color: #002349 !important; /* Changement du rouge vers bleu-nuit au survol */
+				text-decoration: none !important;
+			}
+
+			/* --- STYLE PROFIL DIRECTEUR --- */
 			.director-profile {
-				flex: 0 0 220px; /* Largeur fixe à droite pour le bloc profil */
+				flex: 0 0 220px;
 				text-align: center;
-				padding-top: 5px; /* Ajustement fin pour l'alignement visuel parfait */
+				padding-top: 5px;
 			}
 
 			.profile-card img {
@@ -66,16 +104,16 @@
 			#footer p a {
 				color: #D4AF37 !important;
 				font-weight: 800 !important;
-				text-decoration: none;
+				text-decoration: none !important;
 			}
 			#footer p a:hover {
 				color: #C5A05F !important;
-				text-decoration: underline;
+				text-decoration: underline !important;
 			}
 
 			@media screen and (max-width: 736px) {
 				.contact-profile-container {
-					flex-direction: column-reverse; /* Passe au-dessus ou au-dessous sur mobile */
+					flex-direction: column-reverse;
 					align-items: center;
 				}
 				.director-profile {
@@ -156,9 +194,9 @@
 								<p class="section-title-en">Official Contact Details</p>
 								
 								<ul class="contact-list">
-									<li><i class="icon solid fa-envelope"></i> <strong>Email :</strong> <a href="mailto:lexsportglobal.contact@gmail.com">lexsportglobal.contact@gmail.com</a></li>
-									<li><i class="icon brands fa-whatsapp"></i> <strong>WhatsApp :</strong> <a href="https://wa.me/2290197328579" target="_blank">+229 01 97 32 85 79</a></li>
-									<li><i class="icon brands fa-linkedin-in"></i> <strong>LinkedIn :</strong> <a href="https://linkedin.com/company/lexsportglobal" target="_blank">Lex Sport Global</a></li>
+									<li><i class="icon solid fa-envelope"></i> <strong class="contact-label">Email :</strong> <a href="mailto:lexsportglobal.contact@gmail.com">lexsportglobal.contact@gmail.com</a></li>
+									<li><i class="icon brands fa-whatsapp"></i> <strong class="contact-label">WhatsApp :</strong> <a href="https://wa.me/2290197328579" target="_blank">+229 01 97 32 85 79</a></li>
+									<li><i class="icon brands fa-linkedin-in"></i> <strong class="contact-label">LinkedIn :</strong> <a href="https://linkedin.com/company/lexsportglobal" target="_blank">Lex Sport Global</a></li>
 								</ul>
 
 								<h3 class="section-title-small" style="margin-top: 1.2em;">Siège Social</h3>
@@ -168,7 +206,7 @@
 								<span style="font-size: 0.8em; font-style: italic; color: #666;">Reception by appointment for club audits and private consultations.</span></p>
 							</div>
 
-							<!-- Bloc Photo ID (Haut Droite, Alignement strict) -->
+							<!-- Bloc Photo ID (Haut Droite) -->
 							<div class="director-profile">
 								<div class="profile-card">
 									<img src="images/director.jpg" alt="Noël S. VODOUESSI" />
