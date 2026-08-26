@@ -1,247 +1,294 @@
-/* ==========================================================================
-   LEX SPORT GLOBAL - Main Stylesheet (Optimisée & Authentique)
-   ========================================================================== */
+/*
+	Editorial by HTML5 UP & Custom Style - LEX SPORT GLOBAL
+*/
 
-/* --- 1. VARIABLES & RESET --- */
-:root {
-	--bg-main: #070F1B;
-	--bg-card: #112240;
-	--primary-blue: #002349;
-	--accent-gold: #D4AF37;
-	--accent-gold-hover: #C5A05F;
-	--text-light: #F1F5F9;
-	--text-muted: #94A3B8;
-	--font-main: 'Helvetica Neue', Arial, sans-serif;
-}
-
-*, *::before, *::after {
-	box-sizing: border-box;
-}
-
-html, body {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	background-color: var(--bg-main);
-	color: var(--text-light);
-	font-family: var(--font-main);
-	font-size: 15px;
-	line-height: 1.7;
-	-webkit-font-smoothing: antialiased;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
-/* --- 2. LAYOUT GENERAL (#wrapper & #main) --- */
-#wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	width: 100%;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 
-#main {
-	flex: 1;
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 40px 20px;
+body {
+	line-height: 1;
+	background-color: #ffffff !important; /* Fond blanc préservé */
+	color: #444444;
+	font-family: "Open Sans", sans-serif;
+	font-size: 15pt;
+	font-weight: 400;
 }
 
-.inner {
-	width: 100%;
+ol, ul {
+	list-style: none;
 }
 
-/* --- 3. HEADER & NAVIGATION HORIZONTALE --- */
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --- BOUTONS PAGE D'ACCUEIL AVEC CONTOUR OR --- */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	background-color: transparent;
+	border-radius: 4px;
+	border: 2px solid #D4AF37 !important; /* Contour OR */
+	color: #002349 !important; /* Texte Bleu-Nuit */
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0.8em;
+	font-weight: 700;
+	height: 3.5em;
+	letter-spacing: 0.075em;
+	line-height: 3.5em;
+	padding: 0 2.25em;
+	text-align: center;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+	background-color: #002349 !important; /* Fond Bleu-Nuit au survol */
+	color: #D4AF37 !important; /* Texte Or au survol */
+	border-color: #D4AF37 !important;
+	box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+}
+
+.button.primary {
+	background-color: #002349;
+	color: #ffffff !important;
+	border: 2px solid #D4AF37 !important;
+}
+
+.button.primary:hover {
+	background-color: #D4AF37 !important;
+	color: #002349 !important;
+}
+
+/* --- HEADER TEXTURE & STRUCTURE --- */
 #header {
-	background-color: var(--primary-blue);
-	border-bottom: 2px solid var(--accent-gold);
-	position: sticky;
-	top: 0;
-	z-index: 1000;
-	width: 100%;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	border-bottom: solid 3px #D4AF37;
+	padding: 1.5em 0;
+	position: relative;
+	background: #002349; /* Fond Texture/Bleu Header */
 }
 
 .header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 12px 20px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	padding: 0 2em;
 }
 
-.logo {
+#header .logo {
+	border-bottom: 0;
+	color: #ffffff;
+	font-family: "Roboto Slab", serif;
+	font-size: 1.1em;
+	font-weight: 700;
+	letter-spacing: 0.075em;
+	text-decoration: none;
 	display: flex;
 	align-items: center;
 	gap: 12px;
-	text-decoration: none !important;
-	border-bottom: none !important;
 }
 
-.logo span {
-	color: #ffffff;
-	font-weight: 800;
-	font-size: 1.1rem;
-	letter-spacing: 1.5px;
-}
-
+/* --- MENU NAVIGATION --- */
 #menu-nav ul {
 	display: flex;
+	gap: 20px;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	gap: 20px;
 }
 
 #menu-nav ul li a {
-	color: var(--text-light);
-	text-decoration: none !important;
-	border-bottom: none !important;
+	color: #ffffff;
+	text-decoration: none;
 	font-weight: 600;
-	font-size: 0.95em;
+	font-size: 0.9em;
 	transition: color 0.3s ease;
-	padding: 6px 10px;
+	border-bottom: none !important;
 }
 
 #menu-nav ul li a:hover {
-	color: var(--accent-gold) !important;
+	color: #D4AF37;
 }
 
 .header-right {
 	display: flex;
 	align-items: center;
-	gap: 15px;
+	gap: 20px;
 }
 
-/* Icons Header */
-ul.icons {
+/* Lang Switcher */
+.lang-switcher {
 	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: #D4AF37;
+}
+
+.lang-btn {
+	background: none !important;
+	border: none !important;
+	color: #ffffff !important;
+	padding: 0 !important;
+	height: auto !important;
+	font-size: 0.85em !important;
+	cursor: pointer;
+}
+
+.lang-btn.active {
+	color: #D4AF37 !important;
+	font-weight: 800;
+}
+
+/* Réseaux Sociaux Header */
+.icons {
+	display: flex;
+	gap: 12px;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	gap: 12px;
 }
 
-ul.icons li a {
-	color: var(--text-light);
-	font-size: 1.1em;
-	text-decoration: none !important;
+.icons li a {
+	color: #ffffff;
+	text-decoration: none;
 	border-bottom: none !important;
 	transition: color 0.3s ease;
 }
 
-ul.icons li a:hover {
-	color: var(--accent-gold) !important;
+.icons li a:hover {
+	color: #D4AF37;
 }
 
-.nav-toggle {
-	display: none;
-	background: none;
-	border: none;
-	color: var(--text-light);
-	font-size: 1.4rem;
-	cursor: pointer;
-}
-
-/* --- 4. BOUTONS PAGE D'ACCUEIL (CONTOUR OR D'ORIGINE) --- */
-.button, 
-a.button, 
-input[type="submit"].button, 
-button.button {
-	display: inline-block;
-	background-color: transparent !important;
-	color: var(--accent-gold) !important;
-	border: 2px solid var(--accent-gold) !important;
-	border-radius: 4px;
-	padding: 10px 24px;
-	font-weight: 700;
-	font-size: 0.9em;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	text-decoration: none !important;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-	box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
-}
-
-.button:hover, 
-a.button:hover, 
-input[type="submit"].button:hover, 
-button.button:hover {
-	background-color: var(--accent-gold) !important;
-	color: var(--primary-blue) !important;
-	box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-	transform: translateY(-2px);
-}
-
-/* Bouton Large Spécifique */
-.button.large {
-	padding: 14px 32px;
-	font-size: 1em;
-}
-
-/* --- 5. STYLE FOOTER & MENTIONS LÉGALES (OR PARTOUT) --- */
+/* --- FOOTER ET MENTIONS LÉGALES EN OR --- */
 #footer {
-	background-color: var(--primary-blue);
-	border-top: 2px solid var(--accent-gold);
-	padding: 30px 20px;
+	background: #002349; /* Texture/Couleur Footer */
+	border-top: solid 3px #D4AF37;
+	padding: 3em 0;
 	text-align: center;
-	margin-top: auto;
+	color: #ffffff;
 }
 
 #footer .inner {
 	max-width: 1200px;
 	margin: 0 auto;
+	padding: 0 2em;
 }
 
-/* Mentions Légales & Confidentialité en OR partout */
-#footer p a, 
-a.legal-link {
-	color: var(--accent-gold) !important;
-	font-weight: 800 !important;
+/* RÈGLE SPÉCIFIQUE : MENTIONS LÉGALES EN OR SUR TOUTES LES PAGES */
+#footer p a,
+footer p a,
+a[href="legales.html"] {
+	color: #D4AF37 !important; /* Couleur OR */
+	font-weight: 800 !important; /* Gras */
 	text-decoration: none !important;
 	border-bottom: none !important;
 	transition: color 0.3s ease;
 }
 
-#footer p a:hover, 
-a.legal-link:hover {
-	color: var(--accent-gold-hover) !important;
+#footer p a:hover,
+footer p a:hover,
+a[href="legales.html"]:hover {
+	color: #C5A05F !important;
 	text-decoration: underline !important;
 }
 
 #footer .copyright {
-	color: var(--text-muted);
-	font-size: 0.85rem;
-	margin-top: 10px;
+	font-size: 0.8em;
+	color: #aaaaaa;
+	margin-top: 15px;
 }
 
-/* --- 6. TYPOGRAPHIE ET ELEMENTS DE CONTENU --- */
+/* --- STRUCTURE CONTENU WRAPPER & MAIN --- */
+#wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#main {
+	flex: 1;
+	padding: 3em 0;
+}
+
+#main .inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2em;
+}
+
+/* Titres */
 h1, h2, h3, h4, h5, h6 {
-	color: var(--text-light);
+	color: #002349;
+	font-family: "Roboto Slab", serif;
 	font-weight: 700;
-	margin-top: 0;
+	line-height: 1.5;
+	margin: 0 0 1em 0;
 }
 
-.page-title-small {
-	color: var(--text-light);
-	font-size: 1.8rem;
-	margin-bottom: 5px;
-}
-
-.subtitle-en {
-	color: var(--text-muted);
-	font-style: italic;
-	font-size: 0.95rem;
-	margin-top: 0;
-}
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
 
 hr.major {
 	border: 0;
-	border-top: 1px solid rgba(212, 175, 55, 0.3);
-	margin: 2em 0;
+	border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+	margin: 3em 0;
 }
 
-/* --- 7. RESPONSIVE DESIGN (MOBILE) --- */
+/* Mobile Nav Toggle */
+.nav-toggle {
+	display: none;
+	background: none !important;
+	border: none !important;
+	color: #ffffff !important;
+	font-size: 1.4em;
+	padding: 0 !important;
+	height: auto !important;
+}
+
 @media screen and (max-width: 980px) {
 	.nav-toggle {
 		display: block;
@@ -253,9 +300,9 @@ hr.major {
 		top: 100%;
 		left: 0;
 		width: 100%;
-		background-color: var(--primary-blue);
-		border-bottom: 2px solid var(--accent-gold);
-		padding: 20px 0;
+		background: #002349;
+		border-bottom: 2px solid #D4AF37;
+		padding: 15px 0;
 	}
 
 	#menu-nav.active {
@@ -266,16 +313,5 @@ hr.major {
 		flex-direction: column;
 		align-items: center;
 		gap: 15px;
-	}
-}
-
-@media screen and (max-width: 736px) {
-	#main {
-		padding: 20px 15px;
-	}
-
-	.button {
-		width: 100%;
-		text-align: center;
 	}
 }
