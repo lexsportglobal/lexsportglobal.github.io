@@ -818,20 +818,27 @@ ul.pagination li > .page.active {
   margin: 0 auto;
 }
 
+/* Style uniforme pour les liens du Footer (Mentions Légales, etc.) */
+#footer p a,
+footer p a {
+  color: #D4AF37 !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: color 0.3s ease;
+}
+
+#footer p a:hover,
+footer p a:hover {
+  color: #C5A05F !important;
+  text-decoration: underline !important;
+}
+
 #footer .copyright {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9em;
+  margin-top: 10px;
 }
-
-#footer .copyright a {
-  color: #D4AF37;
-  text-decoration: none;
-}
-
-#footer .copyright a:hover {
-  text-decoration: underline;
-}
-
 /* --------------------------------------------------------------------------
    10. Global Responsive Breakpoints
    -------------------------------------------------------------------------- */
