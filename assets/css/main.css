@@ -807,7 +807,7 @@ ul.pagination li > .page.active {
   width: 100%;
   text-align: center;
   padding: 45px 20px;
-  background: #0B192C;
+  background: #1a1a1a; /* Gris foncé moderne / Anthracite */
   color: #ffffff;
   margin-top: 60px;
   border-top: 3px solid #D4AF37;
