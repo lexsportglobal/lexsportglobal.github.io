@@ -807,8 +807,8 @@ ul.pagination li > .page.active {
   width: 100%;
   text-align: center;
   padding: 45px 20px;
-  background: #1a1a1a; /* Gris foncé moderne / Anthracite */
-  color: #F8F8F6;
+  background: #F8F8F6; /* Couleur mise à jour */
+  color: #002349;       /* Texte général passé en bleu-nuit pour lisibilité */
   margin-top: 60px;
   border-top: 3px solid #D4AF37;
 }
@@ -835,7 +835,7 @@ footer p a:hover {
 }
 
 #footer .copyright {
-  color: rgba(255, 255, 255, 0.7);
+  color: #666666; /* Ajusté pour rester lisible sur fond clair */
   font-size: 0.9em;
   margin-top: 10px;
 }
