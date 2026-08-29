@@ -965,3 +965,44 @@ footer p a:hover {
         right: 15px;
     }
 }
+/* --- ICONES RÉSEAUX SOCIAUX EN NOIR & BLANC (SANS TEXTE) --- */
+.icons {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.icons li {
+    display: inline-block;
+    padding: 0;
+}
+
+.icons a.icon {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    font-size: 1.4rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icons a.icon:hover {
+    color: #cccccc !important;
+    transform: scale(1.1);
+}
+
+/* Cache le texte d'accessibilité de manière invisible */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
