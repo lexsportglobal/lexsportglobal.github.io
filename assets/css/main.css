@@ -1017,31 +1017,34 @@ footer p a:hover {
   padding: 8px;
 }
 /* =========================================================
-   CORRECTIF AFFICHAGE MENU MOBILE & TABLETTE (HAMBURGER)
+   CORRECTIF POSITION ET VISIBILITÉ DU MENU HAMBURGER
    ========================================================= */
 
 @media screen and (max-width: 980px) {
-    /* 1. Ajustement de l'en-tête */
-    #header .header-container {
+    /* 1. Assurer que le header laisse dépasser le menu et ne coupe rien */
+    #header, 
+    .header-container {
+        overflow: visible !important;
+        position: relative !important;
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        position: relative !important;
-        padding-right: 50px !important; /* Laisse de la place pour l'icône */
+        padding-right: 70px !important; /* Espace réservé pour le bouton */
     }
 
-    /* 2. Masquer le menu texte horizontal tronqué */
+    /* 2. Cacher le menu texte horizontal classique sur mobile/tablette */
     #header #menu-nav {
         display: none !important;
     }
 
-    /* 3. Masquer le texte du bouton s'il apparaît */
-    #navToggle span,
-    .nav-toggle span {
+    /* 3. Masquer les éventuels textes parasites à côté de l'icône */
+    #navToggle span, 
+    .nav-toggle span,
+    #header .toggle span {
         display: none !important;
     }
 
-    /* 4. Bouton Hamburger (Icône ☰) bien visible à droite */
+    /* 4. Repositionnement du Bouton Hamburger (Avancé vers la gauche et agrandi) */
     #navToggle,
     .nav-toggle,
     #header .toggle {
@@ -1049,39 +1052,42 @@ footer p a:hover {
         align-items: center !important;
         justify-content: center !important;
         position: absolute !important;
-        right: 10px !important;
+        right: 20px !important; /* Décale le bouton vers la gauche pour qu'il ne soit pas collé au bord */
         top: 50% !important;
         transform: translateY(-50%) !important;
-        width: 42px !important;
-        height: 42px !important;
+        width: 48px !important;  /* Bouton plus large pour une bonne prise en main */
+        height: 48px !important; /* Bouton plus haut */
         background-color: #0B192C !important;
         border: 2px solid #D4AF37 !important;
-        border-radius: 6px !important;
+        border-radius: 8px !important;
         color: #D4AF37 !important;
-        font-size: 1.3rem !important;
+        font-size: 1.5rem !important; /* Icône ☰ plus grosse */
         cursor: pointer !important;
-        z-index: 9999 !important;
+        z-index: 99999 !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
     }
 
-    /* 5. Affichage du Menu Déroulant sur mobile lorsqu'activé */
+    /* 5. Menu déroulant plein écran / large sous le header */
     #menu-nav.active {
         display: block !important;
         position: absolute !important;
         top: 100% !important;
         left: 0 !important;
+        right: 0 !important;
         width: 100% !important;
         background-color: #070F1B !important;
-        border-bottom: 2px solid #D4AF37 !important;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5) !important;
-        z-index: 9998 !important;
-        padding: 15px 0 !important;
+        border-top: 1px solid rgba(212, 175, 55, 0.3) !important;
+        border-bottom: 3px solid #D4AF37 !important;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6) !important;
+        z-index: 99998 !important;
+        padding: 20px 0 !important;
     }
 
     #menu-nav.active ul {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 15px !important;
+        gap: 18px !important;
         margin: 0 !important;
         padding: 0 !important;
         list-style: none !important;
@@ -1089,10 +1095,12 @@ footer p a:hover {
 
     #menu-nav.active ul li a {
         color: #ffffff !important;
-        font-weight: 600 !important;
-        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        font-size: 1.15rem !important;
         text-decoration: none !important;
-        padding: 8px 16px !important;
+        padding: 10px 20px !important;
+        display: block !important;
+        text-align: center !important;
     }
 
     #menu-nav.active ul li a:hover {
@@ -1100,7 +1108,7 @@ footer p a:hover {
     }
 }
 
-/* Affichage classique sur écran PC (Largeur > 980px) */
+/* Affichage standard pour ordinateurs */
 @media screen and (min-width: 981px) {
     #navToggle,
     .nav-toggle,
