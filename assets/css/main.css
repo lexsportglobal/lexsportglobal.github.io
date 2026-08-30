@@ -1006,3 +1006,36 @@ footer p a:hover {
     white-space: nowrap !important;
     border: 0 !important;
 }
+/* Style par défaut (Desktop) */
+.nav-toggle {
+  display: none; /* Caché sur ordinateur */
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #1a365d; /* Ajustez la couleur selon votre charte */
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Écran Mobile & Tablette */
+@media screen and (max-width: 980px) {
+  .nav-toggle {
+    display: block; /* Visible sur mobile */
+  }
+
+  #menu-nav {
+    display: none;
+    position: absolute;
+    top: 100%; /* S'aligne sous le header */
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #edf2f7;
+    z-index: 999; /* Garantit qu'il passe au-dessus du contenu */
+  }
+
+  #menu-nav.active {
+    display: block !important;
+  }
+}
