@@ -1016,26 +1016,3 @@ footer p a:hover {
   cursor: pointer;
   padding: 8px;
 }
-
-/* Écran Mobile & Tablette */
-@media screen and (max-width: 980px) {
-  .nav-toggle {
-    display: block; /* Visible sur mobile */
-  }
-
-  #menu-nav {
-    display: none;
-    position: absolute;
-    top: 100%; /* S'aligne sous le header */
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid #edf2f7;
-    z-index: 999; /* Garantit qu'il passe au-dessus du contenu */
-  }
-
-  #menu-nav.active {
-    display: block !important;
-  }
-}
