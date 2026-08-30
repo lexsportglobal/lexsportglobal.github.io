@@ -256,5 +256,20 @@
 				});
 			}
 		</script>
+
+		<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const menuNav = document.getElementById('menu-nav');
+
+    if (navToggle && menuNav) {
+        navToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            menuNav.classList.toggle('active');
+        });
+    }
+});
+</script>
 	</body>
 </html>
