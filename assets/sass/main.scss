@@ -60,3 +60,48 @@
 	@import 'layout/banner';
 	@import 'layout/footer';
 	@import 'layout/menu';
+/* --- FIX NAVIGATION MOBILE & TABLETTE (MENU HAMBURGER) --- */
+
+/* Affichage du bouton Hamburger sur Mobile & Tablette */
+@media screen and (max-width: 980px) {
+    #header {
+        position: relative;
+    }
+
+    /* Bouton Hamburger */
+    #header .toggle,
+    #header a[href="#sidebar"] {
+        display: block !important;
+        position: absolute;
+        right: 1em;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3em;
+        height: 3em;
+        line-height: 3em;
+        text-align: center;
+        color: #ffffff !important;
+        font-size: 1.25em;
+        cursor: pointer;
+        z-index: 10001;
+        text-decoration: none !important;
+        border-bottom: none !important;
+    }
+
+    /* Menu horizontal classique masqué sur mobile/tablette */
+    #menu-nav {
+        display: none !important;
+    }
+}
+
+/* Affichage normal sur Ordinateur */
+@media screen and (min-width: 981px) {
+    #header .toggle,
+    #header a[href="#sidebar"] {
+        display: none !important;
+    }
+
+    #menu-nav {
+        display: block !important;
+    }
+}
