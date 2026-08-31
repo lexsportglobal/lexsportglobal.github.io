@@ -1017,47 +1017,57 @@ footer p a:hover {
   padding: 8px;
 }
 /* =========================================================
-   NETTOYAGE HEADER ET MENU HAMBURGER DROUANT MOBILE
+   CORRECTIF : HEADER COMPACT, LOGO AGRANDI & MENU MOBILE
    ========================================================= */
 
 @media screen and (max-width: 980px) {
-    /* Supprime le grand vide blanc/sombre en haut du header */
+    /* Supprime les espacements vides en haut du site sur mobile */
+    body, #page-wrapper, #wrapper {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* Redimensionnement et alignement du Header */
     #header {
-        padding: 10px 15px !important;
+        padding: 8px 15px !important;
         margin: 0 !important;
         position: relative !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        top: 0 !important;
     }
 
-    /* Recadre le conteneur du logo et du bouton */
-    .header-container {
+    /* Conteneur fluide */
+    #header .header-container {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
-        box-sizing: border-box !important;
     }
 
-    /* Ajuste la taille du logo sur mobile */
-    .header-container .logo {
-        margin: 0 !important;
-        padding: 0 !important;
+    /* AGRANDISSEMENT DU LOGO SUR PHONE / TABLETTE */
+    #header .logo img {
+        height: 52px !important; /* Logo agrandi (anciennement 38px) */
+        max-height: 55px !important;
+        width: auto !important;
+        vertical-align: middle !important;
     }
 
-    /* Bouton Hamburger bien calé à droite sans espace vide parasite */
+    #header .logo span {
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+    }
+
+    /* BOUTON HAMBURGER BIEN CALÉ */
     #navToggle,
     .nav-toggle,
     #header .toggle {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        position: relative !important; /* Emplacement naturel et fluide */
-        right: 0 !important;
-        top: 0 !important;
-        transform: none !important;
+        position: relative !important;
         width: 44px !important;
         height: 44px !important;
         background-color: #0B192C !important;
@@ -1068,29 +1078,25 @@ footer p a:hover {
         cursor: pointer !important;
         z-index: 99999 !important;
         margin-left: auto !important;
+        padding: 0 !important;
     }
 
-    /* Cache le menu horizontal par défaut */
+    /* MENU MOBILE DÉROULANT */
     #header #menu-nav {
-        display: none !important;
-    }
-
-    /* Menu déroulant quand activé par le clic */
-    #header #menu-nav.active {
-        display: block !important;
+        display: none; /* Géré directement par le JavaScript */
         position: absolute !important;
         top: 100% !important;
         left: 0 !important;
         width: 100% !important;
         background-color: #070F1B !important;
-        border-top: 1px solid rgba(212, 175, 55, 0.3) !important;
+        border-top: 1px solid rgba(212, 175, 55, 0.4) !important;
         border-bottom: 3px solid #D4AF37 !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
         z-index: 99998 !important;
         padding: 15px 0 !important;
     }
 
-    #header #menu-nav.active ul {
+    #header #menu-nav ul {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -1100,16 +1106,16 @@ footer p a:hover {
         list-style: none !important;
     }
 
-    #header #menu-nav.active ul li a {
+    #header #menu-nav ul li a {
         color: #ffffff !important;
         font-weight: 700 !important;
-        font-size: 1.1rem !important;
+        font-size: 1.15rem !important;
         text-decoration: none !important;
-        padding: 8px 16px !important;
+        padding: 10px 20px !important;
         display: block !important;
     }
 
-    #header #menu-nav.active ul li a:hover {
+    #header #menu-nav ul li a:hover {
         color: #D4AF37 !important;
     }
 }
@@ -1124,5 +1130,9 @@ footer p a:hover {
 
     #header #menu-nav {
         display: block !important;
+        position: static !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
     }
 }
