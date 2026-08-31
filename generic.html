@@ -176,17 +176,30 @@
    aria-label="Contact WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
-		<script>
+		<!-- Script Menu Mobile Fonctionnel -->
+<script>
 document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.getElementById('navToggle');
-    const menuNav = document.getElementById('menu-nav');
+    var toggleBtn = document.getElementById('navToggle');
+    var navMenu = document.getElementById('menu-nav');
 
-    if (navToggle && menuNav) {
-        navToggle.addEventListener('click', function(e) {
+    if (toggleBtn && navMenu) {
+        toggleBtn.onclick = function(e) {
             e.preventDefault();
             e.stopPropagation();
-            menuNav.classList.toggle('active');
-        });
+            if (navMenu.style.display === "block") {
+                navMenu.style.display = "none";
+            } else {
+                navMenu.style.display = "block";
+            }
+        };
+
+        // Ferme le menu si l'on clique sur un lien
+        var menuLinks = navMenu.getElementsByTagName('a');
+        for (var i = 0; i < menuLinks.length; i++) {
+            menuLinks[i].addEventListener('click', function() {
+                navMenu.style.display = "none";
+            });
+        }
     }
 });
 </script>
