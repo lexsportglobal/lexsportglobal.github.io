@@ -6,17 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    
     <style>
-        /* --- CORRECTIF ANTI-ESPACE VIDE EN HAUT --- */
+        /* --- CORRECTIF ANTI ESPACE VIDE & IMAGE DEBORDANTE --- */
         #main > .inner {
-            padding-top: 0 !important;
+            padding-top: 10px !important; /* Supprime le grand vide sous le header */
         }
-        #header {
-            margin-top: 0 !important;
+
+        /* Rend l'image 100% responsive et alignée au conteneur */
+        .image.main {
+            width: 100% !important;
+            margin: 0 0 2em 0 !important;
+        }
+
+        .image.main img { 
+            width: 100% !important;
+            max-height: 400px; 
+            object-fit: cover; 
+            border-bottom: 3px solid #C5A05F; 
+            display: block;
         }
 
         /* --- 1. PRESENTATION & TEXTE BILINGUE --- */
-        .image.main img { max-height: 400px; object-fit: cover; border-bottom: 3px solid #C5A05F; }
         .bilingual-grid { display: flex; gap: 40px; margin-top: 30px; border-bottom: 1px solid #333; padding-bottom: 40px; }
         .lang-box { flex: 1; padding: 20px; line-height: 1.8; text-align: justify; }
         .lang-box h2 { color: #C5A05F; font-size: 1.5em; margin-bottom: 1em; text-transform: uppercase; }
@@ -50,7 +61,7 @@
         }
 
         /* --- 3. GRILLE & CARTES --- */
-        #players-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px; }
+        #players-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 0; }
         .player-card { 
             background: linear-gradient(145deg, #0b1d3a, #020b18); 
             border: 1px solid #D4AF37; 
@@ -81,15 +92,16 @@
         .modal-content { background: #1a1a1a; margin: 5% auto; padding: 30px; border: 1px solid #D4AF37; width: 95%; max-width: 500px; border-radius: 15px; color: white; position: relative; }
         .close-modal { position: absolute; right: 20px; top: 10px; color: #D4AF37; font-size: 35px; cursor: pointer; }
     </style>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-VKBQS18D5E');
     </script>
+
     <!-- Import de la police Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,6 +143,7 @@
                     <header class="main">
                         <h1 style="color: #002349; letter-spacing: 2px;">Data Scouting & Performance</h1>
                     </header>
+                    
                     <span class="image main"><img src="images/scouting_data.jpg" alt="Data Analytics" /></span>
 
                     <div class="bilingual-grid">
@@ -143,7 +156,8 @@
                             <p>The <strong>Data Scouting</strong> department at Lex Sport Global turns traditional observation into an exact science. We assist clubs in identifying high-value talent through KPI-based identification and financial valuation.</p>
                         </div>
                     </div>
-                    <div style="text-align: center; margin-bottom: 20px;">
+
+                    <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
                         <p style="font-style: italic; color: #888; font-size: 0.9em; margin-bottom: 10px;">Vous êtes un club ou un agent indépendant ?</p>
                         <a href="add-player.html" class="button primary" style="background-color: #D4AF37 !important; color: #000 !important; font-weight: 900; border-radius: 5px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);">
                             ➕ INSCRIRE UN TALENT
@@ -161,10 +175,11 @@
 
                     <div id="players-container"></div>
                 </section>
+
             </div>
         </div>
 
-        <!-- Footer uniforme -->
+        <!-- Footer -->
         <footer id="footer">
             <div class="inner">
                 <ul class="icons">
@@ -179,6 +194,7 @@
         </footer>
     </div>
 
+    <!-- Modale Joueur -->
     <div id="playerModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -191,7 +207,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Scripts -->
+    <!-- Scripts de base -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
@@ -199,6 +215,7 @@
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+    <!-- Script unique nettoyé -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Menu Mobile Toggle
