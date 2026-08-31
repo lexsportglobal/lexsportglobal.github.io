@@ -59,13 +59,14 @@
             color: #000 !important; 
         }
        /* --- 3. GRILLE & CARTES --- */
+        /* --- 3. GRILLE & CARTES --- */
         #players-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 0; }
         .player-card { 
             background: linear-gradient(145deg, #0b1d3a, #020b18); 
             border: 1px solid #D4AF37; 
             border-radius: 15px; 
             padding: 35px 20px; 
-            text-align: center;
+            text-align: center !important;
             position: relative; 
         }
         .player-card h3 { 
@@ -75,9 +76,16 @@
             margin: 10px 0 5px 0; 
             text-transform: uppercase;
             line-height: 1.2;
+            text-align: center !important; /* Force le centrage du nom du joueur */
         }
-        .player-card .position { color: #D4AF37 !important; font-weight: bold; display: block; margin-bottom: 15px; }
-        .player-card img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid #D4AF37; object-fit: cover; }
+        .player-card .position { 
+            color: #D4AF37 !important; 
+            font-weight: bold; 
+            display: block; 
+            margin-bottom: 15px; 
+            text-align: center !important; /* Force le centrage du poste */
+        }
+        .player-card img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid #D4AF37; object-fit: cover; margin: 0 auto; }
 
         /* --- 4. BADGES --- */
         .player-badge { position: absolute; top: 15px; right: 15px; padding: 4px 12px; border-radius: 20px; font-size: 9px; font-weight: 900; text-transform: uppercase; }
