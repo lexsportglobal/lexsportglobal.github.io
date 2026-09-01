@@ -938,3 +938,43 @@ footer p a:hover {
     color: #0B192C !important;
     transform: translateY(-3px) !important;
 }
+/* --- MASQUER VISUELLEMENT LES TEXTES .LABEL DANS LES ICÔNES --- */
+ul.icons li a .label,
+ul.contact-icons li a .label {
+    display: none !important;
+}
+
+/* Style de la liste d'icônes footer & contact */
+ul.icons,
+ul.contact-icons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 1.5em 0 !important;
+}
+
+ul.icons li a,
+ul.contact-icons li a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+    color: #D4AF37 !important;
+    font-size: 1.2em !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+ul.icons li a:hover,
+ul.contact-icons li a:hover {
+    background-color: #D4AF37 !important;
+    color: #0B192C !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+}
