@@ -732,7 +732,7 @@ footer p a:hover {
     z-index: 99999 !important;
   }
 
-  /* --- MENU HAMBURGER MOBILE (DISCRET ET SOBRE) --- */
+  /* --- MENU HAMBURGER MOBILE COMPACT & SERRÉ --- */
   #header #menu-nav,
   #menu-nav {
     display: none !important;
@@ -743,7 +743,7 @@ footer p a:hover {
     background: #0B192C !important;
     border-bottom: 2px solid #D4AF37 !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
-    padding: 8px 0 !important;
+    padding: 4px 0 !important; /* Bande moins large */
     z-index: 9999 !important;
   }
 
@@ -767,7 +767,7 @@ footer p a:hover {
   #menu-nav ul li {
     width: 100% !important;
     text-align: center !important;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1) !important;
   }
 
   #header #menu-nav ul li:last-child,
@@ -775,16 +775,17 @@ footer p a:hover {
     border-bottom: none !important;
   }
 
-  /* Taille des titres réduite et adaptée */
+  /* Taille très compacte des noms de pages & faibles interlignes */
   #header #menu-nav ul li a,
   #menu-nav ul li a {
     display: block !important;
     color: #FFFFFF !important;
     font-weight: 600 !important;
-    font-size: 0.85rem !important; /* Taille ajustée (plus petite) */
-    letter-spacing: 0.8px !important;
+    font-size: 0.78rem !important; /* Petite taille de texte */
+    line-height: 1.2 !important;     /* Interligne réduit */
+    letter-spacing: 0.5px !important;
     text-decoration: none !important;
-    padding: 10px 15px !important;
+    padding: 6px 10px !important;    /* Espacement restreint pour compacter la bande */
     text-transform: uppercase !important;
   }
 
