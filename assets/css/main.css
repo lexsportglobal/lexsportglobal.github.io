@@ -732,18 +732,22 @@ footer p a:hover {
     z-index: 99999 !important;
   }
 
-  /* --- MENU HAMBURGER MOBILE COMPACT & SERRÉ --- */
+  /* --- MENU HAMBURGER MOBILE & TABLETTE COMPACT (2/3 À DROITE) --- */
   #header #menu-nav,
   #menu-nav {
     display: none !important;
     position: absolute !important;
     top: 100% !important;
-    left: 0 !important;
-    width: 100% !important;
+    left: auto !important;
+    right: 0 !important;
+    width: 66.66% !important; /* Occupe exactement les 2/3 à droite */
+    max-width: 320px !important;
     background: #0B192C !important;
+    border-left: 2px solid #D4AF37 !important;
     border-bottom: 2px solid #D4AF37 !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
-    padding: 4px 0 !important; /* Bande moins large */
+    border-bottom-left-radius: 8px !important;
+    box-shadow: -6px 10px 20px rgba(0, 0, 0, 0.4) !important;
+    padding: 3px 0 !important;
     z-index: 9999 !important;
   }
 
@@ -756,7 +760,7 @@ footer p a:hover {
   #menu-nav ul {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: stretch !important;
     gap: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -766,8 +770,8 @@ footer p a:hover {
   #header #menu-nav ul li,
   #menu-nav ul li {
     width: 100% !important;
-    text-align: center !important;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1) !important;
+    text-align: left !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
   }
 
   #header #menu-nav ul li:last-child,
@@ -775,24 +779,24 @@ footer p a:hover {
     border-bottom: none !important;
   }
 
-  /* Taille très compacte des noms de pages & faibles interlignes */
+  /* Noms de pages très compacts, faible interligne & taille réduite */
   #header #menu-nav ul li a,
   #menu-nav ul li a {
     display: block !important;
     color: #FFFFFF !important;
     font-weight: 600 !important;
-    font-size: 0.78rem !important; /* Petite taille de texte */
-    line-height: 1.2 !important;     /* Interligne réduit */
+    font-size: 0.75rem !important;   /* Petite taille fine */
+    line-height: 1.15 !important;    /* Faible interligne */
     letter-spacing: 0.5px !important;
     text-decoration: none !important;
-    padding: 6px 10px !important;    /* Espacement restreint pour compacter la bande */
+    padding: 5px 12px !important;     /* Bande resserrée */
     text-transform: uppercase !important;
   }
 
   #header #menu-nav ul li a:hover,
   #menu-nav ul li a:hover {
     color: #D4AF37 !important;
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgba(212, 175, 55, 0.1) !important;
   }
 
   .btn-contact-header {
@@ -830,6 +834,7 @@ footer p a:hover {
     background: transparent !important;
     box-shadow: none !important;
     border: none !important;
+    width: auto !important;
   }
 }
 
