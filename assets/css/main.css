@@ -297,7 +297,7 @@ ul.contact li a {
 }
 
 /* --------------------------------------------------------------------------
-   4. Banner Section & Cover Image Configuration (Réinitialisation Côte-à-Côte)
+   4. Banner Section & Cover Image Configuration
    -------------------------------------------------------------------------- */
 #banner {
   display: flex !important;
@@ -376,7 +376,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.35 !important;
 }
 
-/* Structure verticale des articles */
 .posts {
   display: flex !important;
   flex-direction: column !important;
@@ -698,6 +697,8 @@ footer p a:hover {
   #header {
     padding: 8px 15px !important;
     position: relative !important;
+    z-index: 10000 !important;
+    background: #0B192C !important;
     width: 100% !important;
     box-sizing: border-box !important;
     top: 0 !important;
@@ -711,14 +712,8 @@ footer p a:hover {
   }
 
   #header .logo img {
-    height: 52px !important;
-    max-height: 55px !important;
+    height: 42px !important;
     width: auto !important;
-  }
-
-  #header .logo span {
-    font-size: 1.1rem !important;
-    font-weight: 700 !important;
   }
 
   #navToggle, .nav-toggle {
@@ -737,40 +732,66 @@ footer p a:hover {
     z-index: 99999 !important;
   }
 
-  #header #menu-nav {
-    display: none;
+  /* --- MENU HAMBURGER MOBILE (DISCRET ET SOBRE) --- */
+  #header #menu-nav,
+  #menu-nav {
+    display: none !important;
     position: absolute !important;
     top: 100% !important;
     left: 0 !important;
     width: 100% !important;
-    background-color: #070F1B !important;
-    border-top: 1px solid rgba(212, 175, 55, 0.4) !important;
-    border-bottom: 3px solid #D4AF37 !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
-    z-index: 99998 !important;
-    padding: 15px 0 !important;
+    background: #0B192C !important;
+    border-bottom: 2px solid #D4AF37 !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+    padding: 8px 0 !important;
+    z-index: 9999 !important;
   }
 
-  #header #menu-nav ul {
+  #header #menu-nav.active,
+  #menu-nav.active {
+    display: block !important;
+  }
+
+  #header #menu-nav ul,
+  #menu-nav ul {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 15px !important;
+    gap: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     list-style: none !important;
   }
 
-  #header #menu-nav ul li a {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 1.15rem !important;
-    text-decoration: none !important;
-    padding: 10px 20px !important;
+  #header #menu-nav ul li,
+  #menu-nav ul li {
+    width: 100% !important;
+    text-align: center !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
   }
 
-  #header #menu-nav ul li a:hover {
+  #header #menu-nav ul li:last-child,
+  #menu-nav ul li:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Taille des titres réduite et adaptée */
+  #header #menu-nav ul li a,
+  #menu-nav ul li a {
+    display: block !important;
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important; /* Taille ajustée (plus petite) */
+    letter-spacing: 0.8px !important;
+    text-decoration: none !important;
+    padding: 10px 15px !important;
+    text-transform: uppercase !important;
+  }
+
+  #header #menu-nav ul li a:hover,
+  #menu-nav ul li a:hover {
     color: #D4AF37 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
   }
 
   .btn-contact-header {
@@ -810,105 +831,15 @@ footer p a:hover {
     border: none !important;
   }
 }
-/* --- CORRECTIF MENU HAMBURGER MOBILE & TABLETTE --- */
-@media screen and (max-width: 980px) {
 
-    /* Alignement et conteneur du Header */
-    #header {
-        position: relative !important;
-        z-index: 10000 !important;
-        background: #0B192C !important; /* Couleur de fond propre */
-    }
-
-    /* Le menu est MASQUÉ par défaut */
-    #menu-nav {
-        display: none !important; 
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        width: 100% !important;
-        background: #0B192C !important;
-        border-bottom: 2px solid #D4AF37 !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
-        padding: 10px 0 !important;
-        z-index: 9999 !important;
-    }
-
-    /* Le menu S'AFFICHE uniquement quand la classe ACTIVE est présente */
-    #menu-nav.active {
-        display: block !important;
-    }
-
-    /* Style des éléments de liste du menu */
-    #menu-nav ul {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        list-style: none !important;
-    }
-
-    #menu-nav ul li {
-        width: 100% !important;
-        text-align: center !important;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
-    }
-
-    #menu-nav ul li:last-child {
-        border-bottom: none !important;
-    }
-
-    #menu-nav ul li a {
-        display: block !important;
-        padding: 15px 0 !important;
-        color: #FFFFFF !important;
-        font-weight: 700 !important;
-        font-size: 0.95em !important;
-        letter-spacing: 1px !important;
-        text-decoration: none !important;
-    }
-
-    #menu-nav ul li a:hover {
-        color: #D4AF37 !important;
-        background: rgba(255, 255, 255, 0.05) !important;
-    }
-}
-/* --- GESTION MENU HAMBURGER MOBILE --- */
-document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.getElementById('navToggle');
-    const menuNav = document.getElementById('menu-nav');
-
-    if (navToggle && menuNav) {
-        // Clic sur le bouton hamburger : ouvre ou ferme le menu
-        navToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            menuNav.classList.toggle('active');
-        });
-
-        // Ferme le menu dès qu'on clique sur un lien de la navigation
-        const menuLinks = menuNav.querySelectorAll('a');
-        menuLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                menuNav.classList.remove('active');
-            });
-        });
-
-        // Ferme le menu si l'utilisateur clique en dehors de l'en-tête
-        document.addEventListener('click', function(e) {
-            if (!menuNav.contains(e.target) && !navToggle.contains(e.target)) {
-                menuNav.classList.remove('active');
-            }
-        });
-    }
-});
-/* --- SECTION PARTENAIRES (PAGE D'ACCUEIL) --- */
+/* --------------------------------------------------------------------------
+   10. Section Partenaires (Page d'accueil)
+   -------------------------------------------------------------------------- */
 .partners-section {
     text-align: center;
     padding: 3em 1em;
     margin-top: 3em;
-    border-top: 1px solid rgba(212, 175, 55, 0.3); /* Ligne fine dorée de séparation */
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
     background: transparent;
 }
 
@@ -925,13 +856,12 @@ document.addEventListener('DOMContentLoaded', function() {
     display: inline-block;
 }
 
-/* Grille d'alignement des logos */
 .partners-grid {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px; /* Espace entre les logos */
+    gap: 40px;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -943,23 +873,21 @@ document.addEventListener('DOMContentLoaded', function() {
     padding: 10px;
 }
 
-/* Rendu visuel optimal des logos */
 .partners-grid img {
-    max-height: 70px;      /* Hauteur maximale propre */
-    max-width: 160px;      /* Largeur maximale pour éviter qu'un logo ne domine */
+    max-height: 70px;
+    max-width: 160px;
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: none !important; /* Pas de filtre, visibilité à 100% */
-    opacity: 1 !important;   /* Totalement opacifié et net */
+    filter: none !important;
+    opacity: 1 !important;
     transition: transform 0.3s ease;
 }
 
 .partners-grid img:hover {
-    transform: scale(1.08); /* Effet de survol léger */
+    transform: scale(1.08);
 }
 
-/* Ajustement mobile & tablette */
 @media screen and (max-width: 736px) {
     .partners-section {
         padding: 2em 1em;
