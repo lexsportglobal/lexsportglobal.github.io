@@ -20,55 +20,49 @@
 				flex: 1;
 			}
 
-			/* Style des icônes sociales alignées à gauche */
-			.contact-icons-left {
-				display: flex !important;
+			/* Alignement spécifique des icônes sous Coordonnées Officielles */
+			.contact-details ul.contact-icons {
 				justify-content: flex-start !important;
-				align-items: center !important;
-				gap: 15px !important;
+				margin: 1em 0 1.5em 0 !important;
+			}
+
+			/* Liste des coordonnées : Alignement strict des icônes et du texte */
+			.contact-list {
 				list-style: none !important;
-				padding: 0 !important;
-				margin: 10px 0 1.5em 0 !important;
+				padding-left: 0 !important;
+				margin-left: 0 !important;
 			}
 
-			.contact-icons-left li {
-				padding: 0 !important;
-				display: inline-block !important;
+			.contact-list li {
+				display: flex;
+				align-items: center;
+				margin-bottom: 12px;
+				font-size: 0.95em;
 			}
 
-			.contact-icons-left li a {
-				display: inline-flex !important;
-				align-items: center !important;
-				justify-content: center !important;
-				width: 42px !important;
-				height: 42px !important;
-				border-radius: 50% !important;
-				background: #0B192C !important;
-				border: 1px solid #D4AF37 !important;
-				color: #D4AF37 !important;
-				font-size: 1.1em !important;
+			.contact-list li i {
+				width: 25px; /* Largeur fixe pour aligner parfaitement le début de chaque texte */
+				text-align: center;
+				margin-right: 12px;
+				color: #D4AF37; /* Couleur dorée pour les icônes */
+				font-size: 1.1em;
+				flex-shrink: 0;
+			}
+
+			/* Supprime le soulignement et gère la couleur des liens */
+			.contact-list li a {
 				text-decoration: none !important;
-				transition: all 0.3s ease !important;
+				border-bottom: none !important;
+				color: #002349 !important; /* Bleu-nuit */
+				font-weight: 600;
+				transition: color 0.3s ease;
 			}
 
-			.contact-icons-left li a:hover {
-				background-color: #D4AF37 !important;
-				color: #0B192C !important;
-				transform: translateY(-3px) !important;
-				box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+			.contact-list li a:hover {
+				color: #D4AF37 !important; /* Devient doré au survol */
 			}
 
-			/* Masquage propre du texte .label pour garder uniquement l'icône */
-			.contact-icons-left li a .label {
-				display: inline-block !important;
-				width: 0 !important;
-				height: 0 !important;
-				overflow: hidden !important;
-				font-size: 0 !important;
-				text-indent: -9999px !important;
-			}
-
-			/* Bloc Profil Directeur à Droite & Alignement des titres */
+			/* Bloc Profil Directeur à Droite */
 			.director-profile {
 				flex: 0 0 240px;
 				text-align: center;
@@ -82,30 +76,36 @@
 				border-radius: 50%;
 				border: 2px solid #D4AF37;
 				display: block;
-				margin: 0 auto 12px auto;
+				margin: 0 auto 10px auto;
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 			}
 
 			.profile-info {
-				text-align: center;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.profile-info p {
+				margin: 0;
+				line-height: 1.3;
+				text-align: center !important;
 			}
 
 			.profile-title {
 				font-weight: 700;
 				color: #002349; /* Bleu-nuit */
-				font-size: 0.9em;
+				font-size: 0.88em;
 				display: block;
-				margin: 0 0 2px 0 !important;
-				line-height: 1.3;
+				margin-bottom: 2px !important;
 			}
 
 			.profile-title-en {
 				font-style: italic;
 				color: #666;
-				font-size: 0.8em;
+				font-size: 0.78em;
 				display: block;
-				margin: 0 0 6px 0 !important;
-				line-height: 1.3;
+				margin-bottom: 6px !important;
 			}
 
 			.profile-company {
@@ -114,7 +114,6 @@
 				font-size: 0.85em;
 				letter-spacing: 1px;
 				display: block;
-				margin: 0;
 			}
 
 			/* Footer : Liens sans soulignement et dorés */
@@ -131,11 +130,14 @@
 			@media screen and (max-width: 736px) {
 				.contact-profile-container {
 					flex-direction: column-reverse;
-					align-items: center;
+					align-items: stretch;
 				}
 				.director-profile {
 					flex: 1 1 auto;
 					margin-bottom: 25px;
+				}
+				.contact-details ul.contact-icons {
+					justify-content: flex-start !important;
 				}
 			}
 		</style>
@@ -149,39 +151,39 @@
 		  gtag('config', 'G-VKBQS18D5E');
 		</script>
 		<!-- Import de la police Montserrat -->
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 	</head>
 	<body class="is-preload">
 
 		<div id="wrapper">
 
 			<header id="header">
-    <div class="header-container">
-        <!-- Logo -->
-       <a href="index.html" class="logo">
-            <img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
-       </a>
+				<div class="header-container">
+					<!-- Logo -->
+					<a href="index.html" class="logo">
+						<img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
+					</a>
 
-        <!-- Menu Navigation -->
-        <nav id="menu-nav">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="generic.html">Expertise Juridique</a></li>
-                <li><a href="scouting.html">Data Scouting</a></li> 
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+					<!-- Menu Navigation -->
+					<nav id="menu-nav">
+						<ul>
+							<li><a href="index.html">Accueil</a></li>
+							<li><a href="generic.html">Expertise Juridique</a></li>
+							<li><a href="scouting.html">Data Scouting</a></li> 
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</nav>
 
-        <div class="header-right">
-            <!-- Bouton Hamburger Mobile -->
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </div>
-</header>
+					<div class="header-right">
+						<!-- Bouton Hamburger Mobile -->
+						<button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+							<i class="fas fa-bars"></i>
+						</button>
+					</div>
+				</div>
+			</header>
 
 			<!-- Contenu principal -->
 			<div id="main">
@@ -203,24 +205,24 @@
 							
 							<!-- Bloc Contact & Siège (Gauche) -->
 							<div class="contact-details">
-								<h3 class="section-title-small" style="color: #002349; margin-bottom: 0;">Coordonnées Officielles</h3>
-								<p class="section-title-en" style="margin-bottom: 10px;">Official Contact Details</p>
+								<h3 class="section-title-small" style="color: #002349; margin-bottom: 0.2em;">Coordonnées Officielles</h3>
+								<p class="section-title-en" style="margin-bottom: 0.8em; font-style: italic; color: #666; font-size: 0.85em;">Official Contact Details</p>
 								
-								<!-- Bloc Réseaux & Contact (Icônes alignées à gauche) -->
-								<ul class="contact-icons-left">
+								<!-- Bloc Réseaux & Contact (Alignés à gauche avec la classe label) -->
+								<ul class="contact-icons">
 									<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 									<li><a href="mailto:lexsportglobal.contact@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 									<li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." target="_blank" rel="noopener noreferrer" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
 								</ul>
 
-								<h3 class="section-title-small" style="margin-top: 1.2em; color: #002349; margin-bottom: 0;">Siège Social</h3>
-								<p class="section-title-en" style="margin-bottom: 8px;">Headquarters</p>
+								<h3 class="section-title-small" style="margin-top: 1.5em; color: #002349; margin-bottom: 0.2em;">Siège Social</h3>
+								<p class="section-title-en" style="margin-bottom: 0.8em; font-style: italic; color: #666; font-size: 0.85em;">Headquarters</p>
 								<p style="margin-bottom: 0; line-height: 1.4;">📍 <strong>Cotonou, Bénin</strong><br />
 								<span style="font-size: 0.85em;">Réception sur rendez-vous pour les audits de clubs et consultations privées.</span><br />
 								<span style="font-size: 0.8em; font-style: italic; color: #666;">Reception by appointment for club audits and private consultations.</span></p>
 							</div>
 
-							<!-- Bloc Photo ID (Haut Droite, Alignement strict) -->
+							<!-- Bloc Photo ID (Haut Droite) -->
 							<div class="director-profile">
 								<div class="profile-card">
 									<img src="images/director.jpg" alt="Noël S. VODOUESSI" />
@@ -242,18 +244,19 @@
 
 				</div>
 			</div>
-          <!-- Footer -->
-       <footer id="footer">
-    <div class="inner">
-        <ul class="icons">
-            <li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-            <li><a href="mailto:lexsportglobal.contact@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-            <li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." target="_blank" rel="noopener noreferrer" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-            <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-        </ul>
-        <p><a href="legales.html">Mentions Légales & Confidentialité</a></p>
-        <p class="copyright">&copy; LEX SPORT GLOBAL. 2026 All rights reserved.</p>
-    </div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:lexsportglobal.contact@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." target="_blank" rel="noopener noreferrer" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+						<li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+					</ul>
+					<p><a href="legales.html">Mentions Légales & Confidentialité</a></p>
+					<p class="copyright">&copy; LEX SPORT GLOBAL. 2026 All rights reserved.</p>
+				</div>
 			</footer>
 
 		</div>
@@ -264,70 +267,39 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script>
-			// Activation du menu Hamburger (Mobile)
-			const navToggle = document.getElementById('navToggle');
-			const menuNav = document.getElementById('menu-nav');
+		
+		<!-- Bulle Flottante WhatsApp -->
+		<a href="https://wa.me/2290197328579?text=Demande%20d'information" 
+		   class="whatsapp-float" 
+		   aria-label="Contact WhatsApp">
+			<i class="fab fa-whatsapp"></i>
+		</a>
 
-			if (navToggle) {
-				navToggle.addEventListener('click', function() {
-					menuNav.classList.toggle('active');
-				});
-			}
-
-			// Gestion de la bascule FR / EN
-			const btnFr = document.getElementById('btn-fr');
-			const btnEn = document.getElementById('btn-en');
-			const body = document.body;
-
-			if (btnFr && btnEn) {
-				btnFr.addEventListener('click', function() {
-					btnFr.classList.add('active');
-					btnEn.classList.remove('active');
-					body.classList.remove('lang-en-active');
-					body.classList.add('lang-fr-active');
-				});
-
-				btnEn.addEventListener('click', function() {
-					btnEn.classList.add('active');
-					btnFr.classList.remove('active');
-					body.classList.remove('lang-fr-active');
-					body.classList.add('lang-en-active');
-				});
-			}
-		</script>
-		<!-- Bulle Flottante WhatsApp (Milieu Droite) -->
-<a href="https://wa.me/2290197328579?text=Demande%20d'information" 
-   class="whatsapp-float" 
-   aria-label="Contact WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-</a>
 		<!-- Script Menu Mobile Fonctionnel -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var toggleBtn = document.getElementById('navToggle');
-    var navMenu = document.getElementById('menu-nav');
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var toggleBtn = document.getElementById('navToggle');
+			var navMenu = document.getElementById('menu-nav');
 
-    if (toggleBtn && navMenu) {
-        toggleBtn.onclick = function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            if (navMenu.style.display === "block") {
-                navMenu.style.display = "none";
-            } else {
-                navMenu.style.display = "block";
-            }
-        };
+			if (toggleBtn && navMenu) {
+				toggleBtn.onclick = function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					if (navMenu.style.display === "block") {
+						navMenu.style.display = "none";
+					} else {
+						navMenu.style.display = "block";
+					}
+				};
 
-        // Ferme le menu si l'on clique sur un lien
-        var menuLinks = navMenu.getElementsByTagName('a');
-        for (var i = 0; i < menuLinks.length; i++) {
-            menuLinks[i].addEventListener('click', function() {
-                navMenu.style.display = "none";
-            });
-        }
-    }
-});
-</script>
+				var menuLinks = navMenu.getElementsByTagName('a');
+				for (var i = 0; i < menuLinks.length; i++) {
+					menuLinks[i].addEventListener('click', function() {
+						navMenu.style.display = "none";
+					});
+				}
+			}
+		});
+		</script>
 	</body>
 </html>
