@@ -842,23 +842,23 @@ footer p a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   10. Section Partenaires (Page d'accueil) - Version Réajustée
+   10. Section Partenaires (Page d'accueil) - Logos grands & Titre réduit
    -------------------------------------------------------------------------- */
 .partners-section {
     text-align: center;
-    padding: 1.2em 1em !important;
-    margin-top: 1.5em !important;
+    padding: 1.5em 1em !important; 
+    margin-top: 1.5em !important;  
     border-top: 1px solid rgba(212, 175, 55, 0.3);
     background: transparent;
 }
 
 .partners-section h2 {
     color: #0B192C !important;
-    font-size: 0.85em !important;   /* Titre "Nos Partenaires Our Partners" plus petit sur PC/Tablette */
+    font-size: 0.8em !important;   /* Titre plus petit sur PC/Tablette */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 0.6em !important; /* Espacement ajusté sous le titre */
+    margin-bottom: 0.8em !important;
 }
 
 .partners-section h2 span {
@@ -870,8 +870,8 @@ footer p a:hover {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 25px !important;           /* Espacement fluide pour accueillir les logos plus grands */
-    max-width: 1100px;
+    gap: 30px !important;           /* Espace augmenté pour aérer les grands logos */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -879,12 +879,12 @@ footer p a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2px 8px !important;
+    padding: 4px 10px !important;
 }
 
 .partners-grid img {
-    max-height: 55px !important;    /* Logos plus grands (augmenté de 35px à 55px) */
-    max-width: 140px !important;    /* Largeur max augmentée en proportion */
+    max-height: 75px !important;    /* Logos agrandis (hauteur max à 75px) */
+    max-width: 180px !important;    /* Largeur max augmentée */
     width: auto;
     height: auto;
     object-fit: contain;
@@ -899,20 +899,20 @@ footer p a:hover {
 
 @media screen and (max-width: 736px) {
     .partners-section {
-        padding: 1em 0.8em !important;
+        padding: 1.2em 0.8em !important;
         margin-top: 1em !important;
     }
 
     .partners-section h2 {
-        font-size: 0.75em !important; /* Adapté pour écran mobile */
+        font-size: 0.75em !important; /* Maintient une taille discrète sur mobile */
     }
 
     .partners-grid {
-        gap: 15px !important;
+        gap: 16px !important;
     }
 
     .partners-grid img {
-        max-height: 38px !important; /* Logos également agrandis sur mobile */
-        max-width: 100px !important;
+        max-height: 45px !important; /* Ajustement proportionnel sur mobile */
+        max-width: 120px !important;
     }
 }
