@@ -903,51 +903,75 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-/* --- SECTION PARTENAIRES (ACCUEIL) --- */
+/* --- SECTION PARTENAIRES (PAGE D'ACCUEIL) --- */
 .partners-section {
-  padding: 3em 0 2em 0;
-  border-top: 2px solid rgba(212, 175, 55, 0.2); /* Rappel discret de la ligne dorée */
-  margin-top: 3em;
-  text-align: center;
+    text-align: center;
+    padding: 3em 1em;
+    margin-top: 3em;
+    border-top: 1px solid rgba(212, 175, 55, 0.3); /* Ligne fine dorée de séparation */
+    background: transparent;
 }
 
+.partners-section h2 {
+    color: #0B192C !important;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2em;
+}
+
+.partners-section h2 span {
+    display: inline-block;
+}
+
+/* Grille d'alignement des logos */
 .partners-grid {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex-wrap: wrap !important;
-  gap: 40px !important; /* Espacement entre chaque logo */
-  padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px; /* Espace entre les logos */
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .partner-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
-.partner-item img {
-  max-height: 60px !important; /* Hauteur maximale harmonisée */
-  width: auto !important;
-  object-fit: contain !important;
-  filter: grayscale(30%); /* Effet élégant légèrement grisé */
-  opacity: 0.85;
-  transition: all 0.3s ease-in-out;
+/* Rendu visuel optimal des logos */
+.partners-grid img {
+    max-height: 70px;      /* Hauteur maximale propre */
+    max-width: 160px;      /* Largeur maximale pour éviter qu'un logo ne domine */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: none !important; /* Pas de filtre, visibilité à 100% */
+    opacity: 1 !important;   /* Totalement opacifié et net */
+    transition: transform 0.3s ease;
 }
 
-.partner-item img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.05); /* Effet zoom subtil au survol */
+.partners-grid img:hover {
+    transform: scale(1.08); /* Effet de survol léger */
 }
 
-/* Adaptabilité mobile et tablette */
+/* Ajustement mobile & tablette */
 @media screen and (max-width: 736px) {
-  .partners-grid {
-    gap: 25px !important;
-  }
-  
-  .partner-item img {
-    max-height: 45px !important; /* Taille légèrement réduite sur mobile */
-  }
+    .partners-section {
+        padding: 2em 1em;
+        margin-top: 2em;
+    }
+
+    .partners-grid {
+        gap: 25px;
+    }
+
+    .partners-grid img {
+        max-height: 50px;
+        max-width: 120px;
+    }
 }
