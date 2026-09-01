@@ -823,23 +823,23 @@ footer p a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   10. Section Partenaires (Page d'accueil)
+   10. Section Partenaires (Page d'accueil) - Version Compacte (50% hauteur)
    -------------------------------------------------------------------------- */
 .partners-section {
     text-align: center;
-    padding: 3em 1em;
-    margin-top: 3em;
+    padding: 1.2em 1em !important; /* Hauteur réduite de moitié */
+    margin-top: 1.5em !important;  /* Marge supérieure réduite */
     border-top: 1px solid rgba(212, 175, 55, 0.3);
     background: transparent;
 }
 
 .partners-section h2 {
     color: #0B192C !important;
-    font-size: 1.3em;
+    font-size: 1.0em !important;   /* Titre légèrement ajusté */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 2em;
+    margin-bottom: 0.8em !important; /* Marge sous le titre divisée par deux */
 }
 
 .partners-section h2 span {
@@ -851,7 +851,7 @@ footer p a:hover {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px !important;           /* Espacement réduit entre les éléments */
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -860,12 +860,12 @@ footer p a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 2px 8px !important;    /* Rembourrage interne minimal */
 }
 
 .partners-grid img {
-    max-height: 70px;
-    max-width: 160px;
+    max-height: 35px !important;    /* Hauteur max des logos divisée par 2 (au lieu de 70px) */
+    max-width: 110px !important;    /* Largeur max ajustée */
     width: auto;
     height: auto;
     object-fit: contain;
@@ -880,16 +880,16 @@ footer p a:hover {
 
 @media screen and (max-width: 736px) {
     .partners-section {
-        padding: 2em 1em;
-        margin-top: 2em;
+        padding: 1em 0.8em !important;
+        margin-top: 1em !important;
     }
 
     .partners-grid {
-        gap: 25px;
+        gap: 12px !important;
     }
 
     .partners-grid img {
-        max-height: 50px;
-        max-width: 120px;
+        max-height: 25px !important; /* Version mobile ultra-compacte */
+        max-width: 80px !important;
     }
 }
