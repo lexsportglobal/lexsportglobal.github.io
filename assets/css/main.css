@@ -212,12 +212,8 @@
 /* --------------------------------------------------------------------------
    3. Social Media & Icons (Footer & Contact)
    -------------------------------------------------------------------------- */
-/* Masquage du texte .label pour ne garder que l'icône visuelle */
-.label {
-    display: none !important;
-}
 
-/* Alignement des icônes de réseaux sociaux */
+/* Alignement et structure de la liste d'icônes */
 ul.icons,
 ul.contact-icons,
 ul.contact-icons-only {
@@ -237,7 +233,7 @@ ul.contact-icons-only li {
     display: inline-block !important;
 }
 
-/* Style des cercles dorés avec icônes */
+/* Cercles dorés pour les icônes */
 ul.icons li a,
 ul.contact-icons li a,
 ul.contact-icons-only li a {
@@ -253,8 +249,10 @@ ul.contact-icons-only li a {
     font-size: 1.1em !important;
     text-decoration: none !important;
     transition: all 0.3s ease !important;
+    position: relative;
 }
 
+/* Animation au survol */
 ul.icons li a:hover,
 ul.contact-icons li a:hover,
 ul.contact-icons-only li a:hover {
@@ -262,6 +260,37 @@ ul.contact-icons-only li a:hover {
     color: #0B192C !important;
     transform: translateY(-3px) !important;
     box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Gestion du texte caché (.label) sans bloquer l'affichage des icônes */
+ul.icons li a .label,
+ul.contact-icons li a .label {
+    display: inline-block !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    font-size: 0 !important;
+    text-indent: -9999px !important;
+}
+
+/* Support Font Awesome pour afficher correctement les glyphes */
+ul.icons li a.icon::before,
+ul.contact-icons li a.icon::before {
+    font-size: 1rem !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+}
+
+ul.icons li a.brands::before,
+ul.contact-icons li a.brands::before {
+    font-family: 'Font Awesome 5 Brands', 'Font Awesome 6 Brands' !important;
+    font-weight: 400 !important;
+}
+
+ul.icons li a.solid::before,
+ul.contact-icons li a.solid::before {
+    font-family: 'Font Awesome 5 Free', 'Font Awesome 6 Free' !important;
+    font-weight: 900 !important;
 }
 
 /* --------------------------------------------------------------------------
