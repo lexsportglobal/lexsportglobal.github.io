@@ -903,3 +903,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+/* --- SECTION PARTENAIRES (ACCUEIL) --- */
+.partners-section {
+	text-align: center;
+	padding: 3em 0 2em 0;
+	border-top: 2px solid rgba(212, 175, 55, 0.3); /* Ligne de séparation Or subtile */
+	margin-top: 3em;
+}
+
+.partners-grid {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 40px;
+	margin-top: 1.5em;
+}
+
+.partners-grid img {
+	max-height: 65px;
+	width: auto;
+	object-fit: contain;
+	filter: grayscale(100%);
+	opacity: 0.8;
+	transition: all 0.3s ease-in-out;
+}
+
+.partners-grid img:hover {
+	filter: grayscale(0%);
+	opacity: 1;
+	transform: scale(1.05);
+}
+
+@media screen and (max-width: 736px) {
+	.partners-grid {
+		gap: 25px;
+	}
+	.partners-grid img {
+		max-height: 45px;
+	}
+}
