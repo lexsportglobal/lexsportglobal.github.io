@@ -810,60 +810,67 @@ footer p a:hover {
     border: none !important;
   }
 }
-/* --- CORRECTIF MENU MOBILE RESPONSIVE --- */
+/* --- CORRECTIF MENU HAMBURGER MOBILE & TABLETTE --- */
 @media screen and (max-width: 980px) {
-  #header {
-    position: relative;
-    z-index: 10000;
-  }
 
-  #menu-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #0B192C !important;
-    border-bottom: 2px solid #D4AF37;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    padding: 10px 0;
-  }
+    /* Alignement et conteneur du Header */
+    #header {
+        position: relative !important;
+        z-index: 10000 !important;
+        background: #0B192C !important; /* Couleur de fond propre */
+    }
 
-  #menu-nav.active {
-    display: block !important;
-  }
+    /* Le menu est MASQUÉ par défaut */
+    #menu-nav {
+        display: none !important; 
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #0B192C !important;
+        border-bottom: 2px solid #D4AF37 !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+        padding: 10px 0 !important;
+        z-index: 9999 !important;
+    }
 
-  #menu-nav ul {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-  }
+    /* Le menu S'AFFICHE uniquement quand la classe ACTIVE est présente */
+    #menu-nav.active {
+        display: block !important;
+    }
 
-  #menu-nav ul li {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-  }
+    /* Style des éléments de liste du menu */
+    #menu-nav ul {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
 
-  #menu-nav ul li:last-child {
-    border-bottom: none;
-  }
+    #menu-nav ul li {
+        width: 100% !important;
+        text-align: center !important;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+    }
 
-  #menu-nav ul li a {
-    display: block !important;
-    padding: 15px 0 !important;
-    color: #FFFFFF !important;
-    font-weight: 700 !important;
-    font-size: 0.95em !important;
-    letter-spacing: 1px;
-    text-decoration: none !important;
-  }
+    #menu-nav ul li:last-child {
+        border-bottom: none !important;
+    }
 
-  #menu-nav ul li a:hover {
-    color: #D4AF37 !important;
-    background: rgba(255, 255, 255, 0.05);
-  }
+    #menu-nav ul li a {
+        display: block !important;
+        padding: 15px 0 !important;
+        color: #FFFFFF !important;
+        font-weight: 700 !important;
+        font-size: 0.95em !important;
+        letter-spacing: 1px !important;
+        text-decoration: none !important;
+    }
+
+    #menu-nav ul li a:hover {
+        color: #D4AF37 !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+    }
 }
