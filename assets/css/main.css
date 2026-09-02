@@ -131,46 +131,6 @@
   width: 100%;
 }
 
-/* Language Switcher */
-.lang-switcher {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-right: 15px;
-}
-
-.lang-btn {
-  background: transparent !important;
-  border: 1.5px solid #2c3e50 !important;
-  color: #2c3e50 !important;
-  font-size: 0.75em !important;
-  font-weight: 700 !important;
-  padding: 2px 8px !important;
-  border-radius: 4px !important;
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
-  box-shadow: none !important;
-  height: auto !important;
-  line-height: 1.2 !important;
-}
-
-.lang-btn:hover {
-  border-color: #C5A05F !important;
-  color: #C5A05F !important;
-}
-
-.lang-btn.active {
-  background-color: #C5A05F !important;
-  border-color: #C5A05F !important;
-  color: #ffffff !important;
-}
-
-.lang-separator {
-  color: #cbd5e0;
-  font-size: 0.8em;
-  font-weight: bold;
-}
-
 /* Header Right Area */
 .header-right {
   display: flex;
@@ -337,13 +297,6 @@ ul.contact-icons li a.solid::before {
   margin-bottom: 0.5rem;
   line-height: 1.3 !important;
   font-size: 2.2em;
-}
-
-.banner-title .subtitle-en {
-  display: inline-block;
-  font-size: 0.65em;
-  color: #718096;
-  font-style: italic;
 }
 
 .banner-title .subtitle-tagline {
@@ -571,24 +524,22 @@ table thead {
 }
 
 /* --------------------------------------------------------------------------
-   7. Dynamic Language Display Toggle
+   7. Typography Rules & Native Browser Translation Support
    -------------------------------------------------------------------------- */
-.lang-en-hidden .lang-en {
-  display: none !important;
-}
-
-.lang-fr-hidden .lang-fr {
-  display: none !important;
-}
-
 #menu-nav ul li a,
 #header nav a,
-.nav-link,
-.lang-switch,
-.lang-btn {
+.nav-link {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 600 !important;
   letter-spacing: 0.5px;
+}
+
+/* Assure la compatibilité fluide avec la traduction automatique Google/Safari */
+.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0px !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -597,10 +548,10 @@ table thead {
 #footer {
   width: 100%;
   text-align: center;
-  padding: 15px 20px !important; /* Rembourrage global fortement réduit (au lieu de 45px) */
+  padding: 15px 20px !important;
   background: #F8F8F6;
   color: #002349;
-  margin-top: 25px !important;  /* Espace au-dessus du footer réduit (au lieu de 60px) */
+  margin-top: 25px !important;
   border-top: 3px solid #D4AF37;
 }
 
@@ -609,22 +560,19 @@ table thead {
   margin: 0 auto;
 }
 
-/* Espacement réduit autour des icônes sociales */
 #footer ul.icons {
-  margin: 0.4em 0 !important;   /* Marge compacte (au lieu de 1.5em) */
-  gap: 12px !important;         /* Espacement resserré entre les cercles */
+  margin: 0.4em 0 !important;
+  gap: 12px !important;
 }
 
-/* Cercles des icônes légèrement réajustés */
 #footer ul.icons li a {
-  width: 36px !important;       /* Taille ajustée (au lieu de 42px) */
+  width: 36px !important;
   height: 36px !important;
   font-size: 0.95em !important;
 }
 
-/* Liens et mentions légales */
 #footer p {
-  margin: 4px 0 !important;     /* Suppression des marges exagérées entre paragraphes */
+  margin: 4px 0 !important;
   line-height: 1.3 !important;
 }
 
@@ -634,7 +582,7 @@ footer p a {
   font-weight: 800 !important;
   text-decoration: none !important;
   border-bottom: none !important;
-  font-size: 0.85em !important; /* Taille de texte discrète et élégante */
+  font-size: 0.85em !important;
   transition: color 0.3s ease;
 }
 
@@ -647,10 +595,10 @@ footer p a:hover {
 #footer .copyright {
   color: #666666;
   font-size: 0.8em !important;
-  margin-top: 4px !important;   /* Espace minimal sous les mentions légales */
+  margin-top: 4px !important;
 }
 
-/* Bulle Flottante WhatsApp (conservée intacte) */
+/* Bulle Flottante WhatsApp */
 .whatsapp-float {
   position: fixed;
   top: 50%;
@@ -678,15 +626,11 @@ footer p a:hover {
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.4);
 }
+
 /* --------------------------------------------------------------------------
    9. Responsiveness: Phone & Tablet Breaks (< 980px)
    -------------------------------------------------------------------------- */
 @media screen and (max-width: 980px) {
-  .banner-title .subtitle-en {
-    display: block !important;
-    margin-top: 0.5rem;
-  }
-
   body, p, li {
     font-size: 1.05rem !important;
     line-height: 1.75 !important;
@@ -736,7 +680,7 @@ footer p a:hover {
     z-index: 99999 !important;
   }
 
-  /* --- MENU HAMBURGER MOBILE & TABLETTE COMPACT (2/3 À DROITE) --- */
+  /* --- MENU HAMBURGER MOBILE & TABLETTE COMPACT --- */
   #header #menu-nav,
   #menu-nav {
     display: none !important;
@@ -854,7 +798,7 @@ footer p a:hover {
 
 .partners-section h2 {
     color: #0B192C !important;
-    font-size: 0.8em !important;   /* Titre plus petit sur PC/Tablette */
+    font-size: 0.8em !important;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -870,7 +814,7 @@ footer p a:hover {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px !important;           /* Espace augmenté pour aérer les grands logos */
+    gap: 30px !important;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -883,8 +827,8 @@ footer p a:hover {
 }
 
 .partners-grid img {
-    max-height: 75px !important;    /* Logos agrandis (hauteur max à 75px) */
-    max-width: 180px !important;    /* Largeur max augmentée */
+    max-height: 75px !important;
+    max-width: 180px !important;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -904,7 +848,7 @@ footer p a:hover {
     }
 
     .partners-section h2 {
-        font-size: 0.75em !important; /* Maintient une taille discrète sur mobile */
+        font-size: 0.75em !important;
     }
 
     .partners-grid {
@@ -912,7 +856,7 @@ footer p a:hover {
     }
 
     .partners-grid img {
-        max-height: 45px !important; /* Ajustement proportionnel sur mobile */
+        max-height: 45px !important;
         max-width: 120px !important;
     }
 }
