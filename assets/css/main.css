@@ -275,9 +275,9 @@ ul.contact-icons li a.solid::before {
 
 #banner .image,
 .cover-image-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 1.5rem 0 2rem 0 !important;
+  width: 50% !important;
+  max-width: 50% !important;
+  margin: 1.5rem auto 2rem auto !important;
   overflow: hidden;
   border-radius: 8px;
   display: block !important;
@@ -287,7 +287,7 @@ ul.contact-icons li a.solid::before {
 .cover-image-container img {
   width: 100% !important;
   height: auto !important;
-  max-height: 520px;
+  max-height: 364px;
   object-fit: cover;
   display: block;
 }
@@ -343,9 +343,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .posts article .image {
-  max-height: 420px;
+  width: 50% !important;
+  max-height: 294px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
   border-radius: 6px;
   display: block;
 }
@@ -678,6 +679,24 @@ footer p a:hover {
     font-size: 1.4rem !important;
     cursor: pointer !important;
     z-index: 99999 !important;
+  }
+
+  /* Rétablissement de la largeur plein écran pour les images sur tablette/mobile */
+  #banner .image,
+  .cover-image-container,
+  .posts article .image {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 1.5rem 0 2rem 0 !important;
+  }
+
+  #banner .image img,
+  .cover-image-container img {
+    max-height: 520px !important;
+  }
+
+  .posts article .image {
+    max-height: 420px !important;
   }
 
   /* --- MENU HAMBURGER MOBILE & TABLETTE COMPACT --- */
