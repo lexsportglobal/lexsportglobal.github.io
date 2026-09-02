@@ -6,6 +6,77 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!-- Styles spécifiques pour le layout 70/30 et les dimensions d'image -->
+		<style>
+			/* Agencement 70/30 pour ordinateur */
+			@media screen and (min-width: 981px) {
+				.page-layout-container {
+					display: flex;
+					gap: 40px;
+					align-items: flex-start;
+				}
+				.main-content-70 {
+					flex: 0 0 70%;
+					max-width: 70%;
+				}
+				.sidebar-30 {
+					flex: 0 0 30%;
+					max-width: 30%;
+				}
+				/* Image réduite à 50% de largeur et 70% de hauteur sur PC */
+				.custom-page-image {
+					width: 50% !important;
+					height: 175px !important; /* 70% des 250px initiaux */
+					object-fit: cover;
+					border-bottom: 2px solid #C5A05F;
+					display: block;
+				}
+			}
+
+			/* Repli sur 100% de largeur pour tablettes et mobiles */
+			@media screen and (max-width: 980px) {
+				.page-layout-container {
+					display: block;
+				}
+				.main-content-70,
+				.sidebar-30 {
+					width: 100%;
+					max-width: 100%;
+				}
+				.sidebar-30 {
+					margin-top: 40px;
+				}
+				/* Dimensions conservées sur Mobile / Tablette */
+				.custom-page-image {
+					width: 100% !important;
+					max-height: 250px !important;
+					object-fit: cover;
+					border-bottom: 2px solid #C5A05F;
+				}
+			}
+
+			/* Style conteneur d'encadré pour la colonne de droite */
+			.sidebar-box {
+				background-color: #f8f9fa;
+				border: 1px solid rgba(0, 35, 73, 0.1);
+				border-left: 4px solid #D4AF37;
+				padding: 20px;
+				border-radius: 6px;
+				margin-bottom: 25px;
+			}
+			.sidebar-box h3 {
+				color: #002349;
+				margin-bottom: 12px;
+				font-size: 1.1rem;
+			}
+			.sidebar-box p {
+				font-size: 0.9rem;
+				line-height: 1.6;
+				color: #444;
+			}
+		</style>
+
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
 		<script>
@@ -37,7 +108,7 @@
 						<ul>
 							<li><a href="index.html">Accueil</a></li>
 							<li><a href="generic.html">Expertise Juridique</a></li>
-							<li><a href="scouting.html">Data Scouting</a></li> 
+							<li><a href="scouting.html">Data Scouting</a></li>
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
@@ -55,40 +126,71 @@
 			<div id="main">
 				<div class="inner">
 
-					<section>
-						<header class="main">
-							<h1>Ingénierie Juridique & Data Analytics</h1>
-						</header>
+					<!-- Disposition Globale 70% à gauche / 30% à droite -->
+					<div class="page-layout-container">
 
-						<span class="image main">
-							<img src="images/expertise_legal.jpg" 
-								 alt="Ingénierie Juridique" 
-								 style="max-height: 250px; width: 100%; object-fit: cover; border-bottom: 2px solid #C5A05F;" />
-						</span>
+						<!-- COLONNE PRINCIPALE (70% de la largeur sur PC) -->
+						<main class="main-content-70">
+							<section>
+								<header class="main">
+									<h1>Ingénierie Juridique & Data Analytics</h1>
+								</header>
 
-						<p>Dans le nouveau paysage sportif béninois, l'ingénierie juridique n'est plus une option, mais un levier de croissance. LEX SPORT GLOBAL sécurise chaque étape de vos projets sportifs en alliant conformité légale et analyse de données.</p>
+								<span class="image main">
+									<img src="images/expertise_legal.jpg" 
+										 alt="Ingénierie Juridique" 
+										 class="custom-page-image" />
+								</span>
 
-						<hr class="major" />
+								<p>Dans le nouveau paysage sportif béninois, l'ingénierie juridique n'est plus une option, mais un levier de croissance. LEX SPORT GLOBAL sécurise chaque étape de vos projets sportifs en alliant conformité légale et analyse de données.</p>
 
-						<h2>Cadre Légal Béninois : Loi 2021-05</h2>
-						<p>Nous sommes spécialisés dans l'accompagnement lié à la <b>Loi n°2021-05 du 23 décembre 2021</b> portant organisation et promotion des activités physiques et sportives en République du Bénin. Cette loi impose une mutation profonde :</p>
-						<ul>
-							<li><strong>Transformation des clubs :</strong> Passage du statut associatif au statut de société sportive.</li>
-							<li><strong>Gouvernance :</strong> Mise en place de structures administratives conformes aux exigences de l'État.</li>
-							<li><strong>Conventions :</strong> Négociation des conventions d'exploitation et de gestion.</li>
-						</ul>
+								<hr class="major" />
 
-						<hr class="major" />
+								<h2>Cadre Légal Béninois : Loi 2021-05</h2>
+								<p>Nous sommes spécialisés dans l'accompagnement lié à la <b>Loi n°2021-05 du 23 décembre 2021</b> portant organisation et promotion des activités physiques et sportives en République du Bénin. Cette loi impose une mutation profonde :</p>
+								<ul>
+									<li><strong>Transformation des clubs :</strong> Passage du statut associatif au statut de société sportive.</li>
+									<li><strong>Gouvernance :</strong> Mise en place de structures administratives conformes aux exigences de l'État.</li>
+									<li><strong>Conventions :</strong> Négociation des conventions d'exploitation et de gestion.</li>
+								</ul>
 
-						<h2>Régulations FIFA & Transferts</h2>
-						<p>Notre expertise s'étend à la sphère internationale pour garantir la sécurité juridique des transferts d'athlètes :</p>
-						<ul>
-							<li>Rédaction et révision de contrats de travail sportifs internationaux.</li>
-							<li>Gestion des indemnités de formation et du mécanisme de solidarité.</li>
-							<li>Représentation et conseil devant les instances juridictionnelles du sport.</li>
-						</ul>
+								<hr class="major" />
 
-					</section>
+								<h2>Régulations FIFA & Transferts</h2>
+								<p>Notre expertise s'étend à la sphère internationale pour garantir la sécurité juridique des transferts d'athlètes :</p>
+								<ul>
+									<li>Rédaction et révision de contrats de travail sportifs internationaux.</li>
+									<li>Gestion des indemnités de formation et du mécanisme de solidarité.</li>
+									<li>Représentation et conseil devant les instances juridictionnelles du sport.</li>
+								</ul>
+
+							</section>
+						</main>
+
+						<!-- COLONNE LATÉRALE / SIDEBAR (30% de la largeur sur PC) -->
+						<aside class="sidebar-30">
+							
+							<div class="sidebar-box">
+								<h3><i class="fas fa-file-contract"></i> Audit Juridique</h3>
+								<p>Évaluez la conformité de votre club ou association par rapport aux exigences de la Loi 2021-05 et des textes de la FIFA.</p>
+								<a href="contact.html" class="button primary small">Demander un Audit</a>
+							</div>
+
+							<div class="sidebar-box">
+								<h3><i class="fas fa-search-dollar"></i> Indemnités & Transferts</h3>
+								<p>Calcul et sécurisation de vos droits financiers lors des mutations de joueurs (TMS & passeport joueur).</p>
+								<a href="contact.html" class="button small">En savoir plus</a>
+							</div>
+
+							<div class="sidebar-box">
+								<h3><i class="fas fa-chart-bar"></i> Data Scouting</h3>
+								<p>Associez la sécurité juridique aux données de performance sur le terrain.</p>
+								<a href="scouting.html" class="button small">Voir le Scouting</a>
+							</div>
+
+						</aside>
+
+					</div> <!-- Fin .page-layout-container -->
 
 				</div>
 			</div>
