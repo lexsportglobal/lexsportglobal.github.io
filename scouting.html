@@ -8,23 +8,52 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     
     <style>
-        /* --- CORRECTIF ANTI ESPACE VIDE & IMAGE DEBORDANTE --- */
+        /* --- CORRECTIF ANTI ESPACE VIDE --- */
         #main > .inner {
-            padding-top: 10px !important; /* Supprime le grand vide sous le header */
+            padding-top: 10px !important;
         }
 
-        /* Rend l'image 100% responsive et alignée au conteneur */
+        /* --- STYLES DES IMAGES MAIN DEKSTOP VS MOBILE --- */
         .image.main {
-            width: 100% !important;
             margin: 0 0 2em 0 !important;
+            width: 100% !important;
         }
 
         .image.main img { 
-            width: 100% !important;
-            max-height: 400px; 
+            display: block;
             object-fit: cover; 
             border-bottom: 3px solid #C5A05F; 
-            display: block;
+            width: 100% !important;
+            max-height: 400px;
+        }
+
+        /* Ajustements ordinateur uniquement (> 736px) */
+        @media screen and (min-width: 737px) {
+            .image.main.scouting-img-container {
+                width: 50% !important; /* Reduction a 50% de largeur */
+            }
+
+            .image.main.scouting-img-container img { 
+                max-height: 280px !important; /* Reduction a 70% de hauteur (280px au lieu de 400px) */
+            }
+
+            /* Disposition 70% / 30% pour Desktop */
+            .scouting-layout {
+                display: grid;
+                grid-template-columns: 70% 30%;
+                gap: 30px;
+                align-items: start;
+            }
+        }
+
+        /* Disposition mobile / tablette (< 736px) */
+        @media screen and (max-width: 736px) {
+            .scouting-layout {
+                display: block;
+            }
+            .sidebar-right {
+                margin-top: 30px;
+            }
         }
 
         /* --- 1. PRESENTATION --- */
@@ -42,7 +71,15 @@
             text-transform: uppercase;
         }
 
-        /* --- 2. FILTRES (CENTRAGE ABSOLU) --- */
+        /* --- CONTENEUR LATÉRAL 30% --- */
+        .sidebar-right {
+            background: rgba(11, 25, 44, 0.4);
+            border-left: 2px solid #C5A05F;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        /* --- 2. FILTRES --- */
         .filter-section { width: 100%; text-align: center; margin: 40px 0 30px 0; }
         .filter-bar { display: inline-flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .filter-btn {
@@ -160,30 +197,46 @@
                         <h1 style="color: #0B192C; letter-spacing: 2px;">Data Scouting & Performance</h1>
                     </header>
                     
-                    <span class="image main"><img src="images/scouting_data.jpg" alt="Data Analytics" /></span>
+                    <!-- Image reduite a 50% de largeur et 70% de hauteur sur desktop -->
+                    <span class="image main scouting-img-container"><img src="images/scouting_data.jpg" alt="Data Analytics" /></span>
 
-                    <div class="scouting-intro">
-                        <h2>Analyse Prédictive & Valorisation</h2>
-                        <p>Le département <strong>Data Scouting</strong> de LEX SPORT GLOBAL transforme l'observation traditionnelle en une science exacte. Nous accompagnons les clubs, académies et recruteurs dans l'identification de talents à haute valeur ajoutée grâce à une méthodologie rigoureuse basée sur l'analyse d'indicateurs de performance clés (KPIs) et la valorisation financière des profils sportifs.</p>
-                    </div>
+                    <!-- Structure principale en 2 colonnes (70% / 30%) -->
+                    <div class="scouting-layout">
+                        
+                        <!-- COLONNE GAUCHE (70%) -->
+                        <div class="main-content-left">
+                            <div class="scouting-intro">
+                                <h2>Analyse Prédictive & Valorisation</h2>
+                                <p>Le département <strong>Data Scouting</strong> de LEX SPORT GLOBAL transforme l'observation traditionnelle en une science exacte. Nous accompagnons les clubs, académies et recruteurs dans l'identification de talents à haute valeur ajoutée grâce à une méthodologie rigoureuse basée sur l'analyse d'indicateurs de performance clés (KPIs) et la valorisation financière des profils sportifs.</p>
+                            </div>
 
-                    <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-                        <p style="font-style: italic; color: #888; font-size: 0.9em; margin-bottom: 10px;">Vous êtes un club ou un agent indépendant ?</p>
-                        <a href="add-player.html" class="button primary" style="background-color: #D4AF37 !important; color: #000 !important; font-weight: 900; border-radius: 5px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);">
-                            ➕ INSCRIRE UN TALENT
-                        </a>
-                    </div>
+                            <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                                <p style="font-style: italic; color: #888; font-size: 0.9em; margin-bottom: 10px;">Vous êtes un club ou un agent indépendant ?</p>
+                                <a href="add-player.html" class="button primary" style="background-color: #D4AF37 !important; color: #000 !important; font-weight: 900; border-radius: 5px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);">
+                                    ➕ INSCRIRE UN TALENT
+                                </a>
+                            </div>
 
-                    <div class="filter-section">
-                        <div class="filter-bar">
-                            <button class="filter-btn" onclick="filterPlayers('all')">Tous</button>
-                            <button class="filter-btn" onclick="filterPlayers('pro')">Professionnels</button>
-                            <button class="filter-btn" onclick="filterPlayers('amateur')">Amateurs</button>
-                            <button class="filter-btn" onclick="filterPlayers('free agent')">Agents Libres</button>
+                            <div class="filter-section">
+                                <div class="filter-bar">
+                                    <button class="filter-btn" onclick="filterPlayers('all')">Tous</button>
+                                    <button class="filter-btn" onclick="filterPlayers('pro')">Professionnels</button>
+                                    <button class="filter-btn" onclick="filterPlayers('amateur')">Amateurs</button>
+                                    <button class="filter-btn" onclick="filterPlayers('free agent')">Agents Libres</button>
+                                </div>
+                            </div>
+
+                            <div id="players-container"></div>
                         </div>
+
+                        <!-- COLONNE DROITE (30%) : Espace réservé pour d'autres conteneurs et écrits -->
+                        <aside class="sidebar-right">
+                            <h3 style="color: #D4AF37; font-size: 1.1em; text-transform: uppercase; margin-bottom: 15px;">Informations</h3>
+                            <p style="font-size: 0.9em; line-height: 1.6;">Insérez vos futurs conteneurs, annonces, ou widgets ici.</p>
+                        </aside>
+
                     </div>
 
-                    <div id="players-container"></div>
                 </section>
 
             </div>
