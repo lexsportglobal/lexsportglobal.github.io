@@ -13,51 +13,38 @@
             padding-top: 10px !important; /* Supprime le grand vide sous le header */
         }
 
-        /* Adjustments pour l'image scouting_data */
-        .image.main {
-            width: 100% !important;
-            margin: 0 0 2em 0 !important;
+        /* --- MISE EN PAGE 70% / 30% POUR L'INTRODUCTION ET L'IMAGE --- */
+        .scouting-top-layout {
+            display: grid;
+            grid-template-columns: 70% 30%;
+            gap: 30px;
+            align-items: start;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
         }
 
-        .image.main img { 
-            width: 100% !important;
-            max-height: 400px; 
+        .scouting-left-content {
+            width: 100%;
+        }
+
+        /* Image réduite à 50% de largeur (dans son conteneur) et 70% de hauteur */
+        .image.main.scouting-custom-img {
+            width: 50% !important;
+            margin: 0 0 1.5em 0 !important;
+        }
+
+        .image.main.scouting-custom-img img { 
+            width: 100% !important; 
+            max-height: 280px; /* 70% de 400px initiaux */
             object-fit: cover; 
             border-bottom: 3px solid #C5A05F; 
             display: block;
         }
 
-        /* --- STYLES DESKTOP (Écrans grands) --- */
-        @media screen and (min-width: 737px) {
-            .image.main {
-                width: 50% !important; /* Largeur réduite à 50% */
-            }
-            .image.main img {
-                max-height: 280px !important; /* Hauteur réduite à 70% (280px au lieu de 400px) */
-            }
-
-            /* Disposition en colonnes (70% texte à gauche / 30% espace libre à droite) */
-            .scouting-content-layout {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 5%;
-                width: 100%;
-            }
-            .scouting-intro {
-                width: 70% !important; /* Le texte occupe 70% de la largeur */
-                margin-top: 0 !important;
-            }
-            .scouting-sidebar {
-                width: 25% !important; /* Espace réservé pour les 30% restants (comprenant le gap) */
-            }
-        }
-
         /* --- 1. PRESENTATION --- */
         .scouting-intro {
-            margin-top: 20px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 30px;
+            margin-top: 10px;
             line-height: 1.8;
             text-align: justify;
         }
@@ -66,6 +53,16 @@
             font-size: 1.5em;
             margin-bottom: 0.8em;
             text-transform: uppercase;
+        }
+
+        /* --- RESPONSIVE MOBILE / TABLETTE --- */
+        @media screen and (max-width: 736px) {
+            .scouting-top-layout {
+                grid-template-columns: 1fr;
+            }
+            .image.main.scouting-custom-img {
+                width: 100% !important;
+            }
         }
 
         /* --- 2. FILTRES (CENTRAGE ABSOLU) --- */
@@ -186,16 +183,21 @@
                         <h1 style="color: #0B192C; letter-spacing: 2px;">Data Scouting & Performance</h1>
                     </header>
                     
-                    <span class="image main"><img src="images/scouting_data.jpg" alt="Data Analytics" /></span>
+                    <!-- Grille 70% / 30% -->
+                    <div class="scouting-top-layout">
+                        <!-- Bloc Gauche (70%) : Image + Texte d'intro -->
+                        <div class="scouting-left-content">
+                            <span class="image main scouting-custom-img"><img src="images/scouting_data.jpg" alt="Data Analytics" /></span>
 
-                    <!-- Layout : Texte à 70% à gauche / Espace 30% à droite -->
-                    <div class="scouting-content-layout">
-                        <div class="scouting-intro">
-                            <h2>Analyse Prédictive & Valorisation</h2>
-                            <p>Le département <strong>Data Scouting</strong> de LEX SPORT GLOBAL transforme l'observation traditionnelle en une science exacte. Nous accompagnons les clubs, académies et recruteurs dans l'identification de talents à haute valeur ajoutée grâce à une méthodologie rigoureuse basée sur l'analyse d'indicateurs de performance clés (KPIs) et la valorisation financière des profils sportifs.</p>
+                            <div class="scouting-intro">
+                                <h2>Analyse Prédictive & Valorisation</h2>
+                                <p>Le département <strong>Data Scouting</strong> de LEX SPORT GLOBAL transforme l'observation traditionnelle en une science exacte. Nous accompagnons les clubs, académies et recruteurs dans l'identification de talents à haute valeur ajoutée grâce à une méthodologie rigoureuse basée sur l'analyse d'indicateurs de performance clés (KPIs) et la valorisation financière des profils sportifs.</p>
+                            </div>
                         </div>
-                        <div class="scouting-sidebar">
-                            <!-- Espace réservé de 30% à droite pour vos futurs conteneurs et écrits -->
+
+                        <!-- Bloc Droite (30%) : Espace réservé pour vos futurs contenus -->
+                        <div class="scouting-right-content">
+                            <!-- Espace vide ou conteneur additionnel pour les 30% restants -->
                         </div>
                     </div>
 
