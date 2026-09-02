@@ -125,7 +125,6 @@
 					<section>
 						<header class="main">
 							<h1 class="page-title-small" style="color: #002349;">Mentions Légales & Confidentialité</h1>
-							<p class="subtitle-en">Mentions Légales & Politique de Confidentialité</p>
 						</header>
 
 						<!-- Onglets de Navigation Interne -->
@@ -143,7 +142,7 @@
 							<p>Le site internet <strong>lexsportglobal.com</strong> est édité par le Cabinet d'Ingénierie Juridique et de Data Scouting <strong>LEX SPORT GLOBAL</strong>, une division interne de STRONGHAUS.</p>
 							<ul>
 								<li><strong>Siège social :</strong> Cotonou, République du Bénin.</li>
-								<li><strong>Directeur :</strong> S. Noël VODOUESSI, Fondateur & PDG, Ingénieur Juriste du Sport / Praticien du Droit.</li>
+								<li><strong>Directeur :</strong> S. Noël VODOUESSI, Fondateur & Directeur Général, Ingénieur Juriste du Sport.</li>
 								<li><strong>Contact Électronique :</strong> <a href="mailto:lexsportglobal.contact@gmail.com">lexsportglobal.contact@gmail.com</a></li>
 							</ul>
 
@@ -166,15 +165,15 @@
 								<li><strong>Données de Performance des Athlètes :</strong> Données biométriques anonymisées, statistiques de jeu, historique contractuel et statut juridique.</li>
 							</ul>
 
-							<h3>2.2. Sécurité des Données (Sécurité au Niveau des Lignes / RLS)</h3>
-							<p>Les données d'identification directe des athlètes sont strictement cloisonnées et protégées par des mécanismes de sécurité de niveau industriel (Row Level Security - RLS). L'accès aux fiches identifiées des joueurs est strictement réservé aux recruteurs et dirigeants dûment vérifiés et autorisés par le Directeur de LEX SPORT GLOBAL, une division interne de STRONGHAUS.</p>
+							<h3>2.2. Sécurité des Données (Row Level Security)</h3>
+							<p>Les données d'identification directe des athlètes sont entièrement cloisonnées et protégées par des mécanismes de sécurité de niveau industriel (Sécurité au Niveau des Lignes - RLS). L'accès aux fiches identifiées des joueurs est strictement réservé aux recruteurs et dirigeants dûment vérifiés et autorisés par la direction de LEX SPORT GLOBAL, une division interne de STRONGHAUS.</p>
 
 							<h3>2.3. Finalités du Traitement</h3>
 							<p>Les données collectées servent exclusivement à :</p>
 							<ul>
 								<li>La réalisation d'audits de conformité juridique (Règlements FIFA / FBF / OHADA).</li>
 								<li>La mise en relation sécurisée entre clubs formateurs, athlètes certifiés et recruteurs agréés.</li>
-								<li>L'envoi de rapports d'analyse, de lettres d'information stratégiques et de propositions de services.</li>
+								<li>L'envoi de rapports d'analyse, de bulletins d'information stratégiques et de propositions de services.</li>
 							</ul>
 
 							<h3>2.4. Droits des Utilisateurs</h3>
@@ -223,38 +222,6 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script>
-			// Activation du menu Hamburger (Mobile)
-			const navToggle = document.getElementById('navToggle');
-			const menuNav = document.getElementById('menu-nav');
-
-			if (navToggle) {
-				navToggle.addEventListener('click', function() {
-					menuNav.classList.toggle('active');
-				});
-			}
-
-			// Gestion de la bascule FR / EN
-			const btnFr = document.getElementById('btn-fr');
-			const btnEn = document.getElementById('btn-en');
-			const body = document.body;
-
-			if (btnFr && btnEn) {
-				btnFr.addEventListener('click', function() {
-					btnFr.classList.add('active');
-					btnEn.classList.remove('active');
-					body.classList.remove('lang-en-active');
-					body.classList.add('lang-fr-active');
-				});
-
-				btnEn.addEventListener('click', function() {
-					btnEn.classList.add('active');
-					btnFr.classList.remove('active');
-					body.classList.remove('lang-fr-active');
-					body.classList.add('lang-en-active');
-				});
-			}
-		</script>
 
 		<!-- Script Menu Mobile Fonctionnel -->
 		<script>
