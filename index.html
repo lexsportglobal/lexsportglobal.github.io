@@ -6,6 +6,62 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!-- Styles spécifiques pour la disposition 70/30 -->
+		<style>
+			/* Agencement 70/30 pour ordinateurs et grands écrans */
+			@media screen and (min-width: 981px) {
+				.page-layout-container {
+					display: flex;
+					gap: 40px;
+					align-items: flex-start;
+				}
+				.main-content-70 {
+					flex: 0 0 70%;
+					max-width: 70%;
+				}
+				.sidebar-30 {
+					flex: 0 0 30%;
+					max-width: 30%;
+				}
+			}
+
+			/* Repli sur 100% de largeur pour tablettes et mobiles */
+			@media screen and (max-width: 980px) {
+				.page-layout-container {
+					display: block;
+				}
+				.main-content-70,
+				.sidebar-30 {
+					width: 100%;
+					max-width: 100%;
+				}
+				.sidebar-30 {
+					margin-top: 40px;
+				}
+			}
+
+			/* Style conteneur d'encadré pour la colonne de droite */
+			.sidebar-box {
+				background-color: #f8f9fa;
+				border: 1px solid rgba(0, 35, 73, 0.1);
+				border-left: 4px solid #D4AF37;
+				padding: 20px;
+				border-radius: 6px;
+				margin-bottom: 25px;
+			}
+			.sidebar-box h3 {
+				color: #002349;
+				margin-bottom: 12px;
+				font-size: 1.1rem;
+			}
+			.sidebar-box p {
+				font-size: 0.9rem;
+				line-height: 1.6;
+				color: #444;
+			}
+		</style>
+
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
 		<script>
@@ -55,65 +111,99 @@
 			<div id="main">
 				<div class="inner">
 
-					<!-- Banner Section (Ordre: Titre -> Image -> Texte) -->
-					<section id="banner" class="banner-custom">
-					  <!-- 1. Titre -->
-					  <div class="banner-title">
-					    <h1>
-					      L'Ingénierie Juridique au service de la Performance
-					    </h1>
-					    <p class="subtitle-tagline">
-					      Data Scouting &amp; Conformité FIFA
-					    </p>
-					  </div>
+					<!-- Structure globale 70% à gauche / 30% à droite -->
+					<div class="page-layout-container">
 
-					  <!-- 2. Image Cover Large -->
-					  <div class="cover-image-container">
-					    <img src="images/cover.jpg" alt="Lex Sport Global - Expertise Juridique et Data" />
-					  </div>
+						<!-- COLONNE PRINCIPALE (70% de la largeur sur PC) -->
+						<main class="main-content-70">
 
-					  <!-- 3. Paragraphe de texte en dessous -->
-					  <div class="banner-body">
-					    <p class="lang-fr">
-					      Pionnier au Bénin, LEX SPORT GLOBAL allie l'expertise juridique (Loi 2021-05 sur le sport) à l'ingénierie des données pour sécuriser les investissements sportifs et optimiser le scouting de talents.
-					    </p>
-					  </div>
-					</section>
+							<!-- Banner Section -->
+							<section id="banner" class="banner-custom">
+							  <!-- 1. Titre -->
+							  <div class="banner-title">
+							    <h1>
+							      L'Ingénierie Juridique au service de la Performance
+							    </h1>
+							    <p class="subtitle-tagline">
+							      Data Scouting &amp; Conformité FIFA
+							    </p>
+							  </div>
 
-					<!-- Section Piliers Stratégiques -->
-					<section>
-						<header class="major">
-							<h2>Nos Piliers Stratégiques</h2>
-						</header>
-						<div class="posts">
-							<!-- Article 1 -->
-							<article>
-								<a href="generic.html" class="image">
-									<img src="images/expertise_legal.jpg" alt="Ingénierie Juridique" />
-								</a>
-								<h3>Ingénierie Juridique (Loi 2021-05)</h3>
-								<p class="lang-fr">Audit de conformité des sociétés sportives au Bénin et sécurisation des actifs juridiques.</p>
-								<ul class="actions">
-									<li>
-										<a href="generic.html" class="button">Infos</a>
-									</li>
-								</ul>
-							</article>
-							<!-- Article 2 -->
-							<article>
-								<a href="scouting.html" class="image">
-									<img src="images/scouting_data.jpg" alt="Data Scouting" />
-								</a>
-								<h3>Data Scouting & Performance</h3>
-								<p class="lang-fr">Identification de talents via des algorithmes de performance avancés et analyse prédictive.</p>
-								<ul class="actions">
-									<li>
-										<a href="scouting.html" class="button">Infos</a>
-									</li>
-								</ul>
-							</article>
-						</div>
-					</section>
+							  <!-- 2. Image Cover Large -->
+							  <div class="cover-image-container">
+							    <img src="images/cover.jpg" alt="Lex Sport Global - Expertise Juridique et Data" />
+							  </div>
+
+							  <!-- 3. Paragraphe de texte -->
+							  <div class="banner-body">
+							    <p class="lang-fr">
+							      Pionnier au Bénin, LEX SPORT GLOBAL allie l'expertise juridique (Loi 2021-05 sur le sport) à l'ingénierie des données pour sécuriser les investissements sportifs et optimiser le scouting de talents.
+							    </p>
+							  </div>
+							</section>
+
+							<!-- Section Piliers Stratégiques -->
+							<section>
+								<header class="major">
+									<h2>Nos Piliers Stratégiques</h2>
+								</header>
+								<div class="posts">
+									<!-- Article 1 -->
+									<article>
+										<a href="generic.html" class="image">
+											<img src="images/expertise_legal.jpg" alt="Ingénierie Juridique" />
+										</a>
+										<h3>Ingénierie Juridique (Loi 2021-05)</h3>
+										<p class="lang-fr">Audit de conformité des sociétés sportives au Bénin et sécurisation des actifs juridiques.</p>
+										<ul class="actions">
+											<li>
+												<a href="generic.html" class="button">Infos</a>
+											</li>
+										</ul>
+									</article>
+									<!-- Article 2 -->
+									<article>
+										<a href="scouting.html" class="image">
+											<img src="images/scouting_data.jpg" alt="Data Scouting" />
+										</a>
+										<h3>Data Scouting & Performance</h3>
+										<p class="lang-fr">Identification de talents via des algorithmes de performance avancés et analyse prédictive.</p>
+										<ul class="actions">
+											<li>
+												<a href="scouting.html" class="button">Infos</a>
+											</li>
+										</ul>
+									</article>
+								</div>
+							</section>
+
+						</main>
+
+						<!-- COLONNE LATÉRALE / SIDEBAR (30% de la largeur sur PC) -->
+						<aside class="sidebar-30">
+							
+							<div class="sidebar-box">
+								<h3><i class="fas fa-balance-scale"></i> Conformité Loi 2021-05</h3>
+								<p>Accompagnement personnalisé pour le passage des associations sportives au statut de société sportive au Bénin.</p>
+								<a href="generic.html" class="button primary small">En savoir plus</a>
+							</div>
+
+							<div class="sidebar-box">
+								<h3><i class="fas fa-chart-line"></i> Rapports de Scouting</h3>
+								<p>Découvrez nos rapports d'analyse prédictive et nos fiches de joueurs à fort potentiel.</p>
+								<a href="scouting.html" class="button small">Accéder au Scouting</a>
+							</div>
+
+							<div class="sidebar-box">
+								<h3><i class="fas fa-paper-plane"></i> Une question ?</h3>
+								<p>Contactez directement notre cabinet d'ingénierie pour un audit de vos structures.</p>
+								<a href="contact.html" class="button small">Nous contacter</a>
+							</div>
+
+						</aside>
+
+					</div> <!-- Fin .page-layout-container -->
+
 				</div>
 			</div>
 
