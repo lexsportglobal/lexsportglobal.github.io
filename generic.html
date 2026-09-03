@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
-		<!-- Styles spécifiques pour le layout 70/30, les dimensions et le centrage -->
+		<!-- Styles spécifiques pour le layout 70/30, l'image et la sidebar -->
 		<style>
 			/* Agencement 70/30 pour ordinateur */
 			@media screen and (min-width: 981px) {
@@ -23,18 +23,20 @@
 				.sidebar-30 {
 					flex: 0 0 30%;
 					max-width: 30%;
+					margin-top: 135px; /* Descend les 3 conteneurs à la hauteur de l'image */
 				}
-				/* Image réduite à 50% de largeur et centrée dans son conteneur sur PC */
-				.image.main.centered-img-container {
-					display: flex;
-					justify-content: center;
+				/* Image réduite à 50% de largeur, centrée et 70% de hauteur sur PC */
+				.image-container-centered {
+					text-align: center;
+					margin: 0 0 1.5em 0;
 				}
 				.custom-page-image {
 					width: 50% !important;
 					height: 175px !important; /* 70% des 250px initiaux */
 					object-fit: cover;
 					border-bottom: 2px solid #C5A05F;
-					display: block;
+					display: inline-block !important;
+					margin: 0 auto !important;
 				}
 			}
 
@@ -51,8 +53,8 @@
 				.sidebar-30 {
 					margin-top: 40px;
 				}
-				.image.main.centered-img-container {
-					display: block;
+				.image-container-centered {
+					text-align: center;
 				}
 				/* Dimensions conservées sur Mobile / Tablette */
 				.custom-page-image {
@@ -60,6 +62,7 @@
 					max-height: 250px !important;
 					object-fit: cover;
 					border-bottom: 2px solid #C5A05F;
+					margin: 0 auto !important;
 				}
 			}
 
@@ -71,6 +74,7 @@
 				padding: 20px;
 				border-radius: 6px;
 				margin-bottom: 25px;
+				text-align: center; /* Centre le texte et les éléments internes de la box */
 			}
 			.sidebar-box h3 {
 				color: #002349;
@@ -81,11 +85,13 @@
 				font-size: 0.9rem;
 				line-height: 1.6;
 				color: #444;
+				text-align: center;
 			}
 
-			/* Centrage spécifique pour les boutons ciblés dans la sidebar */
-			.sidebar-box.center-btn-box {
-				text-align: center;
+			/* Centrage explicite des boutons de la sidebar */
+			.sidebar-box .button {
+				display: inline-block;
+				margin: 0 auto;
 			}
 		</style>
 
@@ -148,11 +154,13 @@
 									<h1>Ingénierie Juridique & Data Analytics</h1>
 								</header>
 
-								<span class="image main centered-img-container">
-									<img src="images/expertise_legal.jpg" 
-										 alt="Ingénierie Juridique" 
-										 class="custom-page-image" />
-								</span>
+								<div class="image-container-centered">
+									<span class="image main" style="display: inline-block; width: 100%; margin: 0;">
+										<img src="images/expertise_legal.jpg" 
+											 alt="Ingénierie Juridique" 
+											 class="custom-page-image" />
+									</span>
+								</div>
 
 								<p>Dans le nouveau paysage sportif béninois, l'ingénierie juridique n'est plus une option, mais un levier de croissance. LEX SPORT GLOBAL sécurise chaque étape de vos projets sportifs en alliant conformité légale et analyse de données.</p>
 
@@ -188,15 +196,13 @@
 								<a href="contact.html" class="button primary small">Demander un Audit</a>
 							</div>
 
-							<!-- Boîte 2 avec bouton "En savoir plus" centré -->
-							<div class="sidebar-box center-btn-box">
+							<div class="sidebar-box">
 								<h3><i class="fas fa-search-dollar"></i> Indemnités & Transferts</h3>
 								<p>Calcul et sécurisation de vos droits financiers lors des mutations de joueurs (TMS & passeport joueur).</p>
 								<a href="contact.html" class="button small">En savoir plus</a>
 							</div>
 
-							<!-- Boîte 3 avec bouton "Voir le Scouting" centré -->
-							<div class="sidebar-box center-btn-box">
+							<div class="sidebar-box">
 								<h3><i class="fas fa-chart-bar"></i> Data Scouting</h3>
 								<p>Associez la sécurité juridique aux données de performance sur le terrain.</p>
 								<a href="scouting.html" class="button small">Voir le Scouting</a>
