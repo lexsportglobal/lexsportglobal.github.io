@@ -1,344 +1,334 @@
 <!DOCTYPE HTML>
 <html lang="fr">
-<head>
-    <title>Data Scouting | LEX SPORT GLOBAL</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    
-    <style>
-        /* --- CORRECTIF ANTI ESPACE VIDE & IMAGE DEBORDANTE --- */
-        #main > .inner {
-            padding-top: 10px !important; /* Supprime le grand vide sous le header */
-        }
+	<head>
+		<title>Lex Sport Global | Droit • Data • Performance</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 
-        /* --- MISE EN PAGE 70% / 30% POUR L'INTRODUCTION ET L'IMAGE --- */
-        .scouting-top-layout {
-            display: grid;
-            grid-template-columns: 70% 30%;
-            gap: 30px;
-            align-items: start;
-            border-bottom: 1px solid #333;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
+		<!-- Styles spécifiques pour la disposition 70/30 & Ajustements Bannière -->
+		<style>
+			/* Agencement 70/30 pour ordinateurs et grands écrans */
+			@media screen and (min-width: 981px) {
+				.page-layout-container {
+					display: flex;
+					gap: 40px;
+					align-items: flex-start;
+				}
+				.main-content-70 {
+					flex: 0 0 70%;
+					max-width: 70%;
+				}
+				.sidebar-30 {
+					flex: 0 0 30%;
+					max-width: 30%;
+				}
+			}
 
-        .scouting-left-content {
-            width: 100%;
-        }
+			/* Repli sur 100% de largeur pour tablettes et mobiles */
+			@media screen and (max-width: 980px) {
+				.page-layout-container {
+					display: block;
+				}
+				.main-content-70,
+				.sidebar-30 {
+					width: 100%;
+					max-width: 100%;
+				}
+				.sidebar-30 {
+					margin-top: 40px;
+				}
+			}
 
-        /* Image réduite à 50% de largeur (dans son conteneur) et 70% de hauteur */
-        .image.main.scouting-custom-img {
-            width: 50% !important;
-            margin: 0 0 1.5em 0 !important;
-        }
+			/* Style conteneur d'encadré pour la colonne de droite (Centré) */
+			.sidebar-box {
+				background-color: #f8f9fa;
+				border: 1px solid rgba(0, 35, 73, 0.1);
+				border-left: 4px solid #D4AF37;
+				padding: 20px;
+				border-radius: 6px;
+				margin-bottom: 25px;
+				text-align: center; /* Centre les textes et éléments internes */
+			}
+			.sidebar-box h3 {
+				color: #002349;
+				margin-bottom: 12px;
+				font-size: 1.1rem;
+				text-align: center;
+			}
+			.sidebar-box p {
+				font-size: 0.9rem;
+				line-height: 1.6;
+				color: #444;
+				text-align: center;
+			}
+			/* Centrage explicite des boutons à l'intérieur de la sidebar */
+			.sidebar-box .button {
+				display: inline-block;
+				margin: 0 auto;
+			}
 
-        .image.main.scouting-custom-img img { 
-            width: 100% !important; 
-            max-height: 280px; /* 70% de 400px initiaux */
-            object-fit: cover; 
-            border-bottom: 3px solid #C5A05F; 
-            display: block;
-        }
+			/* --- CORRECTION : Suppression des puces sur les actions --- */
+			.actions {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
 
-        /* --- 1. PRESENTATION --- */
-        .scouting-intro {
-            margin-top: 10px;
-            line-height: 1.8;
-            text-align: justify;
-        }
-        .scouting-intro h2 {
-            color: #C5A05F;
-            font-size: 1.5em;
-            margin-bottom: 0.8em;
-            text-transform: uppercase;
-        }
+			/* --- AJUSTEMENTS DEMANDÉS (ACCUEIL) --- */
+			/* 1. Centrage et rapprochement du Titre et du Sous-titre */
+			.banner-custom .banner-title {
+				text-align: center;
+				margin-bottom: 10px; /* Réduit pour rapprocher de l'image */
+			}
+			.banner-custom .banner-title h1 {
+				margin-bottom: 5px;
+			}
 
-        /* --- RESPONSIVE MOBILE / TABLETTE --- */
-        @media screen and (max-width: 736px) {
-            .scouting-top-layout {
-                grid-template-columns: 1fr;
-            }
-            .image.main.scouting-custom-img {
-                width: 100% !important;
-            }
-        }
+			/* 2. Image Cover ultra-large et rapprochée des textes sur PC */
+			.cover-image-container {
+				display: flex;
+				justify-content: center;
+				margin: 10px 0; /* Marges réduites pour rapprocher des textes haut et bas */
+			}
+			.cover-image-container img {
+				width: 100%; /* Largeur maximale sur PC */
+				max-height: 560px; /* Hauteur généreuse */
+				object-fit: cover;
+				border-radius: 8px;
+				border-bottom: 3px solid #D4AF37;
+				box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+			}
 
-        /* --- 2. FILTRES (CENTRAGE ABSOLU) --- */
-        .filter-section { width: 100%; text-align: center; margin: 40px 0 30px 0; }
-        .filter-bar { display: inline-flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .filter-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent !important;
-            color: #D4AF37 !important;
-            border: 2px solid #D4AF37 !important;
-            padding: 10px 25px !important;
-            font-weight: 800 !important;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.3s;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            line-height: 1;
-            text-align: center;
-            min-height: 45px;
-        }
-        .filter-btn:hover { 
-            background: #D4AF37 !important; 
-            color: #000 !important; 
-        }
-        
-        /* --- 3. GRILLE & CARTES --- */
-        #players-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 0; }
-        .player-card { 
-            background: linear-gradient(145deg, #0b1d3a, #020b18); 
-            border: 1px solid #D4AF37; 
-            border-radius: 15px; 
-            padding: 35px 20px; 
-            text-align: center !important;
-            position: relative; 
-        }
-        .player-card h3 { 
-            color: #FFFFFF !important; 
-            font-size: 1.1em !important; 
-            font-weight: 800 !important; 
-            margin: 10px 0 5px 0; 
-            text-transform: uppercase;
-            line-height: 1.2;
-            text-align: center !important;
-        }
-        .player-card .position { 
-            color: #D4AF37 !important; 
-            font-weight: bold; 
-            display: block; 
-            margin-bottom: 15px; 
-            text-align: center !important;
-        }
-        .player-card img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid #D4AF37; object-fit: cover; margin: 0 auto; }
+			.banner-body {
+				margin-top: 10px; /* Rapproche le texte du dessous de l'image */
+			}
 
-        /* --- 4. BADGES --- */
-        .player-badge { position: absolute; top: 15px; right: 15px; padding: 4px 12px; border-radius: 20px; font-size: 9px; font-weight: 900; text-transform: uppercase; }
-        .status-pro { background: #D4AF37; color: #000; }
-        .status-free { background: #000; color: #D4AF37; border: 1px solid #D4AF37; }
-        .status-amateur { background: #444; color: #fff; }
+			/* Adaptation mobile pour l'image cover (réglages maintenus) */
+			@media screen and (max-width: 736px) {
+				.cover-image-container img {
+					width: 100%;
+					max-height: 300px;
+				}
+			}
+		</style>
 
-        /* --- 5. MODALE --- */
-        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
-        .modal-content { background: #1a1a1a; margin: 5% auto; padding: 30px; border: 1px solid #D4AF37; width: 95%; max-width: 500px; border-radius: 15px; color: white; position: relative; }
-        .close-modal { position: absolute; right: 20px; top: 10px; color: #D4AF37; font-size: 35px; cursor: pointer; }
-    </style>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-VKBQS18D5E');
-    </script>
+		  gtag('config', 'G-VKBQS18D5E');
+		</script>
+		<!-- Import de la police Montserrat -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="is-preload">
 
-    <!-- Import de la police Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="is-preload">
-    <div id="wrapper">
-        
-        <!-- Header Horizontal -->
-        <header id="header">
-            <div class="header-container">
-                <!-- Logo -->
-                <a href="index.html" class="logo">
-                    <img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
-                </a>
+		<div id="wrapper">
 
-                <!-- Menu Navigation -->
-                <nav id="menu-nav">
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="generic.html">Expertise Juridique</a></li>
-                        <li><a href="scouting.html">Data Scouting</a></li> 
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+			<!-- Header Horizontal -->
+			<header id="header">
+				<div class="header-container">
+					<!-- Logo -->
+					<a href="index.html" class="logo">
+                         <img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
+                    </a>
 
-                <div class="header-right">
-                    <!-- Bouton Hamburger Mobile -->
-                    <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
+					<!-- Menu Navigation -->
+					<nav id="menu-nav">
+						<ul>
+							<li><a href="index.html">Accueil</a></li>
+							<li><a href="generic.html">Expertise Juridique</a></li>
+							<li><a href="scouting.html">Data Scouting</a></li> 
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</nav>
 
-        <div id="main">
-            <div class="inner">
-                
-                <section>
-                    <header class="main">
-                        <h1 style="color: #0B192C; letter-spacing: 2px;">Data Scouting & Performance</h1>
-                    </header>
-                    
-                    <!-- Grille 70% / 30% -->
-                    <div class="scouting-top-layout">
-                        <!-- Bloc Gauche (70%) : Image + Texte d'intro -->
-                        <div class="scouting-left-content">
-                            <span class="image main scouting-custom-img"><img src="images/players.jpg" alt="Data Analytics" /></span>
+					<div class="header-right">
+						<!-- Bouton Hamburger Mobile -->
+						<button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+							<i class="fas fa-bars"></i>
+						</button>
+					</div>
+				</div>
+			</header>
 
-                            <div class="scouting-intro">
-                                <h2>Analyse Prédictive & Valorisation</h2>
-                                <p>Le département <strong>Data Scouting</strong> de LEX SPORT GLOBAL transforme l'observation traditionnelle en une science exacte. Nous accompagnons les clubs, académies et recruteurs dans l'identification de talents à haute valeur ajoutée grâce à une méthodologie rigoureuse basée sur l'analyse d'indicateurs de performance clés (KPIs) et la valorisation financière des profils sportifs.</p>
-                            </div>
-                        </div>
+			<!-- Contenu principal -->
+			<div id="main">
+				<div class="inner">
 
-                        <!-- Bloc Droite (30%) : Espace réservé pour vos futurs contenus -->
-                        <div class="scouting-right-content">
-                            <!-- Espace vide ou conteneur additionnel pour les 30% restants -->
-                        </div>
-                    </div>
+					<!-- Structure globale 70% à gauche / 30% à droite -->
+					<div class="page-layout-container">
 
-                    <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-                        <p style="font-style: italic; color: #888; font-size: 0.9em; margin-bottom: 10px;">Vous êtes un club ou un agent indépendant ?</p>
-                        <a href="add-player.html" class="button primary" style="background-color: #D4AF37 !important; color: #000 !important; font-weight: 900; border-radius: 5px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);">
-                            ➕ INSCRIRE UN TALENT
-                        </a>
-                    </div>
+						<!-- COLONNE PRINCIPALE (70% de la largeur sur PC) -->
+						<main class="main-content-70">
 
-                    <div class="filter-section">
-                        <div class="filter-bar">
-                            <button class="filter-btn" onclick="filterPlayers('all')">Tous</button>
-                            <button class="filter-btn" onclick="filterPlayers('pro')">Professionnels</button>
-                            <button class="filter-btn" onclick="filterPlayers('amateur')">Amateurs</button>
-                            <button class="filter-btn" onclick="filterPlayers('free agent')">Agents Libres</button>
-                        </div>
-                    </div>
+							<!-- Banner Section -->
+							<section id="banner" class="banner-custom">
+							  <!-- 1. Titre & Sous-titre (Centrés) -->
+							  <div class="banner-title">
+							    <h1>
+							      L'Ingénierie Juridique au service de la Performance
+							    </h1>
+							    <p class="subtitle-tagline">
+							      Data Scouting &amp; Conformité FIFA
+							    </p>
+							  </div>
 
-                    <div id="players-container"></div>
-                </section>
+							  <!-- 2. Image Cover Agrandie, Élargie et Rapprochée -->
+							  <div class="cover-image-container">
+							    <img src="images/cover.jpg" alt="Lex Sport Global - Expertise Juridique et Data" />
+							  </div>
 
-            </div>
-        </div>
+							  <!-- 3. Paragraphe de texte -->
+							  <div class="banner-body">
+							    <p class="lang-fr">
+							      Pionnier au Bénin, LEX SPORT GLOBAL allie l'expertise juridique (Loi 2021-05 sur le sport) à l'ingénierie des données pour sécuriser les investissements sportifs et optimiser le scouting de talents.
+							    </p>
+							  </div>
+							</section>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="inner">
-                <ul class="icons">
-                    <li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="mailto:lexsportglobal.contact@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-                    <li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." target="_blank" rel="noopener noreferrer" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-                    <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-                </ul>
-                <p><a href="legales.html">Mentions Légales & Confidentialité</a></p>
-                <p class="copyright">&copy; LEX SPORT GLOBAL. 2026 Tous droits réservés.</p>
-            </div>
-        </footer>
-        
-    </div>
+							<!-- Section Piliers Stratégiques -->
+							<section>
+								<header class="major">
+									<h2>Nos Piliers Stratégiques</h2>
+								</header>
+								<div class="posts">
+									<!-- Article 1 -->
+									<article>
+										<a href="generic.html" class="image">
+											<img src="images/expertise_legal.jpg" alt="Ingénierie Juridique" />
+										</a>
+										<h3>Ingénierie Juridique (Loi 2021-05)</h3>
+										<p class="lang-fr">Audit de conformité des sociétés sportives au Bénin et sécurisation des actifs juridiques.</p>
+										<div class="actions">
+											<a href="generic.html" class="button">Infos</a>
+										</div>
+									</article>
+									<!-- Article 2 -->
+									<article>
+										<a href="scouting.html" class="image">
+											<img src="images/scouting_data.jpg" alt="Data Scouting" />
+										</a>
+										<h3>Data Scouting & Performance</h3>
+										<p class="lang-fr">Identification de talents via des algorithmes de performance avancés et analyse prédictive.</p>
+										<div class="actions">
+											<a href="scouting.html" class="button">Infos</a>
+										</div>
+									</article>
+								</div>
+							</section>
 
-    <!-- Modale Joueur -->
-    <div id="playerModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modalDetails"></div>
-        </div>
-    </div>
+						</main>
 
-    <!-- Bulle Flottante WhatsApp -->
-    <a href="https://wa.me/2290197328579?text=Demande%20d'information" class="whatsapp-float" aria-label="Contact WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+						<!-- COLONNE LATÉRALE / SIDEBAR (30% de la largeur sur PC) -->
+						<aside class="sidebar-30">
+							
+							<!-- Nouveau bloc : Révision des contrats des athlètes -->
+							<div class="sidebar-box">
+								<h3><i class="fas fa-file-signature"></i> Révision des Contrats</h3>
+								<p>Sécurisez les intérêts des clubs et des joueurs grâce à une analyse rigoureuse et une mise en conformité des contrats d'athlètes selon les standards internationaux et le droit national.</p>
+								<a href="generic.html" class="button small">En savoir plus</a>
+							</div>
 
-    <!-- Scripts de base -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+							<div class="sidebar-box">
+								<h3><i class="fas fa-balance-scale"></i> Conformité Loi 2021-05</h3>
+								<p>Accompagnement personnalisé pour le passage des associations sportives au statut de société sportive au Bénin.</p>
+								<a href="generic.html" class="button primary small">En savoir plus</a>
+							</div>
 
-    <!-- Script unique nettoyé -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Menu Mobile Toggle
-            const navToggle = document.getElementById('navToggle');
-            const menuNav = document.getElementById('menu-nav');
-            if(navToggle && menuNav) {
-                navToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    menuNav.classList.toggle('active');
-                });
-            }
+							<div class="sidebar-box">
+								<h3><i class="fas fa-chart-line"></i> Rapports de Scouting</h3>
+								<p>Découvrez nos rapports d'analyse prédictive et nos fiches de joueurs à fort potentiel.</p>
+								<a href="scouting.html" class="button small">Accéder au Scouting</a>
+							</div>
 
-            // Supabase Logic
-            let allPlayers = [];
-            const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
-            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
+							<div class="sidebar-box">
+								<h3><i class="fas fa-paper-plane"></i> Une question ?</h3>
+								<p>Contactez directement notre cabinet d'ingénierie pour un audit de vos structures.</p>
+								<a href="contact.html" class="button small">Nous contacter</a>
+							</div>
 
-            async function fetchPlayers() {
-                try {
-                    const response = await fetch(`${supabaseUrl}/rest/v1/players?is_active=eq.true&select=*`, {
-                        headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` }
-                    });
-                    allPlayers = await response.json();
-                    displayPlayers(allPlayers);
-                } catch (error) { console.error("Erreur:", error); }
-            }
+						</aside>
 
-            window.displayPlayers = function(players) {
-                const container = document.getElementById('players-container');
-                container.innerHTML = '';
-                players.forEach((player) => {
-                    let s = (player.status || 'Amateur').toLowerCase();
-                    let bClass = s === 'pro' ? 'status-pro' : (s.includes('free') ? 'status-free' : 'status-amateur');
-                    
-                    container.innerHTML += `
-                        <div class="player-card">
-                            <div class="player-badge ${bClass}">${player.status || 'Amateur'}</div>
-                            <img src="${player.photo_url || 'https://via.placeholder.com/150'}" alt="">
-                            <h3>${player.full_name}</h3>
-                            <span class="position">📍 ${player.position || 'N/A'}</span>
-                            <button onclick="showDetailsByName('${player.full_name.replace(/'/g, "\\'")}')" style="width:100%; background:#D4AF37 !important; color:#000 !important; font-weight:900; border:none; height:45px; border-radius:5px; cursor:pointer; margin-top:15px; text-transform:uppercase;">VOIR LE PROFIL</button>
-                        </div>`;
-                });
-            }
+					</div> <!-- Fin .page-layout-container -->
 
-            window.filterPlayers = function(cat) {
-                const filtered = (cat === 'all') 
-                    ? allPlayers 
-                    : allPlayers.filter(p => (p.status || '').toLowerCase().includes(cat.toLowerCase()));
-                displayPlayers(filtered);
-            };
+				</div>
+			</div>
 
-            window.showDetailsByName = function(name) {
-                const player = allPlayers.find(p => p.full_name === name);
-                if(!player) return;
-                const details = document.getElementById("modalDetails");
-                details.innerHTML = `
-                    <h2 style="color:#D4AF37; text-transform:uppercase; margin-bottom:10px;">${player.full_name}</h2>
-                    <p style="color:#888;">${player.position} | ${player.nationality}</p>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:20px; border-top:1px solid #333; padding-top:15px;">
-                        <div><label style="color:#D4AF37; font-size:10px; display:block; text-transform:uppercase;">Pied fort</label>${player.preferred_foot || 'N/A'}</div>
-                        <div><label style="color:#D4AF37; font-size:10px; display:block; text-transform:uppercase;">Valeur estimée</label>${player.market_value || 'N/A'}</div>
-                        <div><label style="color:#D4AF37; font-size:10px; display:block; text-transform:uppercase;">Taille</label>${player.height || 'N/A'}</div>
-                        <div><label style="color:#D4AF37; font-size:10px; display:block; text-transform:uppercase;">Fin de contrat</label>${player.contract_end || 'N/A'}</div>
-                    </div>
-                    <div style="margin-top:25px; padding:15px; background:#222; border-left:4px solid #D4AF37; font-style:italic;">
-                        <span style="display:block; font-weight:bold; color:#D4AF37; font-style:normal; margin-bottom:5px;">RAPPORT D'ANALYSE :</span>
-                        "${player.scout_comment || 'Analyse en cours...'}"
-                    </div>`;
-                document.getElementById("playerModal").style.display = "block";
-            };
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:lexsportglobal.contact@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="https://wa.me/2290197328579?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." target="_blank" rel="noopener noreferrer" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+						<li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+					</ul>
+					<p><a href="legales.html">Mentions Légales & Confidentialité</a></p>
+					<p class="copyright">&copy; LEX SPORT GLOBAL. 2026 Tous droits réservés.</p>
+				</div>
 
-            const modal = document.getElementById("playerModal");
-            document.querySelector(".close-modal").onclick = () => modal.style.display = "none";
-            window.onclick = (e) => { if(e.target == modal) modal.style.display = "none"; };
+				<!-- Section Partenaires -->
+				<section class="partners-section">
+				    <h2>Nos Partenaires</h2>
+				    <div class="partners-grid">
+				        <div class="partner-item">
+				            <img src="images/Stronghaus-logo.png" alt="Stronghaus" />
+				        </div>
+				        <div class="partner-item">
+				            <img src="images/vallée_des_elites.png" alt="Vallée des Elites" />
+				        </div>
+				        <div class="partner-item">
+				            <img src="images/dozia logo.png" alt="Dozia" />
+				        </div>
+				    </div>
+				</section>
+			</footer>
 
-            fetchPlayers();
-        });
-    </script>
-</body>
+		</div>
+
+		<!-- Bulle Flottante WhatsApp -->
+		<a href="https://wa.me/2290197328579?text=Demande%20d'information" class="whatsapp-float" aria-label="Contact WhatsApp">
+			<i class="fab fa-whatsapp"></i>
+		</a>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var toggleBtn = document.getElementById('navToggle');
+				var navMenu = document.getElementById('menu-nav');
+
+				if (toggleBtn && navMenu) {
+					toggleBtn.onclick = function(e) {
+						e.preventDefault();
+						e.stopPropagation();
+						if (navMenu.style.display === "block") {
+							navMenu.style.display = "none";
+						} else {
+							navMenu.style.display = "block";
+						}
+					};
+
+					var menuLinks = navMenu.getElementsByTagName('a');
+					for (var i = 0; i < menuLinks.length; i++) {
+						menuLinks[i].addEventListener('click', function() {
+							navMenu.style.display = "none";
+						});
+					}
+				}
+			});
+		</script>
+	</body>
 </html>
