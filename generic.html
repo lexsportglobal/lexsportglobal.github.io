@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
-		<!-- Styles spécifiques pour le layout 70/30, l'image et la sidebar -->
+		<!-- Styles spécifiques pour le layout 70/30, l'image et la sidebar (Harmonisation sobre & centrage) -->
 		<style>
 			/* Agencement 70/30 pour ordinateur */
 			@media screen and (min-width: 981px) {
@@ -34,7 +34,7 @@
 					width: 50% !important;
 					height: 175px !important; /* 70% des 250px initiaux */
 					object-fit: cover;
-					border-bottom: 2px solid #4A607A; /* Couleur sobre et universelle */
+					border-bottom: 2px solid #4A6B82; /* Remplacement du doré par un bleu ardoise sobre */
 					display: inline-block !important;
 					margin: 0 auto !important;
 				}
@@ -61,41 +61,62 @@
 					width: 100% !important;
 					max-height: 250px !important;
 					object-fit: cover;
-					border-bottom: 2px solid #4A607A; /* Couleur sobre et universelle */
+					border-bottom: 2px solid #4A6B82;
 					margin: 0 auto !important;
 				}
 			}
 
-			/* Style conteneur d'encadré pour la colonne de droite */
+			/* Style conteneur d'encadré pour la colonne de droite (Centrage strict et couleurs sobres) */
 			.sidebar-box {
 				background-color: #f8f9fa;
 				border: 1px solid rgba(0, 35, 73, 0.1);
-				border-left: 4px solid #4A607A; /* Remplacement de l'or par une couleur sobre */
-				padding: 20px;
+				border-left: 4px solid #4A6B82; /* Bordure sobre d'accentuation */
+				padding: 25px 20px;
 				border-radius: 6px;
 				margin-bottom: 25px;
+				text-align: center; /* Centre l'ensemble des éléments textuels de la box */
 				display: flex;
 				flex-direction: column;
-				align-items: center; /* Centre les blocs dans leur contenu */
-				text-align: center; /* Centre le texte et les éléments internes de la box */
+				align-items: center;
+				justify-content: center;
 			}
 			.sidebar-box h3 {
 				color: #002349;
 				margin-bottom: 12px;
 				font-size: 1.1rem;
 				text-align: center;
+				width: 100%;
+			}
+			.sidebar-box h3 i {
+				display: block;
+				margin: 0 auto 8px auto;
+				color: #4A6B82; /* Icône sobre */
+				font-size: 1.3rem;
 			}
 			.sidebar-box p {
 				font-size: 0.9rem;
 				line-height: 1.6;
 				color: #444;
 				text-align: center;
+				margin-bottom: 20px;
 			}
 
-			/* Centrage explicite des boutons de la sidebar */
+			/* Personnalisation sobre et universelle des boutons (remplacement des styles dorés) */
 			.sidebar-box .button {
-				display: inline-block;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
 				margin: 0 auto;
+				background-color: #2C3E50 !important; /* Gris-bleu foncé élégant et neutre */
+				color: #ffffff !important;
+				border: 1px solid #2C3E50 !important;
+				box-shadow: none !important;
+				transition: background-color 0.3s ease, border-color 0.3s ease;
+			}
+			
+			.sidebar-box .button:hover {
+				background-color: #1A252F !important;
+				border-color: #1A252F !important;
 			}
 		</style>
 
@@ -195,19 +216,19 @@
 						<aside class="sidebar-30">
 							
 							<div class="sidebar-box">
-								<h3><i class="fas fa-file-contract"></i> Audit Juridique</h3>
+								<h3><i class="fas fa-file-contract"></i>Audit Juridique</h3>
 								<p>Évaluez la conformité de votre club ou association par rapport aux exigences de la Loi 2021-05 et des textes de la FIFA.</p>
 								<a href="contact.html" class="button primary small">Demander un Audit</a>
 							</div>
 
 							<div class="sidebar-box">
-								<h3><i class="fas fa-search-dollar"></i> Indemnités & Transferts</h3>
+								<h3><i class="fas fa-search-dollar"></i>Indemnités & Transferts</h3>
 								<p>Calcul et sécurisation de vos droits financiers lors des mutations de joueurs (TMS & passeport joueur).</p>
 								<a href="contact.html" class="button small">En savoir plus</a>
 							</div>
 
 							<div class="sidebar-box">
-								<h3><i class="fas fa-chart-bar"></i> Data Scouting</h3>
+								<h3><i class="fas fa-chart-bar"></i>Data Scouting</h3>
 								<p>Associez la sécurité juridique aux données de performance sur le terrain.</p>
 								<a href="scouting.html" class="button small">Voir le Scouting</a>
 							</div>
