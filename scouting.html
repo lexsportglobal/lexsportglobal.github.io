@@ -19,76 +19,66 @@
             padding-top: 0 !important;
         }
 
-        /* --- MISE EN PAGE 70% / 30% POUR L'INTRODUCTION ET L'IMAGE --- */
-        .scouting-top-layout {
+        /* --- LIGNE SUPÉRIEURE : IMAGE ET VIDÉO CÔTE À CÔTE (70% / 30%) --- */
+        .scouting-hero-row {
             display: grid;
             grid-template-columns: 70% 30%;
             gap: 30px;
-            align-items: stretch; /* Aligne la hauteur des deux blocs sur la même ligne */
-            border-bottom: 1px solid #333;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
+            align-items: stretch; /* Aligne la hauteur exacte entre l'image et la boîte vidéo */
+            margin-bottom: 25px;
         }
 
-        .scouting-left-content {
+        .scouting-image-wrapper {
             width: 100%;
+            height: 100%;
         }
 
-        /* Image à 50% de largeur et hauteur augmentée pour afficher la tête */
+        /* Image à 50% de sa largeur globale du conteneur mais respectant le bloc, dimensions inchangées */
         .image.main.scouting-custom-img {
             width: 50% !important;
-            margin: 0 0 1.5em 0 !important;
+            margin: 0 !important;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .image.main.scouting-custom-img img { 
             width: 100% !important; 
-            max-height: 380px; /* Hauteur augmentée pour révéler le haut des têtes */
+            height: 100% !important;
+            max-height: 380px; /* Consserve la hauteur initiale voulue */
             object-fit: cover; 
             object-position: center 20%; /* Centre l'image en privilégiant le haut (visages/têtes) */
             border-bottom: 3px solid #C5A05F; 
             display: block;
         }
 
-        /* --- 1. PRESENTATION --- */
-        .scouting-intro {
-            margin-top: 10px;
-            line-height: 1.8;
-            text-align: justify;
-        }
-        .scouting-intro h2 {
-            color: #C5A05F;
-            font-size: 1.5em;
-            margin-bottom: 0.8em;
-            text-transform: uppercase;
-        }
-
-        /* --- CONTENEUR VIDÉO DROITE (30%) --- */
-        .scouting-right-content {
+        /* --- CONTENEUR VIDÉO DROITE (30%) - STRICTEMENT ALIGNÉ SUR L'IMAGE --- */
+        .scouting-right-video {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            height: 100%;
         }
 
         .scouting-video-box {
             background: linear-gradient(145deg, #0b1d3a, #020b18);
             border: 1px solid #C5A05F;
             border-radius: 12px;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100%;
+            justify-content: space-between;
+            height: 380px; /* S'adapte exactement à la hauteur maximale de l'image */
             box-sizing: border-box;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
         .scouting-video-box h3 {
             color: #FFFFFF !important;
-            font-size: 1rem !important;
+            font-size: 0.9rem !important;
             font-weight: 700 !important;
-            margin-bottom: 15px;
+            margin: 0 0 8px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -96,12 +86,12 @@
         .scouting-video-wrapper {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* Ratio 16:9 */
-            height: 0;
+            flex-grow: 1;
+            min-height: 0;
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 6px;
             border: 1px solid rgba(197, 160, 95, 0.4);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             background: #000;
         }
 
@@ -122,8 +112,8 @@
             background: #C5A05F !important;
             color: #000 !important;
             font-weight: 800 !important;
-            font-size: 0.85rem;
-            padding: 10px 15px !important;
+            font-size: 0.8rem;
+            padding: 8px 12px !important;
             border-radius: 4px;
             text-transform: uppercase;
             text-decoration: none;
@@ -137,18 +127,37 @@
             color: #000 !important;
         }
 
+        /* --- 1. PRESENTATION (TEXTE EN DESSOUS) --- */
+        .scouting-content-row {
+            border-top: 1px solid #333;
+            padding-top: 25px;
+            margin-bottom: 30px;
+        }
+
+        .scouting-intro {
+            line-height: 1.8;
+            text-align: justify;
+        }
+        .scouting-intro h2 {
+            color: #C5A05F;
+            font-size: 1.5em;
+            margin-bottom: 0.8em;
+            text-transform: uppercase;
+        }
+
         /* --- RESPONSIVE MOBILE / TABLETTE --- */
         @media screen and (max-width: 736px) {
-            .scouting-top-layout {
+            .scouting-hero-row {
                 grid-template-columns: 1fr;
             }
             .image.main.scouting-custom-img {
                 width: 100% !important;
             }
             .scouting-video-box {
-                margin-top: 20px;
                 height: auto;
-                padding: 25px 15px;
+                min-height: 300px;
+                margin-top: 15px;
+                padding: 20px;
             }
         }
 
@@ -270,22 +279,17 @@
                         <h1 style="color: #0B192C; letter-spacing: 2px;">Data Scouting & Performance</h1>
                     </header>
                     
-                    <!-- Grille 70% / 30% -->
-                    <div class="scouting-top-layout">
-                        <!-- Bloc Gauche (70%) : Image + Texte d'intro -->
-                        <div class="scouting-left-content">
+                    <!-- Ligne Supérieure : Image à gauche (70%) et Conteneur Vidéo à droite (30%) -->
+                    <div class="scouting-hero-row">
+                        <!-- Bloc Gauche : Image uniquement -->
+                        <div class="scouting-image-wrapper">
                             <span class="image main scouting-custom-img"><img src="images/players.jpg" alt="Data Analytics" /></span>
-
-                            <div class="scouting-intro">
-                                <h2>Analyse Prédictive & Valorisation</h2>
-                                <p>Le département <strong>Data Scouting</strong> de LEX SPORT GLOBAL transforme l'observation traditionnelle en une science exacte. Nous accompagnons les clubs, académies et recruteurs dans l'identification de talents à haute valeur ajoutée grâce à une méthodologie rigoureuse basée sur l'analyse d'indicateurs de performance clés (KPIs) et la valorisation financière des profils sportifs.</p>
-                            </div>
                         </div>
 
-                        <!-- Bloc Droite (30%) : Conteneur Vidéo YouTube -->
-                        <div class="scouting-right-content">
+                        <!-- Bloc Droite : Conteneur Vidéo YouTube (même hauteur que l'image) -->
+                        <div class="scouting-right-video">
                             <div class="scouting-video-box">
-                                <h3><i class="fab fa-youtube" style="color: #C5A05F; margin-right: 8px;"></i> Chaîne Vidéo</h3>
+                                <h3><i class="fab fa-youtube" style="color: #C5A05F; margin-right: 6px;"></i> Chaîne Vidéo</h3>
                                 <div class="scouting-video-wrapper">
                                     <!-- Intégrez ici l'URL de votre vidéo YouTube (embed) -->
                                     <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Lex Sport Global YouTube" allowfullscreen></iframe>
@@ -294,6 +298,14 @@
                                     <i class="fab fa-youtube"><span>Voir la chaîne</span></i>
                                 </a>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Ligne Inférieure : Texte d'introduction -->
+                    <div class="scouting-content-row">
+                        <div class="scouting-intro">
+                            <h2>Analyse Prédictive & Valorisation</h2>
+                            <p>Le département <strong>Data Scouting</strong> de LEX SPORT GLOBAL transforme l'observation traditionnelle en une science exacte. Nous accompagnons les clubs, académies et recruteurs dans l'identification de talents à haute valeur ajoutée grâce à une méthodologie rigoureuse basée sur l'analyse d'indicateurs de performance clés (KPIs) et la valorisation financière des profils sportifs.</p>
                         </div>
                     </div>
 
