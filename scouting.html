@@ -24,7 +24,7 @@
             display: grid;
             grid-template-columns: 70% 30%;
             gap: 30px;
-            align-items: center; /* Centrage vertical harmonieux avec la vidéo à droite */
+            align-items: start;
             border-bottom: 1px solid #333;
             padding-bottom: 30px;
             margin-bottom: 30px;
@@ -53,59 +53,70 @@
         .scouting-right-content {
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
             height: 100%;
+            min-height: 380px; /* Aligné sur la hauteur maximale de l'image à gauche */
+            box-sizing: border-box;
         }
 
-        .scouting-video-box {
-            width: 100%;
+        .video-box-wrapper {
             background: linear-gradient(145deg, #0b1d3a, #020b18);
             border: 1px solid #D4AF37;
             border-radius: 12px;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            width: 100%;
         }
 
-        .video-container-wrapper {
+        .video-box-wrapper h3 {
+            color: #D4AF37 !important;
+            font-size: 1em !important;
+            font-weight: 800 !important;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .video-container {
             position: relative;
             width: 100%;
             padding-bottom: 56.25%; /* Ratio 16:9 */
             height: 0;
             overflow: hidden;
             border-radius: 8px;
-            margin-bottom: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: #000;
         }
 
-        .video-container-wrapper iframe {
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: none;
+            border: 0;
         }
 
-        .scouting-video-box .youtube-link-btn {
+        .youtube-channel-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            margin-top: 15px;
             background: #D4AF37 !important;
             color: #000 !important;
-            font-weight: 800;
+            font-weight: 900 !important;
             font-size: 0.85em;
             text-transform: uppercase;
             padding: 10px 15px;
-            border-radius: 4px;
+            border-radius: 5px;
             text-decoration: none;
             transition: 0.3s;
             width: 100%;
-            box-sizing: border-box;
         }
 
-        .scouting-video-box .youtube-link-btn:hover {
+        .youtube-channel-link:hover {
             background: #fff !important;
             color: #000 !important;
         }
@@ -130,6 +141,10 @@
             }
             .image.main.scouting-custom-img {
                 width: 100% !important;
+            }
+            .scouting-right-content {
+                min-height: auto;
+                margin-top: 20px;
             }
         }
 
@@ -263,15 +278,16 @@
                             </div>
                         </div>
 
-                        <!-- Bloc Droite (30%) : Conteneur vidéo vers la chaîne YouTube -->
+                        <!-- Bloc Droite (30%) : Conteneur Vidéo & Chaîne YouTube -->
                         <div class="scouting-right-content">
-                            <div class="scouting-video-box">
-                                <div class="video-container-wrapper">
-                                    <!-- Remplacez l'URL src par celle de votre vidéo de présentation YouTube (mode embed) -->
-                                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="LEX SPORT GLOBAL YouTube" allowfullscreen></iframe>
+                            <div class="video-box-wrapper">
+                                <h3>Immersion Vidéo</h3>
+                                <div class="video-container">
+                                    <!-- Remplacez l'URL src par celle de votre vidéo de présentation YouTube -->
+                                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Lex Sport Global YouTube" allowfullscreen></iframe>
                                 </div>
-                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="youtube-link-btn">
-                                    <i class="fab fa-youtube"></i> Voir notre chaîne
+                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="youtube-channel-link">
+                                    <i class="fab fa-youtube"></i> Voir la chaîne
                                 </a>
                             </div>
                         </div>
