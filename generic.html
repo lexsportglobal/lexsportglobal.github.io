@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
-		<!-- Styles spécifiques pour le layout 70/30 et les dimensions d'image -->
+		<!-- Styles spécifiques pour le layout 70/30, les dimensions et le centrage -->
 		<style>
 			/* Agencement 70/30 pour ordinateur */
 			@media screen and (min-width: 981px) {
@@ -24,7 +24,11 @@
 					flex: 0 0 30%;
 					max-width: 30%;
 				}
-				/* Image réduite à 50% de largeur et 70% de hauteur sur PC */
+				/* Image réduite à 50% de largeur et centrée dans son conteneur sur PC */
+				.image.main.centered-img-container {
+					display: flex;
+					justify-content: center;
+				}
 				.custom-page-image {
 					width: 50% !important;
 					height: 175px !important; /* 70% des 250px initiaux */
@@ -46,6 +50,9 @@
 				}
 				.sidebar-30 {
 					margin-top: 40px;
+				}
+				.image.main.centered-img-container {
+					display: block;
 				}
 				/* Dimensions conservées sur Mobile / Tablette */
 				.custom-page-image {
@@ -74,6 +81,11 @@
 				font-size: 0.9rem;
 				line-height: 1.6;
 				color: #444;
+			}
+
+			/* Centrage spécifique pour les boutons ciblés dans la sidebar */
+			.sidebar-box.center-btn-box {
+				text-align: center;
 			}
 		</style>
 
@@ -136,7 +148,7 @@
 									<h1>Ingénierie Juridique & Data Analytics</h1>
 								</header>
 
-								<span class="image main">
+								<span class="image main centered-img-container">
 									<img src="images/expertise_legal.jpg" 
 										 alt="Ingénierie Juridique" 
 										 class="custom-page-image" />
@@ -176,13 +188,15 @@
 								<a href="contact.html" class="button primary small">Demander un Audit</a>
 							</div>
 
-							<div class="sidebar-box">
+							<!-- Boîte 2 avec bouton "En savoir plus" centré -->
+							<div class="sidebar-box center-btn-box">
 								<h3><i class="fas fa-search-dollar"></i> Indemnités & Transferts</h3>
 								<p>Calcul et sécurisation de vos droits financiers lors des mutations de joueurs (TMS & passeport joueur).</p>
 								<a href="contact.html" class="button small">En savoir plus</a>
 							</div>
 
-							<div class="sidebar-box">
+							<!-- Boîte 3 avec bouton "Voir le Scouting" centré -->
+							<div class="sidebar-box center-btn-box">
 								<h3><i class="fas fa-chart-bar"></i> Data Scouting</h3>
 								<p>Associez la sécurité juridique aux données de performance sur le terrain.</p>
 								<a href="scouting.html" class="button small">Voir le Scouting</a>
