@@ -24,7 +24,7 @@
             display: grid;
             grid-template-columns: 70% 30%;
             gap: 30px;
-            align-items: stretch; /* Aligne la hauteur des deux blocs */
+            align-items: stretch; /* Aligne la hauteur des deux blocs sur la même ligne */
             border-bottom: 1px solid #333;
             padding-bottom: 30px;
             margin-bottom: 30px;
@@ -32,9 +32,6 @@
 
         .scouting-left-content {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         /* Image à 50% de largeur et hauteur augmentée pour afficher la tête */
@@ -52,65 +49,6 @@
             display: block;
         }
 
-        /* --- CONTENEUR VIDÉO / YOUTUBE (30% de droite) --- */
-        .scouting-right-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .youtube-sidebar-box {
-            background: linear-gradient(145deg, #0b1d3a, #020b18);
-            border: 1px solid #C5A05F;
-            border-radius: 12px;
-            padding: 25px 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%; /* S'adapte à la hauteur du bloc de gauche */
-            box-sizing: border-box;
-        }
-
-        .youtube-sidebar-box i.fa-youtube {
-            font-size: 3rem;
-            color: #FF0000;
-            margin-bottom: 15px;
-        }
-
-        .youtube-sidebar-box h3 {
-            color: #FFFFFF !important;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            font-weight: 800;
-        }
-
-        .youtube-sidebar-box p {
-            color: #ccc;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .youtube-sidebar-box .button {
-            background-color: #FF0000 !important;
-            color: #ffffff !important;
-            font-weight: 900;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .youtube-sidebar-box .button:hover {
-            background-color: #cc0000 !important;
-        }
-
         /* --- 1. PRESENTATION --- */
         .scouting-intro {
             margin-top: 10px;
@@ -124,6 +62,81 @@
             text-transform: uppercase;
         }
 
+        /* --- CONTENEUR VIDÉO DROITE (30%) --- */
+        .scouting-right-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .scouting-video-box {
+            background: linear-gradient(145deg, #0b1d3a, #020b18);
+            border: 1px solid #C5A05F;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .scouting-video-box h3 {
+            color: #FFFFFF !important;
+            font-size: 1rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scouting-video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid rgba(197, 160, 95, 0.4);
+            margin-bottom: 15px;
+            background: #000;
+        }
+
+        .scouting-video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .youtube-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #C5A05F !important;
+            color: #000 !important;
+            font-weight: 800 !important;
+            font-size: 0.85rem;
+            padding: 10px 15px !important;
+            border-radius: 4px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: 0.3s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .youtube-link-btn:hover {
+            background: #ffffff !important;
+            color: #000 !important;
+        }
+
         /* --- RESPONSIVE MOBILE / TABLETTE --- */
         @media screen and (max-width: 736px) {
             .scouting-top-layout {
@@ -132,10 +145,10 @@
             .image.main.scouting-custom-img {
                 width: 100% !important;
             }
-            .youtube-sidebar-box {
+            .scouting-video-box {
                 margin-top: 20px;
                 height: auto;
-                padding: 30px 20px;
+                padding: 25px 15px;
             }
         }
 
@@ -269,13 +282,17 @@
                             </div>
                         </div>
 
-                        <!-- Bloc Droite (30%) : Conteneur vidéo / Chaîne YouTube -->
+                        <!-- Bloc Droite (30%) : Conteneur Vidéo YouTube -->
                         <div class="scouting-right-content">
-                            <div class="youtube-sidebar-box">
-                                <i class="fab fa-youtube"></i>
-                                <h3>Nos Analyses en Vidéo</h3>
-                                <p>Explorez nos décryptages tactiques, rapports de scouting et présentations de talents sur notre chaîne officielle.</p>
-                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="button">Voir la chaîne</a>
+                            <div class="scouting-video-box">
+                                <h3><i class="fab fa-youtube" style="color: #C5A05F; margin-right: 8px;"></i> Chaîne Vidéo</h3>
+                                <div class="scouting-video-wrapper">
+                                    <!-- Intégrez ici l'URL de votre vidéo YouTube (embed) -->
+                                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Lex Sport Global YouTube" allowfullscreen></iframe>
+                                </div>
+                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="youtube-link-btn">
+                                    <i class="fab fa-youtube"><span>Voir la chaîne</span></i>
+                                </a>
                             </div>
                         </div>
                     </div>
