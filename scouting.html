@@ -24,7 +24,7 @@
             display: grid;
             grid-template-columns: 70% 30%;
             gap: 30px;
-            align-items: center; /* Aligne verticalement le contenu des deux colonnes */
+            align-items: stretch; /* Aligne la hauteur des deux blocs */
             border-bottom: 1px solid #333;
             padding-bottom: 30px;
             margin-bottom: 30px;
@@ -32,6 +32,9 @@
 
         .scouting-left-content {
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         /* Image à 50% de largeur et hauteur augmentée pour afficher la tête */
@@ -49,67 +52,63 @@
             display: block;
         }
 
-        /* --- STYLING DU CONTENEUR VIDÉO (30% DE DROITE) --- */
+        /* --- CONTENEUR VIDÉO / YOUTUBE (30% de droite) --- */
         .scouting-right-content {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100%;
         }
 
         .youtube-sidebar-box {
             background: linear-gradient(145deg, #0b1d3a, #020b18);
-            border: 1px solid #D4AF37;
-            border-radius: 15px;
+            border: 1px solid #C5A05F;
+            border-radius: 12px;
             padding: 25px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            height: 100%; /* S'adapte à la hauteur du bloc de gauche */
+            box-sizing: border-box;
+        }
+
+        .youtube-sidebar-box i.fa-youtube {
+            font-size: 3rem;
+            color: #FF0000;
+            margin-bottom: 15px;
         }
 
         .youtube-sidebar-box h3 {
             color: #FFFFFF !important;
-            font-size: 1.1em !important;
-            font-weight: 800 !important;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
             text-transform: uppercase;
-        }
-
-        .youtube-sidebar-box h3 i {
-            color: #D4AF37;
-            display: block;
-            margin-bottom: 8px;
-            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
         }
 
         .youtube-sidebar-box p {
-            font-size: 0.9rem;
             color: #ccc;
+            font-size: 0.9rem;
             line-height: 1.5;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .youtube-sidebar-box .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #D4AF37 !important;
-            color: #000 !important;
-            font-weight: 900 !important;
-            border: none !important;
-            border-radius: 5px;
+            background-color: #FF0000 !important;
+            color: #ffffff !important;
+            font-weight: 900;
+            border: none;
+            border-radius: 4px;
             padding: 10px 20px;
             text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
         .youtube-sidebar-box .button:hover {
-            background-color: #fff !important;
-            color: #000 !important;
+            background-color: #cc0000 !important;
         }
 
         /* --- 1. PRESENTATION --- */
@@ -132,6 +131,11 @@
             }
             .image.main.scouting-custom-img {
                 width: 100% !important;
+            }
+            .youtube-sidebar-box {
+                margin-top: 20px;
+                height: auto;
+                padding: 30px 20px;
             }
         }
 
@@ -265,12 +269,13 @@
                             </div>
                         </div>
 
-                        <!-- Bloc Droite (30%) : Conteneur Vidéo YouTube -->
+                        <!-- Bloc Droite (30%) : Conteneur vidéo / Chaîne YouTube -->
                         <div class="scouting-right-content">
                             <div class="youtube-sidebar-box">
-                                <h3><i class="fab fa-youtube"></i> Vidéos & Analyses</h3>
-                                <p>Découvrez nos séquences d'analyse de matchs, présentations de talents et décryptages tactiques en vidéo.</p>
-                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="button">Voir la Chaîne</a>
+                                <i class="fab fa-youtube"></i>
+                                <h3>Nos Analyses en Vidéo</h3>
+                                <p>Explorez nos décryptages tactiques, rapports de scouting et présentations de talents sur notre chaîne officielle.</p>
+                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="button">Voir la chaîne</a>
                             </div>
                         </div>
                     </div>
