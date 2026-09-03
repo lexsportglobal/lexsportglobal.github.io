@@ -34,9 +34,9 @@
             width: 100%;
         }
 
-        /* Image à 50% de largeur et hauteur augmentée pour afficher la tête */
+        /* Image à 100% de la largeur du bloc gauche (70%) */
         .image.main.scouting-custom-img {
-            width: 50% !important;
+            width: 100% !important;
             margin: 0 0 1.5em 0 !important;
         }
 
@@ -62,13 +62,95 @@
             text-transform: uppercase;
         }
 
+        /* --- CONTENEUR VIDÉO / YOUTUBE (30%) --- */
+        .scouting-right-content {
+            background: linear-gradient(145deg, #0b1d3a, #020b18);
+            border: 1px solid #D4AF37;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .scouting-right-content h3 {
+            color: #FFFFFF !important;
+            font-size: 1.05rem !important;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .video-preview-box {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+        .video-preview-box img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .video-preview-box:hover img {
+            transform: scale(1.03);
+        }
+        .video-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(11, 25, 44, 0.85);
+            color: #D4AF37;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 2px solid #D4AF37;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .scouting-right-content p {
+            font-size: 0.85rem;
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #FF0000 !important;
+            color: #FFFFFF !important;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            width: 100%;
+            transition: background-color 0.3s;
+            border: none;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+        }
+        .youtube-btn:hover {
+            background-color: #CC0000 !important;
+            color: #FFFFFF !important;
+        }
+
         /* --- RESPONSIVE MOBILE / TABLETTE --- */
-        @media screen and (max-width: 736px) {
+        @media screen and (max-width: 980px) {
             .scouting-top-layout {
                 grid-template-columns: 1fr;
             }
-            .image.main.scouting-custom-img {
-                width: 100% !important;
+            .scouting-right-content {
+                margin-top: 20px;
             }
         }
 
@@ -142,7 +224,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){dataLayer.puts && gtag.puts(arguments) || dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-VKBQS18D5E');
     </script>
@@ -202,9 +284,21 @@
                             </div>
                         </div>
 
-                        <!-- Bloc Droite (30%) : Espace réservé pour vos futurs contenus -->
+                        <!-- Bloc Droite (30%) : Conteneur Vidéo / Chaîne YouTube -->
                         <div class="scouting-right-content">
-                            <!-- Espace vide ou conteneur additionnel pour les 30% restants -->
+                            <h3><i class="fab fa-youtube" style="color: #FF0000; margin-right: 8px;"></i> Visionnez Nos Analyses</h3>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                                <div class="video-preview-box">
+                                    <img src="images/players.jpg" alt="Aperçu Vidéo Scouting" />
+                                    <div class="video-play-icon">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            <p>Découvrez nos rapports en vidéo, décryptages tactiques et démonstrations de nos outils d'évaluation de talents.</p>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="youtube-btn">
+                                <i class="fab fa-youtube"></i> Visiter notre chaîne
+                            </a>
                         </div>
                     </div>
 
