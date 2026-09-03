@@ -24,6 +24,21 @@
 					flex: 0 0 30%;
 					max-width: 30%;
 				}
+				/* Dimensions et centrage identiques à expertise_legal sur PC, rapprochés des textes */
+				.cover-image-container {
+					text-align: center;
+					margin: 10px 0 15px 0 !important;
+				}
+				.cover-image-container img {
+					width: 50% !important;
+					height: 175px !important;
+					object-fit: cover;
+					border-bottom: 2px solid #C5A05F;
+					border-radius: 6px;
+					display: inline-block !important;
+					margin: 0 auto !important;
+					box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				}
 			}
 
 			/* Repli sur 100% de largeur pour tablettes et mobiles */
@@ -38,6 +53,18 @@
 				}
 				.sidebar-30 {
 					margin-top: 40px;
+				}
+				.cover-image-container {
+					text-align: center;
+					margin: 15px 0;
+				}
+				.cover-image-container img {
+					width: 100% !important;
+					max-height: 250px !important;
+					object-fit: cover;
+					border-bottom: 2px solid #C5A05F;
+					border-radius: 6px;
+					margin: 0 auto !important;
 				}
 			}
 
@@ -61,41 +88,13 @@
 				color: #444;
 			}
 
-			/* --- AJUSTEMENTS DEMANDÉS (ACCUEIL) --- */
-			/* 1. Centrage et rapprochement du Titre et du Sous-titre */
+			/* Centrage du Titre et du Sous-titre et rapprochement */
 			.banner-custom .banner-title {
 				text-align: center;
-				margin-bottom: 10px; /* Réduit pour rapprocher de l'image */
+				margin-bottom: 15px;
 			}
 			.banner-custom .banner-title h1 {
 				margin-bottom: 5px;
-			}
-
-			/* 2. Image Cover ultra-large et rapprochée des textes sur PC */
-			.cover-image-container {
-				display: flex;
-				justify-content: center;
-				margin: 10px 0; /* Marges réduites pour rapprocher des textes haut et bas */
-			}
-			.cover-image-container img {
-				width: 100%; /* Largeur maximale sur PC */
-				max-height: 560px; /* Hauteur généreuse */
-				object-fit: cover;
-				border-radius: 8px;
-				border-bottom: 3px solid #D4AF37;
-				box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-			}
-
-			.banner-body {
-				margin-top: 10px; /* Rapproche le texte du dessous de l'image */
-			}
-
-			/* Adaptation mobile pour l'image cover (réglages maintenus) */
-			@media screen and (max-width: 736px) {
-				.cover-image-container img {
-					width: 100%;
-					max-height: 300px;
-				}
 			}
 		</style>
 
@@ -166,7 +165,7 @@
 							    </p>
 							  </div>
 
-							  <!-- 2. Image Cover Agrandie, Élargie et Rapprochée -->
+							  <!-- 2. Image Cover dimensionnée et rapprochée -->
 							  <div class="cover-image-container">
 							    <img src="images/cover.jpg" alt="Lex Sport Global - Expertise Juridique et Data" />
 							  </div>
