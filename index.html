@@ -71,26 +71,30 @@
 				margin-bottom: 10px;
 			}
 
-			/* 2. Agrandissement (double de taille et largeur) et centrage de l'image Cover sur PC */
+			/* 2. Agrandissement de 50% en largeur et en hauteur de l'image Cover sur PC */
 			.cover-image-container {
 				display: flex;
 				justify-content: center;
-				margin: 30px 0;
+				margin: 40px 0;
+				overflow: hidden; /* Empêche le débordement visuel hors de la section */
 			}
 			.cover-image-container img {
-				width: 100%; /* Largeur maximisée dans le conteneur principal sur PC */
-				max-height: 560px; /* Hauteur doublée et généreuse sur PC */
+				width: 150% !important; /* +50% de largeur par rapport au conteneur */
+				max-width: none !important;
+				max-height: 840px !important; /* +50% de hauteur (passé de 560px à 840px) */
 				object-fit: cover;
 				border-radius: 8px;
 				border-bottom: 3px solid #D4AF37;
 				box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+				transform: translateX(0); /* Ajustement pour garder le centrage parfait si besoin */
 			}
 
-			/* Adaptation mobile pour l'image cover */
+			/* Adaptation mobile pour l'image cover (réglages maintenus) */
 			@media screen and (max-width: 736px) {
 				.cover-image-container img {
-					width: 100%;
-					max-height: 300px;
+					width: 100% !important;
+					max-height: 300px !important;
+					transform: none;
 				}
 			}
 		</style>
@@ -162,7 +166,7 @@
 							    </p>
 							  </div>
 
-							  <!-- 2. Image Cover Agrandie et Centrée -->
+							  <!-- 2. Image Cover Agrandie de 50% et Centrée -->
 							  <div class="cover-image-container">
 							    <img src="images/cover.jpg" alt="Lex Sport Global - Expertise Juridique et Data" />
 							  </div>
