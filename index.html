@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
-		<!-- Styles spécifiques pour la disposition 70/30 -->
+		<!-- Styles spécifiques pour la disposition 70/30 & Correction Image / Titres -->
 		<style>
 			/* Agencement 70/30 pour ordinateurs et grands écrans */
 			@media screen and (min-width: 981px) {
@@ -24,6 +24,16 @@
 					flex: 0 0 30%;
 					max-width: 30%;
 				}
+
+				/* Image Cover sur PC : 50% de largeur, centré, hauteur ajustée à environ 70% d'un format classique (max-height 320px) */
+				.cover-image-container img {
+					width: 50% !important;
+					max-height: 320px !important;
+					object-fit: cover;
+					display: block;
+					margin: 0 auto 1.5em auto;
+					border-bottom: 3px solid #D4AF37;
+				}
 			}
 
 			/* Repli sur 100% de largeur pour tablettes et mobiles */
@@ -39,6 +49,26 @@
 				.sidebar-30 {
 					margin-top: 40px;
 				}
+
+				/* Image Cover sur Mobile/Tablette : 100% de largeur */
+				.cover-image-container img {
+					width: 100% !important;
+					max-height: none !important;
+					display: block;
+					margin: 0 0 1.5em 0;
+				}
+			}
+
+			/* Centrage du Titre et du Sous-titre de la Bannière */
+			.banner-title {
+				text-align: center !important;
+				margin-bottom: 25px;
+			}
+			.banner-title h1 {
+				text-align: center !important;
+			}
+			.banner-title .subtitle-tagline {
+				text-align: center !important;
 			}
 
 			/* Style conteneur d'encadré pour la colonne de droite */
@@ -119,7 +149,7 @@
 
 							<!-- Banner Section -->
 							<section id="banner" class="banner-custom">
-							  <!-- 1. Titre -->
+							  <!-- 1. Titre (Centré) -->
 							  <div class="banner-title">
 							    <h1>
 							      L'Ingénierie Juridique au service de la Performance
