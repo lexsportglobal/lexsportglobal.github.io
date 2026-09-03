@@ -1,15 +1,15 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
-		<title>Lex Sport Global | Droit • Data • Performance</title>
+		<title>Expertise Juridique | LEX SPORT GLOBAL</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
-		<!-- Styles spécifiques pour la disposition 70/30 & Ajustements Bannière -->
+		<!-- Styles spécifiques pour le layout 70/30, l'image et la sidebar -->
 		<style>
-			/* Agencement 70/30 pour ordinateurs et grands écrans */
+			/* Agencement 70/30 pour ordinateur */
 			@media screen and (min-width: 981px) {
 				.page-layout-container {
 					display: flex;
@@ -23,6 +23,20 @@
 				.sidebar-30 {
 					flex: 0 0 30%;
 					max-width: 30%;
+					margin-top: 135px; /* Descend les 3 conteneurs à la hauteur de l'image */
+				}
+				/* Image réduite à 50% de largeur, centrée et 70% de hauteur sur PC */
+				.image-container-centered {
+					text-align: center;
+					margin: 0 0 1.5em 0;
+				}
+				.custom-page-image {
+					width: 50% !important;
+					height: 175px !important; /* 70% des 250px initiaux */
+					object-fit: cover;
+					border-bottom: 2px solid #C5A05F;
+					display: inline-block !important;
+					margin: 0 auto !important;
 				}
 			}
 
@@ -39,6 +53,17 @@
 				.sidebar-30 {
 					margin-top: 40px;
 				}
+				.image-container-centered {
+					text-align: center;
+				}
+				/* Dimensions conservées sur Mobile / Tablette */
+				.custom-page-image {
+					width: 100% !important;
+					max-height: 250px !important;
+					object-fit: cover;
+					border-bottom: 2px solid #C5A05F;
+					margin: 0 auto !important;
+				}
 			}
 
 			/* Style conteneur d'encadré pour la colonne de droite */
@@ -49,6 +74,7 @@
 				padding: 20px;
 				border-radius: 6px;
 				margin-bottom: 25px;
+				text-align: center; /* Centre le texte et les éléments internes de la box */
 			}
 			.sidebar-box h3 {
 				color: #002349;
@@ -59,39 +85,13 @@
 				font-size: 0.9rem;
 				line-height: 1.6;
 				color: #444;
-			}
-
-			/* --- CORRECTIONS DEMANDÉES (ACCUEIL) --- */
-			/* 1. Centrage du Titre et du Sous-titre */
-			.banner-custom .banner-title {
 				text-align: center;
-				margin-bottom: 30px;
-			}
-			.banner-custom .banner-title h1 {
-				margin-bottom: 10px;
 			}
 
-			/* 2. Agrandissement (double de taille et largeur) et centrage de l'image Cover sur PC */
-			.cover-image-container {
-				display: flex;
-				justify-content: center;
-				margin: 30px 0;
-			}
-			.cover-image-container img {
-				width: 100%; /* Largeur maximisée dans le conteneur PC */
-				max-height: 560px; /* Hauteur doublée/généreuse sur PC */
-				object-fit: cover;
-				border-radius: 8px;
-				border-bottom: 3px solid #D4AF37;
-				box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-			}
-
-			/* Adaptation mobile pour l'image cover (réglages maintenus) */
-			@media screen and (max-width: 736px) {
-				.cover-image-container img {
-					width: 100%;
-					max-height: 300px;
-				}
+			/* Centrage explicite des boutons de la sidebar */
+			.sidebar-box .button {
+				display: inline-block;
+				margin: 0 auto;
 			}
 		</style>
 
@@ -118,15 +118,15 @@
 				<div class="header-container">
 					<!-- Logo -->
 					<a href="index.html" class="logo">
-                         <img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
-                    </a>
+						<img src="images/logo_final.jpg" alt="Logo LEX SPORT GLOBAL" style="height: 38px;" />
+					</a>
 
 					<!-- Menu Navigation -->
 					<nav id="menu-nav">
 						<ul>
 							<li><a href="index.html">Accueil</a></li>
 							<li><a href="generic.html">Expertise Juridique</a></li>
-							<li><a href="scouting.html">Data Scouting</a></li> 
+							<li><a href="scouting.html">Data Scouting</a></li>
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
@@ -144,93 +144,68 @@
 			<div id="main">
 				<div class="inner">
 
-					<!-- Structure globale 70% à gauche / 30% à droite -->
+					<!-- Disposition Globale 70% à gauche / 30% à droite -->
 					<div class="page-layout-container">
 
 						<!-- COLONNE PRINCIPALE (70% de la largeur sur PC) -->
 						<main class="main-content-70">
-
-							<!-- Banner Section -->
-							<section id="banner" class="banner-custom">
-							  <!-- 1. Titre & Sous-titre (Centrés) -->
-							  <div class="banner-title">
-							    <h1>
-							      L'Ingénierie Juridique au service de la Performance
-							    </h1>
-							    <p class="subtitle-tagline">
-							      Data Scouting &amp; Conformité FIFA
-							    </p>
-							  </div>
-
-							  <!-- 2. Image Cover Agrandie et Centrée -->
-							  <div class="cover-image-container">
-							    <img src="images/cover.jpg" alt="Lex Sport Global - Expertise Juridique et Data" />
-							  </div>
-
-							  <!-- 3. Paragraphe de texte -->
-							  <div class="banner-body">
-							    <p class="lang-fr">
-							      Pionnier au Bénin, LEX SPORT GLOBAL allie l'expertise juridique (Loi 2021-05 sur le sport) à l'ingénierie des données pour sécuriser les investissements sportifs et optimiser le scouting de talents.
-							    </p>
-							  </div>
-							</section>
-
-							<!-- Section Piliers Stratégiques -->
 							<section>
-								<header class="major">
-									<h2>Nos Piliers Stratégiques</h2>
+								<header class="main">
+									<h1>Ingénierie Juridique & Data Analytics</h1>
 								</header>
-								<div class="posts">
-									<!-- Article 1 -->
-									<article>
-										<a href="generic.html" class="image">
-											<img src="images/expertise_legal.jpg" alt="Ingénierie Juridique" />
-										</a>
-										<h3>Ingénierie Juridique (Loi 2021-05)</h3>
-										<p class="lang-fr">Audit de conformité des sociétés sportives au Bénin et sécurisation des actifs juridiques.</p>
-										<ul class="actions">
-											<li>
-												<a href="generic.html" class="button">Infos</a>
-											</li>
-										</ul>
-									</article>
-									<!-- Article 2 -->
-									<article>
-										<a href="scouting.html" class="image">
-											<img src="images/scouting_data.jpg" alt="Data Scouting" />
-										</a>
-										<h3>Data Scouting & Performance</h3>
-										<p class="lang-fr">Identification de talents via des algorithmes de performance avancés et analyse prédictive.</p>
-										<ul class="actions">
-											<li>
-												<a href="scouting.html" class="button">Infos</a>
-											</li>
-										</ul>
-									</article>
-								</div>
-							</section>
 
+								<div class="image-container-centered">
+									<span class="image main" style="display: inline-block; width: 100%; margin: 0;">
+										<img src="images/expertise_legal.jpg" 
+											 alt="Ingénierie Juridique" 
+											 class="custom-page-image" />
+									</span>
+								</div>
+
+								<p>Dans le nouveau paysage sportif béninois, l'ingénierie juridique n'est plus une option, mais un levier de croissance. LEX SPORT GLOBAL sécurise chaque étape de vos projets sportifs en alliant conformité légale et analyse de données.</p>
+
+								<hr class="major" />
+
+								<h2>Cadre Légal Béninois : Loi 2021-05</h2>
+								<p>Nous sommes spécialisés dans l'accompagnement lié à la <b>Loi n°2021-05 du 23 décembre 2021</b> portant organisation et promotion des activités physiques et sportives en République du Bénin. Cette loi impose une mutation profonde :</p>
+								<ul>
+									<li><strong>Transformation des clubs :</strong> Passage du statut associatif au statut de société sportive.</li>
+									<li><strong>Gouvernance :</strong> Mise en place de structures administratives conformes aux exigences de l'État.</li>
+									<li><strong>Conventions :</strong> Négociation des conventions d'exploitation et de gestion.</li>
+								</ul>
+
+								<hr class="major" />
+
+								<h2>Régulations FIFA & Transferts</h2>
+								<p>Notre expertise s'étend à la sphère internationale pour garantir la sécurité juridique des transferts d'athlètes :</p>
+								<ul>
+									<li>Rédaction et révision de contrats de travail sportifs internationaux.</li>
+									<li>Gestion des indemnités de formation et du mécanisme de solidarité.</li>
+									<li>Représentation et conseil devant les instances juridictionnelles du sport.</li>
+								</ul>
+
+							</section>
 						</main>
 
 						<!-- COLONNE LATÉRALE / SIDEBAR (30% de la largeur sur PC) -->
 						<aside class="sidebar-30">
 							
 							<div class="sidebar-box">
-								<h3><i class="fas fa-balance-scale"></i> Conformité Loi 2021-05</h3>
-								<p>Accompagnement personnalisé pour le passage des associations sportives au statut de société sportive au Bénin.</p>
-								<a href="generic.html" class="button primary small">En savoir plus</a>
+								<h3><i class="fas fa-file-contract"></i> Audit Juridique</h3>
+								<p>Évaluez la conformité de votre club ou association par rapport aux exigences de la Loi 2021-05 et des textes de la FIFA.</p>
+								<a href="contact.html" class="button primary small">Demander un Audit</a>
 							</div>
 
 							<div class="sidebar-box">
-								<h3><i class="fas fa-chart-line"></i> Rapports de Scouting</h3>
-								<p>Découvrez nos rapports d'analyse prédictive et nos fiches de joueurs à fort potentiel.</p>
-								<a href="scouting.html" class="button small">Accéder au Scouting</a>
+								<h3><i class="fas fa-search-dollar"></i> Indemnités & Transferts</h3>
+								<p>Calcul et sécurisation de vos droits financiers lors des mutations de joueurs (TMS & passeport joueur).</p>
+								<a href="contact.html" class="button small">En savoir plus</a>
 							</div>
 
 							<div class="sidebar-box">
-								<h3><i class="fas fa-paper-plane"></i> Une question ?</h3>
-								<p>Contactez directement notre cabinet d'ingénierie pour un audit de vos structures.</p>
-								<a href="contact.html" class="button small">Nous contacter</a>
+								<h3><i class="fas fa-chart-bar"></i> Data Scouting</h3>
+								<p>Associez la sécurité juridique aux données de performance sur le terrain.</p>
+								<a href="scouting.html" class="button small">Voir le Scouting</a>
 							</div>
 
 						</aside>
@@ -252,28 +227,14 @@
 					<p><a href="legales.html">Mentions Légales & Confidentialité</a></p>
 					<p class="copyright">&copy; LEX SPORT GLOBAL. 2026 Tous droits réservés.</p>
 				</div>
-
-				<!-- Section Partenaires -->
-				<section class="partners-section">
-				    <h2>Nos Partenaires</h2>
-				    <div class="partners-grid">
-				        <div class="partner-item">
-				            <img src="images/Stronghaus-logo.png" alt="Stronghaus" />
-				        </div>
-				        <div class="partner-item">
-				            <img src="images/vallée_des_elites.png" alt="Vallée des Elites" />
-				        </div>
-				        <div class="partner-item">
-				            <img src="images/dozia logo.png" alt="Dozia" />
-				        </div>
-				    </div>
-				</section>
 			</footer>
 
 		</div>
 
-		<!-- Bulle Flottante WhatsApp -->
-		<a href="https://wa.me/2290197328579?text=Demande%20d'information" class="whatsapp-float" aria-label="Contact WhatsApp">
+		<!-- Bulle Flottante WhatsApp (Milieu Droite) -->
+		<a href="https://wa.me/2290197328579?text=Demande%20d'information" 
+		   class="whatsapp-float" 
+		   aria-label="Contact WhatsApp">
 			<i class="fab fa-whatsapp"></i>
 		</a>
 
@@ -283,30 +244,33 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+
+		<!-- Script Menu Mobile Fonctionnel -->
 		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				var toggleBtn = document.getElementById('navToggle');
-				var navMenu = document.getElementById('menu-nav');
+		document.addEventListener('DOMContentLoaded', function() {
+			var toggleBtn = document.getElementById('navToggle');
+			var navMenu = document.getElementById('menu-nav');
 
-				if (toggleBtn && navMenu) {
-					toggleBtn.onclick = function(e) {
-						e.preventDefault();
-						e.stopPropagation();
-						if (navMenu.style.display === "block") {
-							navMenu.style.display = "none";
-						} else {
-							navMenu.style.display = "block";
-						}
-					};
-
-					var menuLinks = navMenu.getElementsByTagName('a');
-					for (var i = 0; i < menuLinks.length; i++) {
-						menuLinks[i].addEventListener('click', function() {
-							navMenu.style.display = "none";
-						});
+			if (toggleBtn && navMenu) {
+				toggleBtn.onclick = function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					if (navMenu.style.display === "block") {
+						navMenu.style.display = "none";
+					} else {
+						navMenu.style.display = "block";
 					}
+				};
+
+				// Ferme le menu si l'on clique sur un lien
+				var menuLinks = navMenu.getElementsByTagName('a');
+				for (var i = 0; i < menuLinks.length; i++) {
+					menuLinks[i].addEventListener('click', function() {
+						navMenu.style.display = "none";
+					});
 				}
-			});
+			}
+		});
 		</script>
 	</body>
 </html>
