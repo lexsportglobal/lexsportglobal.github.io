@@ -41,7 +41,7 @@
 				}
 			}
 
-			/* Style conteneur d'encadré pour la colonne de droite */
+			/* Style conteneur d'encadré pour la colonne de droite (Centré) */
 			.sidebar-box {
 				background-color: #f8f9fa;
 				border: 1px solid rgba(0, 35, 73, 0.1);
@@ -49,16 +49,24 @@
 				padding: 20px;
 				border-radius: 6px;
 				margin-bottom: 25px;
+				text-align: center; /* Centre les textes et éléments internes */
 			}
 			.sidebar-box h3 {
 				color: #002349;
 				margin-bottom: 12px;
 				font-size: 1.1rem;
+				text-align: center;
 			}
 			.sidebar-box p {
 				font-size: 0.9rem;
 				line-height: 1.6;
 				color: #444;
+				text-align: center;
+			}
+			/* Centrage explicite des boutons à l'intérieur de la sidebar */
+			.sidebar-box .button {
+				display: inline-block;
+				margin: 0 auto;
 			}
 
 			/* --- CORRECTION : Suppression des puces sur les actions --- */
@@ -222,6 +230,13 @@
 						<!-- COLONNE LATÉRALE / SIDEBAR (30% de la largeur sur PC) -->
 						<aside class="sidebar-30">
 							
+							<!-- Nouveau bloc : Révision des contrats des athlètes -->
+							<div class="sidebar-box">
+								<h3><i class="fas fa-file-signature"></i> Révision des Contrats</h3>
+								<p>Sécurisez les intérêts des clubs et des joueurs grâce à une analyse rigoureuse et une mise en conformité des contrats d'athlètes selon les standards internationaux et le droit national.</p>
+								<a href="generic.html" class="button small">En savoir plus</a>
+							</div>
+
 							<div class="sidebar-box">
 								<h3><i class="fas fa-balance-scale"></i> Conformité Loi 2021-05</h3>
 								<p>Accompagnement personnalisé pour le passage des associations sportives au statut de société sportive au Bénin.</p>
