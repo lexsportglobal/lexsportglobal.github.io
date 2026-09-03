@@ -41,32 +41,56 @@
 				}
 			}
 
-			/* Style conteneur d'encadré pour la colonne de droite (Centré) */
+			/* Style conteneur d'encadré pour la colonne de droite (Centré et couleurs sobres) */
 			.sidebar-box {
 				background-color: #f8f9fa;
 				border: 1px solid rgba(0, 35, 73, 0.1);
-				border-left: 4px solid #D4AF37;
-				padding: 20px;
+				border-left: 4px solid #4A6B82; /* Remplacement de l'or par un bleu ardoise sobre */
+				padding: 25px 20px;
 				border-radius: 6px;
 				margin-bottom: 25px;
 				text-align: center; /* Centre les textes et éléments internes */
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
 			}
 			.sidebar-box h3 {
 				color: #002349;
 				margin-bottom: 12px;
 				font-size: 1.1rem;
 				text-align: center;
+				width: 100%;
+			}
+			.sidebar-box h3 i {
+				display: block;
+				margin: 0 auto 8px auto;
+				color: #4A6B82; /* Icône sobre harmonisée */
+				font-size: 1.3rem;
 			}
 			.sidebar-box p {
 				font-size: 0.9rem;
 				line-height: 1.6;
 				color: #444;
 				text-align: center;
+				margin-bottom: 20px;
 			}
-			/* Centrage explicite des boutons à l'intérieur de la sidebar */
+			
+			/* Centrage et harmonisation sobre des boutons de la sidebar */
 			.sidebar-box .button {
-				display: inline-block;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
 				margin: 0 auto;
+				background-color: #2C3E50 !important; /* Gris-bleu foncé neutre et professionnel */
+				color: #ffffff !important;
+				border: 1px solid #2C3E50 !important;
+				box-shadow: none !important;
+				transition: background-color 0.3s ease, border-color 0.3s ease;
+			}
+			.sidebar-box .button:hover {
+				background-color: #1A252F !important;
+				border-color: #1A252F !important;
 			}
 
 			/* --- CORRECTION : Suppression des puces sur les actions --- */
@@ -74,6 +98,17 @@
 				list-style: none;
 				padding: 0;
 				margin: 0;
+			}
+			
+			/* Harmonisation sobre des boutons généraux de la page */
+			.actions .button {
+				background-color: #2C3E50 !important;
+				color: #ffffff !important;
+				border: 1px solid #2C3E50 !important;
+			}
+			.actions .button:hover {
+				background-color: #1A252F !important;
+				border-color: #1A252F !important;
 			}
 
 			/* --- AJUSTEMENTS DEMANDÉS (ACCUEIL) --- */
@@ -97,7 +132,7 @@
 				max-height: 560px; /* Hauteur généreuse */
 				object-fit: cover;
 				border-radius: 8px;
-				border-bottom: 3px solid #D4AF37;
+				border-bottom: 3px solid #4A6B82; /* Remplacement de la bordure dorée */
 				box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 			}
 
@@ -240,7 +275,7 @@
 							<div class="sidebar-box">
 								<h3><i class="fas fa-balance-scale"></i> Conformité Loi 2021-05</h3>
 								<p>Accompagnement personnalisé pour le passage des associations sportives au statut de société sportive au Bénin.</p>
-								<a href="generic.html" class="button primary small">En savoir plus</a>
+								<a href="generic.html" class="button small">En savoir plus</a>
 							</div>
 
 							<div class="sidebar-box">
