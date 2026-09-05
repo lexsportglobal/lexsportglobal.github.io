@@ -360,20 +360,12 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/hamburger.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <!-- Script unique nettoyé -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Menu Mobile Toggle
-            const navToggle = document.getElementById('navToggle');
-            const menuNav = document.getElementById('menu-nav');
-            if(navToggle && menuNav) {
-                navToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    menuNav.classList.toggle('active');
-                });
-            }
 
             // Supabase Logic
             let allPlayers = [];
