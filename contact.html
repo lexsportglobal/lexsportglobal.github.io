@@ -268,31 +268,5 @@
 			<i class="fab fa-whatsapp"></i>
 		</a>
 
-		<!-- Script Menu Mobile Fonctionnel -->
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			var toggleBtn = document.getElementById('navToggle');
-			var navMenu = document.getElementById('menu-nav');
-
-			if (toggleBtn && navMenu) {
-				toggleBtn.onclick = function(e) {
-					e.preventDefault();
-					e.stopPropagation();
-					if (navMenu.style.display === "block") {
-						navMenu.style.display = "none";
-					} else {
-						navMenu.style.display = "block";
-					}
-				};
-
-				var menuLinks = navMenu.getElementsByTagName('a');
-				for (var i = 0; i < menuLinks.length; i++) {
-					menuLinks[i].addEventListener('click', function() {
-						navMenu.style.display = "none";
-					});
-				}
-			}
-		});
-		</script>
 	</body>
 </html>
