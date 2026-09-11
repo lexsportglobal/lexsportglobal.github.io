@@ -140,6 +140,48 @@
 					justify-content: flex-start !important;
 				}
 			}
+
+			/* --- BOUTONS SERVICES PERSONNELS --- */
+.personal-services {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 20px 0 20px;
+    margin-bottom: -10px; /* Réduit l'espace avant le contenu principal */
+}
+.btn-perso {
+    background-color: #66bb6a !important; /* Vert clair */
+    color: #ffffff !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease;
+}
+.btn-perso i {
+    margin-right: 8px; /* Espace entre l'icône et le texte */
+}
+.btn-perso:hover {
+    opacity: 0.85; /* Effet visuel au survol */
+}
+
+/* Adaptation pour les téléphones portables */
+@media screen and (max-width: 736px) {
+    .personal-services {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .btn-perso {
+        width: 100%;
+        justify-content: center;
+    }
+}
 		</style>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
