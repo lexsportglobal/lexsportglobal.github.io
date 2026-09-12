@@ -140,7 +140,49 @@
 					justify-content: flex-start !important;
 				}
 			}
+			/* --- BOUTONS SERVICES PERSONNELS --- */
+.personal-services {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 20px 0 20px;
+    margin-bottom: -10px; /* Réduit l'espace avant le contenu principal */
+}
+.btn-perso {
+    background-color: #66bb6a !important; /* Vert clair */
+    color: #ffffff !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease;
+}
+.btn-perso i {
+    margin-right: 8px; /* Espace entre l'icône et le texte */
+}
+.btn-perso:hover {
+    opacity: 0.85; /* Effet visuel au survol */
+}
+
+/* Adaptation pour les téléphones portables */
+@media screen and (max-width: 736px) {
+    .personal-services {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .btn-perso {
+        width: 100%;
+        justify-content: center;
+    }
+}
 		</style>
+		
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKBQS18D5E"></script>
 		<script>
@@ -193,7 +235,16 @@
 						<header class="main">
 							<h1 class="page-title-small" style="color: #002349;">Contact & Direction Générale</h1>
 						</header>
-
+          <!-- BOUTONS SERVICES PERSONNELS (Sous le menu) -->
+               <div class="personal-services">
+                  <a href="https://wa.me/2290197328579?text=Bonjour,%20je%20souhaiterais%20avoir%20des%20informations%20sur%20votre%20service%20de%20traduction." class="btn-perso" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-language"></i> Service Traduction
+                  </a>
+                  <a href="https://wa.me/2290197328579?text=Bonjour,%20je%20souhaiterais%20avoir%20des%20informations%20sur%20vos%20services%20numériques." class="btn-perso" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-laptop-code"></i> Service Numérique
+                 </a>
+               </div>
+						
 						<p style="margin-bottom: 0.5em;">Pour toute expertise en ingénierie juridique sportive, audit de conformité ou data scouting, nos consultants sont à votre disposition pour accompagner votre structure vers l'excellence.</p>
 
 						<hr class="major" style="margin: 1.5em 0;" />
