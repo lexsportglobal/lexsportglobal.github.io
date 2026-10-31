@@ -69,87 +69,25 @@
         }
 
         /* --- CONTENEUR VIDÉO DROITE (30%) --- */
-<!-- Bloc Droite (30%) : Redirection directe vers la chaîne YouTube -->
+<!-- Bloc Droite (30%) : Vidéo et Accès Chaîne -->
 <div class="scouting-right-content">
-    <div class="scouting-video-box" style="text-align: center; padding: 30px 20px;">
-        <i class="fab fa-youtube" style="color: #C5A05F; font-size: 3rem; margin-bottom: 15px; display: block;"></i>
-        <h3 style="color: #FFFFFF !important; font-size: 1.1rem !important; font-weight: 700 !important; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Chaîne Officielle</h3>
-        <p style="font-size: 0.9em; color: #ccc; margin-bottom: 25px; line-height: 1.5;">
-            Explorez l'ensemble de nos reportages, analyses de performance et actualités du sport béninois directement sur notre chaîne.
-        </p>
+    <div class="scouting-video-box">
+        <h3><i class="fab fa-youtube" style="color: #C5A05F; margin-right: 8px;"></i> Chaîne Vidéo</h3>
+        
+        <!-- 1. En cliquant sur cette image/bloc, l'internaute accède directement à la vidéo sur YouTube -->
+        <a href="https://www.youtube.com/watch?v=TH2xS-bT6iA" target="_blank" rel="noopener noreferrer" style="display: block; position: relative; width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid rgba(197, 160, 95, 0.4); margin-bottom: 15px; text-decoration: none;">
+            <img src="https://img.youtube.com/vi/TH2xS-bT6iA/hqdefault.jpg" alt="Le Dynamisme du Sport au Bénin" style="width: 100%; display: block; height: auto;" />
+<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.7); width: 60px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: 0.3s;">
+                <i class="fab fa-youtube" style="color: #ff0000; font-size: 28px;"></i>
+    </div>
+        </a>
+
+        <!-- 2. En cliquant sur ce bouton, l'internaute accède à toute la chaîne -->
         <a href="https://www.youtube.com/@LexSportGlobal" target="_blank" rel="noopener noreferrer" class="youtube-link-btn">
-            <i class="fab fa-youtube" style="margin-right: 8px;"></i><span>Voir la chaîne</span>
+            <i class="fab fa-youtube"><span>Voir la chaîne</span></i>
         </a>
     </div>
 </div>
-
-        .scouting-video-box {
-            background: linear-gradient(145deg, #0b1d3a, #020b18);
-            border: 1px solid #C5A05F;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            box-sizing: border-box;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-
-        .scouting-video-box h3 {
-            color: #FFFFFF !important;
-            font-size: 1rem !important;
-            font-weight: 700 !important;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .scouting-video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* Ratio 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            border: 1px solid rgba(197, 160, 95, 0.4);
-            margin-bottom: 15px;
-            background: #000;
-        }
-
-        .scouting-video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .youtube-link-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: #C5A05F !important;
-            color: #000 !important;
-            font-weight: 800 !important;
-            font-size: 0.85rem;
-            padding: 10px 15px !important;
-            border-radius: 4px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: 0.3s;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .youtube-link-btn:hover {
-            background: #ffffff !important;
-            color: #000 !important;
-        }
 
         /* --- RESPONSIVE MOBILE / TABLETTE --- */
         @media screen and (max-width: 736px) {
