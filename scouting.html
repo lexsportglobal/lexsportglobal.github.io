@@ -6,31 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
     <!-- FAVICONS -->
-         <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link rel="icon" type="image/svg+xml" href="favicon.svg">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 	
-		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     
     <style>
         /* --- CORRECTIF ANTI ESPACE VIDE & IMAGE DEBORDANTE --- */
         #main > .inner {
-            padding-top: 0px !important; /* Réduit au maximum l'espace sous le header */
+            padding-top: 0px !important;
         }
 
-        /* Remonter le titre "Data Scouting & Performance" */
         header.main {
             margin-bottom: 10px !important;
             padding-top: 0 !important;
         }
 
-        /* --- MISE EN PAGE 70% / 30% POUR L'INTRODUCTION ET L'IMAGE --- */
+        /* --- MISE EN PAGE 70% / 30% --- */
         .scouting-top-layout {
             display: grid;
             grid-template-columns: 70% 30%;
             gap: 30px;
-            align-items: stretch; /* Aligne la hauteur des deux blocs sur la même ligne */
+            align-items: stretch;
             border-bottom: 1px solid #333;
             padding-bottom: 30px;
             margin-bottom: 30px;
@@ -40,7 +39,6 @@
             width: 100%;
         }
 
-        /* Image à 50% de largeur et hauteur augmentée pour afficher la tête */
         .image.main.scouting-custom-img {
             width: 50% !important;
             margin: 0 0 1.5em 0 !important;
@@ -48,14 +46,13 @@
 
         .image.main.scouting-custom-img img { 
             width: 100% !important; 
-            max-height: 380px; /* Hauteur augmentée pour révéler le haut des têtes */
+            max-height: 380px;
             object-fit: cover; 
-            object-position: center 20%; /* Centre l'image en privilégiant le haut (visages/têtes) */
+            object-position: center 20%;
             border-bottom: 3px solid #C5A05F; 
             display: block;
         }
 
-        /* --- 1. PRESENTATION --- */
         .scouting-intro {
             margin-top: 10px;
             line-height: 1.8;
@@ -68,80 +65,60 @@
             text-transform: uppercase;
         }
 
-        /* --- CONTENEUR VIDÉO DROITE (30%) --- */
-  .scouting-right-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+        /* --- CONTENEUR YOUTUBE DROITE (30%) --- */
+        .scouting-right-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-        .scouting-video-box {
-            background: linear-gradient(145deg, #0b1d3a, #020b18);
-            border: 1px solid #C5A05F;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            box-sizing: border-box;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
+        .scouting-video-box {
+            background: linear-gradient(145deg, #0b1d3a, #020b18);
+            border: 1px solid #C5A05F;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
 
-        .scouting-video-box h3 {
-            color: #FFFFFF !important;
-            font-size: 1rem !important;
-            font-weight: 700 !important;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .scouting-video-box h3 {
+            color: #FFFFFF !important;
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        .scouting-video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* Ratio 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            border: 1px solid rgba(197, 160, 95, 0.4);
-            margin-bottom: 15px;
-            background: #000;
-        }
+        .youtube-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #ff0000 !important;
+            color: #ffffff !important;
+            font-weight: 800 !important;
+            font-size: 0.95rem;
+            padding: 12px 20px !important;
+            border-radius: 6px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: 0.3s;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+        }
 
-        .scouting-video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .youtube-link-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: #C5A05F !important;
-            color: #000 !important;
-            font-weight: 800 !important;
-            font-size: 0.85rem;
-            padding: 10px 15px !important;
-            border-radius: 4px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: 0.3s;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .youtube-link-btn:hover {
-            background: #ffffff !important;
-            color: #000 !important;
-        }
+        .youtube-link-btn:hover {
+            background: #d40000 !important;
+            color: #ffffff !important;
+        }
 
         /* --- RESPONSIVE MOBILE / TABLETTE --- */
         @media screen and (max-width: 736px) {
@@ -158,7 +135,7 @@
             }
         }
 
-        /* --- 2. FILTRES (CENTRAGE ABSOLU) --- */
+        /* --- 2. FILTRES --- */
         .filter-section { width: 100%; text-align: center; margin: 40px 0 30px 0; }
         .filter-bar { display: inline-flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .filter-btn {
@@ -288,16 +265,15 @@
                             </div>
                         </div>
 
-                        <!-- Bloc Droite (30%) : Conteneur Vidéo YouTube -->
+                        <!-- Bloc Droite (30%) : Redirection YouTube Propre -->
                         <div class="scouting-right-content">
                             <div class="scouting-video-box">
-                                <h3><i class="fab fa-youtube" style="color: #C5A05F; margin-right: 8px;"></i> Chaîne Vidéo</h3>
-                                <div class="scouting-video-wrapper">
-                                    <!-- Intégrez ici l'URL de votre vidéo YouTube (embed) -->
-                                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Lex Sport Global YouTube" allowfullscreen></iframe>
-                                </div>
-                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="youtube-link-btn">
-                                    <i class="fab fa-youtube"><span>Voir la chaîne</span></i>
+                                <h3><i class="fab fa-youtube" style="color: #C5A05F; margin-right: 8px;"></i> YouTube</h3>
+                                <p style="font-size: 0.85em; color: #ccc; margin-bottom: 20px; line-height: 1.4; text-align: center;">
+                                    Accédez à notre chaîne officielle pour découvrir tous nos reportages et analyses.
+                                </p>
+                                <a href="https://www.youtube.com/@LexSportGlobal" target="_blank" rel="noopener noreferrer" class="youtube-link-btn" style="padding: 15px 20px !important; font-size: 1rem !important; background-color: #ff0000 !important; color: #ffffff !important;">
+                                    <i class="fab fa-youtube" style="font-size: 1.5rem; margin-right: 10px;"></i> <span>Voir la chaîne</span>
                                 </a>
                             </div>
                         </div>
@@ -332,7 +308,7 @@
                     <li><a href="https://www.linkedin.com/company/lexsportglobal/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
                     <li><a href="mailto:lexsportglobal.contact@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
                     <li><a href="https://wa.me/2290196454539?text=Bonjour%20LEX%20SPORT%20GLOBAL,%20je%20souhaiterais%20en%20savoir%20plus%20sur%20vos%20services%20d'audit." target="_blank" rel="noopener noreferrer" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-                    <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+                    <li><a href="https://youtube.com/@LexSportGlobal" target="_blank" rel="noopener noreferrer" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
                 </ul>
                 <p><a href="legales.html">Mentions Légales & Confidentialité</a></p>
                 <p class="copyright">&copy; LEX SPORT GLOBAL. 2026 Tous droits réservés.</p>
@@ -367,7 +343,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            // Supabase Logic
             let allPlayers = [];
             const supabaseUrl = 'https://kjhrikutzxixmvmhbjqk.supabase.co';
             const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtqaHJpa3V0enhpeG12bWhianFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNzg4NzQsImV4cCI6MjA4Njg1NDg3NH0.df9_4U08BN-NPNaXYXsyWTkSZqoNT7UtF_Iz8lx6HZo';
